@@ -1,4 +1,4 @@
-import {BLOOD_LADDER} from './blood-bounty.js?v=81';
+import {BLOOD_LADDER} from './blood-bounty.js?v=82';
 import {OUTLAW_NAMES} from './blood-outlaws.js?v=91art';
 const IVORY='#efe1bf',MUTED='#55432f',RED='#8e1f18',INK='#24180e',BRASS='#c9b48a',PLATE='#2a1a10',BRASS_EDGE='#b8905a',SCORCH='#2a1408';
 const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>1-(1-clamp(x))**3;
@@ -76,7 +76,7 @@ export function createBloodContract(paper,{surface=null,getTile=null}={}){
  }
  function hero(ctx,state,opts={}){if(plateReady('poster'))return heroPlate(ctx,state,opts);return heroVector(ctx,state,opts);}
  function heroPlate(ctx,state,{x,y,w,h,remaining=8,total=0,boost=4,stampPulse=0,turn=0,nextTarget=null,collected=false,briefing=false}={}){
-  const done=state.level===2,target=BLOOD_LADDER[state.level],name=nextTarget&&ease(turn)>.5?nextTarget:target;
+  const done=state.level===2&&state.stamps===3,target=BLOOD_LADDER[state.level],name=nextTarget&&ease(turn)>.5?nextTarget:target;
   ctx.save();ctx.translate(x,y+Math.sin(stampPulse*Math.PI)*1.5);ctx.scale(w/380,h/760);
   const m=drawPlate(ctx,'poster',-14,0,408,760),P=bandRect(m,'portrait');
   ctx.fillStyle=IVORY;ctx.fillRect(P.x,P.y,P.w,P.h);portrait(ctx,target,P.x,P.y,P.w,P.h,{turn,nextTarget,collected,shade:true});
@@ -91,14 +91,14 @@ export function createBloodContract(paper,{surface=null,getTile=null}={}){
    if(hit>0){ctx.globalAlpha=.4*hit;ctx.strokeStyle='#ead0aa';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,R+hit*10,0,6.283);ctx.stroke();}ctx.restore();}
   const countText=done?'ALL BOUNTIES CLAIMED':state.stamps===2?'ONE MORE STAMP':`${state.stamps} OF 3 STAMPS`;
   liveBand(ctx,'poster',m,'count',countText,r=>slab(ctx,countText,r.x+r.w/2,r.y+r.h/2,r.h*.88,r.w*.96,RED));
-  const nextText=done?'THE RINGLEADER':'NEXT: '+OUTLAW_NAMES[BLOOD_LADDER[state.level+1]];
+  const nextText=state.level===2?'THE RINGLEADER':'NEXT: '+OUTLAW_NAMES[BLOOD_LADDER[state.level+1]];
   liveBand(ctx,'poster',m,'next',nextText,r=>slab(ctx,nextText,r.x+r.w/2,r.y+r.h/2,r.h*.8,r.w*.98,'#2b1a10',true));
   liveBand(ctx,'poster',m,'spins',String(remaining),r=>slab(ctx,String(remaining),r.x+r.w/2,r.y+r.h/2,r.h*.62,r.w*.9,IVORY));
   liveBand(ctx,'poster',m,'reward',dollars(total),r=>slab(ctx,dollars(total),r.x+r.w/2,r.y+r.h/2,r.h*.5,r.w*.94,IVORY));
   ctx.restore();
  }
  function heroVector(ctx,state,{x,y,w,h,remaining=8,total=0,boost=4,stampPulse=0,turn=0,nextTarget=null,collected=false,briefing=false}={}){
-  const done=state.level===2,target=BLOOD_LADDER[state.level],name=nextTarget&&ease(turn)>.5?nextTarget:target;
+  const done=state.level===2&&state.stamps===3,target=BLOOD_LADDER[state.level],name=nextTarget&&ease(turn)>.5?nextTarget:target;
   ctx.save();ctx.translate(x,y+Math.sin(stampPulse*Math.PI)*1.5);ctx.scale(w/380,h/760);base(ctx,380,760);
   slab(ctx,'WANTED',190,64,76,300,INK);
   ctx.strokeStyle=INK;ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(56,104);ctx.lineTo(324,104);ctx.stroke();ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(56,109);ctx.lineTo(324,109);ctx.stroke();
@@ -112,7 +112,7 @@ export function createBloodContract(paper,{surface=null,getTile=null}={}){
   marks(ctx,done?3:state.stamps,190,CONTRACT.stampY,{gap:CONTRACT.stampGap,pulse:stampPulse});
   slab(ctx,done?'ALL BOUNTIES CLAIMED':state.stamps===2?'ONE MORE STAMP':`${state.stamps} OF 3 STAMPS`,190,606,23,320,RED);
   ctx.strokeStyle='#3a2a1b';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(52,631);ctx.lineTo(82,631);ctx.moveTo(298,631);ctx.lineTo(328,631);ctx.stroke();
-  slab(ctx,done?'THE RINGLEADER':'NEXT: '+OUTLAW_NAMES[BLOOD_LADDER[state.level+1]],190,631,15,210,'#3a2a1b',true);
+  slab(ctx,state.level===2?'THE RINGLEADER':'NEXT: '+OUTLAW_NAMES[BLOOD_LADDER[state.level+1]],190,631,15,210,'#3a2a1b',true);
   plate(ctx,22,652,336,94);
   ctx.strokeStyle='#efe1bf33';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(190,668);ctx.lineTo(190,730);ctx.stroke();
   slab(ctx,briefing?'FREE SPINS':'SPINS LEFT',108,676,14,130,BRASS,true);slab(ctx,'REWARD',272,676,14,130,BRASS,true);
@@ -176,8 +176,8 @@ export function createBloodContract(paper,{surface=null,getTile=null}={}){
   slab(ctx,'WANTED',372,30,32,380,INK);
   ctx.strokeStyle=INK;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(206,48);ctx.lineTo(538,48);ctx.stroke();
   slab(ctx,OUTLAW_NAMES[nextTarget&&ease(turn)>.5?nextTarget:BLOOD_LADDER[state.level]],372,74,38,380,INK);
-  marks(ctx,state.level===2?3:state.stamps,372,116,{width:44,height:44,gap:80,pulse:stampPulse,fontSize:19});
-  slab(ctx,state.level===2?'TOP BOUNTY':state.stamps===2?'ONE MORE STAMP':`${state.stamps} OF 3 STAMPS`,372,156,18,330,RED);
+  marks(ctx,state.stamps,372,116,{width:44,height:44,gap:80,pulse:stampPulse,fontSize:19});
+  slab(ctx,state.level===2&&state.stamps===3?'BOUNTY CLAIMED':state.stamps===2?'ONE MORE STAMP':`${state.stamps} OF 3 STAMPS`,372,156,18,330,RED);
   if(collected&&turn<.1){ctx.save();ctx.translate(94,130);ctx.rotate(-.08);ctx.fillStyle=RED;ctx.fillRect(-79,-18,158,36);slab(ctx,'CLAIMED',0,1,28,148,IVORY);ctx.restore();}
   plate(ctx,196,170,354,46,{rivets:false});
   slab(ctx,briefing?`${remaining} FREE SPINS`:`${remaining} SPINS`,286,193,21,170,IVORY);slab(ctx,dollars(total),464,193,21,170,IVORY);

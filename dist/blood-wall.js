@@ -4,7 +4,7 @@
 // depth that stays. On the third hole the finished poster turns up and over its
 // nail like a page and the next outlaw is already hanging beneath.
 // Presentation only: the bounty resolver owns every value shown here.
-import {BLOOD_LADDER} from './blood-bounty.js?v=81';
+import {BLOOD_LADDER} from './blood-bounty.js?v=82';
 import {OUTLAW_FILES} from './blood-outlaws.js?v=91art';
 const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>1-(1-clamp(x))**3;
 // Hole positions are fixed per poster and stamp so a hole never moves once shot (poster units).

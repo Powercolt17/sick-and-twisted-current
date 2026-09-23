@@ -24,7 +24,7 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
  const has=level=>level!=null&&!!meta&&!!meta.outlaws[String(level)]&&!!img[`clip_${level}_hit1`];
  const O=()=>meta.outlaws[String(d.level)];
  const fresh=(level,enterAt)=>({level,state:0,clip:null,hitAt:null,pools:[],enterAt,goneAt:0,restAt:-1e9,shot:null,away:false,deferNext:false});
- function start(level=0,stamps=0){heldShot=null;if(!has(level))return false;clock=0;last=null;dustAt=null;particles=[];shots=[];d=fresh(level,-1e9);d.state=Math.max(0,Math.min(2,stamps));canvas.style.filter='';return true;}
+ function start(level=0,stamps=0){heldShot=null;if(!has(level))return false;clock=0;last=null;dustAt=null;particles=[];shots=[];d=fresh(level,-1e9);d.state=Math.max(0,Math.min(level===2?3:2,stamps));canvas.style.filter='';return true;}
  function stop(){heldShot=null;d=null;particles=[];shots=[];dustAt=null;canvas.style.filter='';}
  function setPaused(value){paused=!!value;last=null;}
  // Active time is shared by fire, contact, audio and particles. Drawing never advances state.

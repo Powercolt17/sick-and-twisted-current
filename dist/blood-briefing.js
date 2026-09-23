@@ -2,7 +2,7 @@
 export function createBloodBriefing({stage,onPreview=()=>{},onFinish=()=>{}}){
  let pending=null,priorFocus=null,previousInert=false;
  const panel=document.createElement('section');panel.className='blood-briefing blood-overlay';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-labelledby','blood-briefing-title');
- panel.innerHTML=`<div class="blood-dossier blood-briefing-card"><div class="blood-hardware" aria-hidden="true"><i class="timber top"></i><i class="timber bottom"></i><i class="timber left"></i><i class="timber right"></i></div>
+ panel.innerHTML=`<div class="blood-dossier blood-briefing-card blood-reference-entry"><img class="blood-entry-reference" src="assets/blood-plates/approved-entry-hd.webp" alt="" aria-hidden="true" draggable="false"><div class="blood-hardware" aria-hidden="true"><i class="timber top"></i><i class="timber bottom"></i><i class="timber left"></i><i class="timber right"></i></div>
   <header class="blood-dossier-header"><span class="blood-eyebrow">A DEADLY WAGER. A HIGHER BOUNTY.</span><h2 id="blood-briefing-title">BLOOD MONEY</h2><div class="blood-header-rule" aria-hidden="true"><span>★</span></div></header>
   <div class="blood-dossier-content">
    <figure class="blood-target"><div class="blood-target-art"><img src="assets/ink-western/rustler.webp" alt="Wanted: The Rustler" draggable="false"></div><figcaption>YOUR FIRST TARGET</figcaption></figure>
@@ -19,7 +19,7 @@ export function createBloodBriefing({stage,onPreview=()=>{},onFinish=()=>{}}){
  document.addEventListener('keydown',e=>{if(!pending)return;if(['Space','Enter'].includes(e.code)){e.preventDefault();e.stopImmediatePropagation();if(!e.repeat)finish();}else if(e.key==='Tab'){e.preventDefault();button.focus({preventScroll:true});}},true);
  window.addEventListener('pagehide',()=>finish(false));
  return {
-  show({awardedSpins,boost=1}){if(pending)throw Error('Blood Money briefing already open');if(!Number.isSafeInteger(awardedSpins)||awardedSpins<1)throw Error('Confirmed free spins required');priorFocus=document.activeElement;previousInert=!!hud?.inert;panel.querySelector('.blood-award-spins').textContent=String(awardedSpins);panel.querySelector('.blood-award-boost').textContent='UP TO 10×';onPreview({awardedSpins,boost});stage.setAttribute('data-blood-briefing','');if(hud){hud.inert=true;hud.setAttribute('aria-hidden','true');}panel.hidden=false;const result=new Promise(resolve=>pending=resolve);button.focus({preventScroll:true});return result;},
+  show({awardedSpins,boost=1}){if(pending)throw Error('Blood Money briefing already open');if(!Number.isSafeInteger(awardedSpins)||awardedSpins<1)throw Error('Confirmed free spins required');panel.querySelector('.blood-briefing-card').classList.toggle('blood-reference-entry',awardedSpins===8);priorFocus=document.activeElement;previousInert=!!hud?.inert;panel.querySelector('.blood-award-spins').textContent=String(awardedSpins);panel.querySelector('.blood-award-boost').textContent='UP TO 10×';onPreview({awardedSpins,boost});stage.setAttribute('data-blood-briefing','');if(hud){hud.inert=true;hud.setAttribute('aria-hidden','true');}panel.hidden=false;const result=new Promise(resolve=>pending=resolve);button.focus({preventScroll:true});return result;},
   cancel:()=>finish(false),get active(){return !!pending;}
  };
 }

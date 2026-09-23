@@ -1,6 +1,6 @@
 import {createHellIntro} from './hell-intro.js?v=80';
 import {createBloodScatterReaction} from './blood-reveal.js?v=3';
-import {createBountyReveal,createBountyFrame,BOUNTY_REVEAL,BOUNTY_MATERIAL} from './bounty-poster.js?v=93art';
+import {createBountyReveal,createBountyFrame,BOUNTY_REVEAL,BOUNTY_MATERIAL} from './bounty-poster.js?v=94art';
 import {loadBloodAudio,scheduleBloodAudio} from './blood-audio.js?v=82';
 import {createBloodCinematic} from './blood-cinematic.js?v=2';
 

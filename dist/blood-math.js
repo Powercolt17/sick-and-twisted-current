@@ -1,5 +1,5 @@
 import * as M from './math.js?v=23';
-import {BLOOD_STATES,bloodOutcome,bountyIndex} from './blood-bounty.js?v=81';
+import {BLOOD_STATES,bloodOutcome,bountyIndex} from './blood-bounty.js?v=82';
 import {BLOOD_CATALOG} from './blood-catalog.js?v=2';
 import {BLOOD_PROFILES} from './blood-profiles.js?v=1';
 import {BLOOD_START_SPINS,bloodExtraSpins,bloodMultiplier,BLOOD_MULTIPLIERS,BLOOD_MULTIPLIER_WEIGHTS} from './blood-rules.js?v=2';

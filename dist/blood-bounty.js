@@ -13,16 +13,17 @@ export const BLOOD_STATES=Object.freeze([
 ].map(Object.freeze));
 export const freshBounty=()=>({level:0,stamps:0,multiplier:1});
 export function bountyIndex(state){
- if(!Number.isInteger(state?.level)||state.level<0||state.level>2||!Number.isInteger(state.stamps)||state.stamps<0||state.stamps>2||state.level===2&&state.stamps!==0)throw new RangeError('Invalid Blood Money bounty state');
+ if(!Number.isInteger(state?.level)||state.level<0||state.level>2||!Number.isInteger(state.stamps)||state.stamps<0||state.stamps>(state.level===2?3:2))throw new RangeError('Invalid Blood Money bounty state');
+// Final health shares the terminal pricing state: no payout or probability change.
  return state.level===2?6:state.level*3+state.stamps;
 }
 export function upgradeSymbol(symbol,level){const i=BLOOD_LADDER.indexOf(symbol);return i>=0&&i<level?BLOOD_LADDER[level]:symbol;}
 export const upgradeGrid=(grid,level)=>grid.map(col=>col.map(s=>upgradeSymbol(s,level)));
 export function collectBounty(state,result,grid,wilds={}){
  bountyIndex(state);const target=BLOOD_LADDER[state.level];
- const paid=state.level<2&&result.groups.some(g=>g.symbol===target&&g.exactTenths>0&&g.cells.some(([c,r])=>!wilds[c]&&grid[c][r]===target));
+ const paid=!(state.level===2&&state.stamps===3)&&result.groups.some(g=>g.symbol===target&&g.exactTenths>0&&g.cells.some(([c,r])=>!wilds[c]&&grid[c][r]===target));
  if(!paid)return {state:{...state},stamp:false,upgraded:false,target};
- const upgraded=state.stamps===2;
+ const upgraded=state.level<2&&state.stamps===2;
  return {state:upgraded?{...state,level:state.level+1,stamps:0}:{...state,stamps:state.stamps+1},stamp:true,upgraded,target,next:upgraded?BLOOD_LADDER[state.level+1]:null};
 }
 export function bloodRandom(seed){let s=seed>>>0;return()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296;};}

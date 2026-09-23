@@ -1,9 +1,9 @@
-import {BOUNTY_MATERIAL,createBountyPoster} from './bounty-poster.js?v=93art';
-import {BLOOD_LADDER} from './blood-bounty.js?v=81';
+import {BOUNTY_MATERIAL,createBountyPoster} from './bounty-poster.js?v=94art';
+import {BLOOD_LADDER} from './blood-bounty.js?v=82';
 import {OUTLAW_NAMES as BLOOD_NAMES} from './blood-outlaws.js?v=91art';
 import {createBountyTimeline,BOUNTY_TIME} from './bounty-timeline.js?v=109';
-import {createBloodContract,contractStampPoint,CONTRACT_SURFACE} from './blood-contract.js?v=117';
-import {createBloodWall,WALL_TIME} from './blood-wall.js?v=12';
+import {createBloodContract,contractStampPoint,CONTRACT_SURFACE} from './blood-contract.js?v=118';
+import {createBloodWall,WALL_TIME} from './blood-wall.js?v=13';
 const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>1-(1-clamp(x))**3;
 export function createBloodBank({G,W,H,getTile,reduced=false,getVisibleWidth=()=>1212,isPortrait=()=>false,announce=()=>{}}){
  const timeline=createBountyTimeline({reduced}),wall=createBloodWall({reduced});let art=null,spins=8,award=8,total=0,boost=1,flash=null,briefing=null,stampHit=null,readoutFrom=0,readoutAt=0;
@@ -13,7 +13,7 @@ export function createBloodBank({G,W,H,getTile,reduced=false,getVisibleWidth=()=
  const mobile=()=>getVisibleWidth()<1000||isPortrait();   // portrait phones get the header, never the dock
  const destination=()=>mobile()?{x:G.x+G.w*.12,y:-255,w:172,h:265}:side;
  const mix=(a,b,p)=>Object.fromEntries(['x','y','w','h'].map(k=>[k,a[k]+(b[k]-a[k])*p]));
- function sync(){const s=timeline.snapshot(performance.now()).state;announce(`Blood Money. Target ${BLOOD_NAMES[BLOOD_LADDER[s.level]]}. ${s.level===2?'Upgrades complete':s.stamps+' of 3 stamps'}. ${spins} free spins remaining. Feature won $${total.toFixed(2)}. ${boost} times feature win boost.`);}
+ function sync(){const s=timeline.snapshot(performance.now()).state;announce(`Blood Money. Target ${BLOOD_NAMES[BLOOD_LADDER[s.level]]}. ${s.level===2&&s.stamps===3?'Ringleader defeated':s.stamps+' of 3 hits'}. ${spins} free spins remaining. Feature won $${total.toFixed(2)}. ${boost} times feature win boost.`);}
  function appearance(snapshot){const e=snapshot.event,t=snapshot.timings;
   const pulse=stampHit?Math.max(0,1-(snapshot.entered-stampHit.at)/560):0;
   const turn=e?.data.upgraded?clamp((e.age-t.turn)/portraitDuration):0;

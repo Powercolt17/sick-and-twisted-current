@@ -225,3 +225,55 @@
 
 .blood-award .blood-award-boost{font-size:clamp(18px,2.1cqw,31px);letter-spacing:-.03em;white-space:nowrap}.blood-briefing-note{letter-spacing:.02em}
 @container (max-aspect-ratio:1/1){.blood-award .blood-award-boost{font-size:20px}.blood-briefing-note{font-size:10px}}
+
+/* The user's approved entry art is preserved verbatim. Live semantic content
+   stays available to assistive technology; the painted button is interactive. */
+.blood-entry-reference{display:none}
+.blood-briefing .blood-reference-entry{width:min(91cqw,145cqh,1100px);aspect-ratio:406/264;padding:0;max-height:none;overflow:visible;background:none;border:0;box-shadow:0 24px 70px #000c}
+.blood-reference-entry .blood-entry-reference{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.blood-reference-entry::before,.blood-reference-entry>.blood-hardware,.blood-reference-entry>.blood-corner{display:none}
+.blood-reference-entry .blood-dossier-header,.blood-reference-entry .blood-target,.blood-reference-entry .blood-award,.blood-reference-entry .blood-motto,.blood-reference-entry .blood-briefing-stamps,.blood-reference-entry .blood-instructions,.blood-reference-entry .blood-briefing-note{position:absolute;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.blood-reference-entry .blood-dossier-content,.blood-reference-entry .blood-dossier-action{display:contents}
+.blood-reference-entry .blood-continue{position:absolute;left:45.5%;top:80.7%;width:49.7%!important;height:10.5%;min-height:0;padding:0;margin:0;border:0;background:none;box-shadow:none;color:transparent;font-size:0;transition:background .15s;transform:none}
+.blood-reference-entry .blood-continue::before,.blood-reference-entry .blood-continue::after,.blood-reference-entry .blood-continue>span{display:none}
+.blood-reference-entry .blood-continue:hover{background:#ffcf7820;filter:none;transform:none}
+.blood-reference-entry .blood-continue:active{background:#0003;transform:none}
+.blood-reference-entry .blood-continue:focus-visible{outline:2px solid #f2d28c;outline-offset:2px}
+
+/* Crop the reference to its board only: the existing duel scene stays behind it.
+   Coordinates are registered to the 1314 × 916 board within the clean plate. */
+.blood-receipt .blood-reference-receipt{container-type:inline-size;width:min(94cqw,134cqh,1260px);aspect-ratio:1314/916;padding:0;max-height:none;overflow:visible;background:none;border:0;outline:0;box-shadow:none}
+.blood-reference-receipt .blood-receipt-plate{position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('assets/blood-plates/approved-receipt-clean.webp') 49.55% 38.89%/116.895% 111.791% no-repeat;clip-path:polygon(0 4.8%,24% 4.8%,32% 1.6%,48% 0,61% 3.2%,77% 4.8%,100% 4.8%,100% 100%,0 100%)}
+.blood-reference-receipt::before,.blood-reference-receipt>.blood-hardware,.blood-reference-receipt>.blood-corner{display:none}
+.blood-reference-receipt .blood-dossier-content,.blood-reference-receipt .blood-receipt-stats,.blood-reference-receipt .blood-dossier-action,.blood-reference-receipt .blood-reward{display:contents}
+.blood-reference-receipt .blood-dossier-header,.blood-reference-receipt .blood-reward>.blood-eyebrow,.blood-reference-receipt .blood-reward-rule,.blood-reference-receipt .blood-receipt-stats span,.blood-reference-receipt .blood-receipt-note,.blood-reference-receipt .blood-final-target{position:absolute;width:1px;height:1px;padding:0;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.blood-reference-receipt .blood-target{position:absolute;left:4.6%;top:21.6%;width:35.1%;height:68.1%;padding:0;margin:0;max-height:none}
+.blood-reference-receipt .blood-target-art{width:100%;height:100%;transform:rotate(-1.5deg);filter:drop-shadow(4px 7px 4px #0009)}
+.blood-reference-receipt .blood-target img{width:100%;height:100%;max-height:none;object-fit:fill;filter:none}
+.blood-reference-receipt .blood-target-art::after{left:43%;top:-1%;width:2.6%;height:2%;background:radial-gradient(circle at 30% 30%,#aa8a5d,#21150e 55%);box-shadow:1px 3px 2px #0009}
+.blood-reference-receipt .blood-closed{left:-1%;bottom:11%;width:104%;right:auto;transform-origin:center}
+.blood-reference-receipt .blood-closed span{background:#d9b984dd;color:#811f12;border:5px double #7b1c0c;outline:2px solid #7b1c0c;outline-offset:3px;font:900 2.5cqw/.9 Western,Georgia,serif;letter-spacing:.075em;padding:2.2% 1%}
+.blood-reference-receipt .blood-closed b{font:900 4.4cqw/.92 Western,Georgia,serif;letter-spacing:.055em}
+.blood-reference-receipt .blood-reward-amount{position:absolute;left:44%;top:36.1%;width:49.7%;height:19%;display:flex;align-items:center;justify-content:center;margin:0;font:900 12.8cqw/1 Western,Georgia,serif;letter-spacing:-.035em;white-space:nowrap;background:linear-gradient(#fff0b7 12%,#f0c972 58%,#bc7930 95%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 #6b320e) drop-shadow(0 5px 4px #000);transform:scale(var(--reward-pulse,1))}
+.blood-reference-receipt .blood-reward-amount[data-long=true]{font-size:8.3cqw;letter-spacing:-.04em}
+.blood-reference-receipt .blood-receipt-stats>div{display:contents;border:0}
+.blood-reference-receipt .blood-receipt-stats strong{position:absolute;top:60.5%;height:6.6%;margin:0;display:flex;align-items:center;justify-content:center;font:900 5.1cqw/1 Western,Georgia,serif;color:#ffe5b3;text-shadow:0 2px 1px #241308,0 5px 6px #000}
+.blood-reference-receipt .blood-receipt-spins{left:44.6%;width:24.1%}.blood-reference-receipt .blood-receipt-boost{left:70.7%;width:22%}
+.blood-reference-receipt #bounty-return{position:absolute;left:44%;top:75.8%;width:49.5%!important;height:11.1%;min-height:0;margin:0;padding:0;background:none;border:0;box-shadow:none;color:transparent;font-size:0;transform:none;transition:background .15s}
+.blood-reference-receipt #bounty-return::before,.blood-reference-receipt #bounty-return::after,.blood-reference-receipt #bounty-return>span{display:none}
+.blood-reference-receipt #bounty-return:hover{background:#ffcf781c;filter:none;transform:none}
+.blood-reference-receipt #bounty-return:active{background:#0003}
+.blood-reference-receipt #bounty-return:focus-visible{outline:2px solid #f2d28c;outline-offset:2px}
+.blood-reference-receipt .blood-reward-dust{inset:30% 6% 40% 44%;z-index:1}
+.blood-briefing.blood-overlay,.blood-receipt.blood-overlay{background:#0806045e}
+#slot-shell[data-layout=portrait] .blood-briefing.blood-overlay,#slot-shell[data-layout=portrait] .blood-receipt.blood-overlay{background:#0806045e}
+
+@font-face{font-family:BloodReward;src:url('assets/anton.ttf') format('truetype');font-display:block}
+.blood-reference-receipt .blood-reward-amount{font-family:BloodReward,Impact,sans-serif;font-weight:400;font-size:13.1cqw;letter-spacing:0;background-image:linear-gradient(#fff1ba 10%,#f5ce7a 53%,#b7782d 98%)}
+.blood-reference-receipt .blood-receipt-stats strong{font-family:BloodReward,Impact,sans-serif;font-weight:400;font-size:5.4cqw}
+.blood-reference-receipt .blood-closed span,.blood-reference-receipt .blood-closed b{font-family:Outlaw,Georgia,serif}
+.blood-reference-receipt .blood-reference-poster{display:none}
+.blood-receipt[data-target=bandit] .blood-reference-poster{display:block;position:absolute;left:4.26%;top:20.74%;width:37.21%;height:69.87%;background:url('assets/blood-plates/approved-receipt-reference.webp') 15.86% 60.42%/314.11% 160% no-repeat;clip-path:polygon(0 3%,38% 2%,42% 0,44% 0,42% 2%,94% 1%,100% 100%,3% 100%);pointer-events:none}
+.blood-receipt[data-target=bandit] .blood-reference-receipt .blood-target{opacity:0;pointer-events:none}
+
+@container(max-width:600px){.blood-reference-entry .blood-continue::after,.blood-reference-receipt #bounty-return::after{content:"";display:block;position:absolute;inset:-10px -3px;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none}}

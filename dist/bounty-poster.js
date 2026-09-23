@@ -1,4 +1,4 @@
-import {BLOOD_LADDER} from './blood-bounty.js?v=81';
+import {BLOOD_LADDER} from './blood-bounty.js?v=82';
 import {OUTLAW_NAMES as BLOOD_NAMES} from './blood-outlaws.js?v=91art';
 export const BOUNTY_MATERIAL='assets/ink-western/poster-knife.webp';
 export const BOUNTY_REVEAL={cardAt:.28,knifeAt:.70,continueAt:1.55,duration:8};
@@ -22,7 +22,7 @@ export function createBountyPoster({atlas,getTile=()=>null}){
  function closedStamp(ctx,p=1){ctx.save();ctx.translate(180,152);ctx.rotate(-.13);ctx.scale(1+.18*(1-p),1+.18*(1-p));ctx.globalAlpha*=p;ctx.strokeStyle='#711c18';ctx.lineWidth=5;ctx.strokeRect(-153,-34,306,68);ctx.lineWidth=1.2;ctx.strokeRect(-146,-27,292,54);label(ctx,'BOUNTY CLOSED',0,1,36,'#711c18',283,'Western');ctx.restore();}
  // One continuous card: entrance, side dock, upgrades and result all use these coordinates.
  function hero(ctx,state,{x=520,y=91,w=400,h=610,knifeOn=true,knifeFall=0,knifeHeight=145,award=8,boost=4,remaining=award,total=0,intro=false,reveal=Infinity,stampPulse=0,turn=0,nextTarget=null,collected=false,closed=0,result=0,paperAngle=0,shadow=true}={}){
-  const target=BLOOD_LADDER[state.level],done=state.level===BLOOD_LADDER.length-1;
+  const target=BLOOD_LADDER[state.level],done=state.level===BLOOD_LADDER.length-1&&state.stamps===3;
   ctx.save();ctx.translate(x,y);ctx.scale(w/360,h/600);
   if(shadow){ctx.save();ctx.shadowColor='#0008';ctx.shadowBlur=17;ctx.shadowOffsetY=9;sheet(ctx,0,0,360,600);ctx.restore();}
   // Paper pivots around the pin; the steel and its shadow never inherit that flex.
@@ -38,12 +38,12 @@ export function createBountyPoster({atlas,getTile=()=>null}){
    if(collected&&turn<.4){ctx.save();ctx.translate(180,237);ctx.rotate(-.12);ctx.strokeStyle='#8d241c';ctx.lineWidth=4;ctx.strokeRect(-94,-21,188,42);label(ctx,'COLLECTED',0,0,32,'#8d241c',178,'Western');ctx.restore();}
    if(nextTarget&&turn>0){const p=bountyEase(turn),s=54+(194-54)*p;symbol(ctx,nextTarget,244+(83-244)*p,404+(107-404)*p,s,false,54+(166-54)*p);}
   }
-  if(reveal>=1){stamps(ctx,done?3:state.stamps,180,341,29,94,stampPulse);label(ctx,done?'UPGRADES COMPLETE':intro?'3 STAMPS = UPGRADE':`${state.stamps} / 3 STAMPS`,180,388,27,'#6f211a',300);}
+  if(reveal>=1){stamps(ctx,done?3:state.stamps,180,341,29,94,stampPulse);label(ctx,done?'BOUNTY CLAIMED':intro?'3 STAMPS = UPGRADE':`${state.stamps} / 3 STAMPS`,180,388,27,'#6f211a',300);}
   if(!intro||reveal>=1){
    ctx.strokeStyle='#a0875f';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(42,413);ctx.lineTo(220,413);ctx.stroke();
-   label(ctx,done?'TOP SYMBOL UNLOCKED':'NEXT UPGRADE',137,436,18,'#51422e',190);
-   if(!done&&!(nextTarget&&turn>0))symbol(ctx,BLOOD_LADDER[state.level+1],244,404,54);
-   if(done)symbol(ctx,'bandit',244,404,54);
+   label(ctx,state.level===2?'FINAL TARGET':'NEXT UPGRADE',137,436,18,'#51422e',190);
+   if(state.level<2&&!(nextTarget&&turn>0))symbol(ctx,BLOOD_LADDER[state.level+1],244,404,54);
+   if(state.level===2)symbol(ctx,'bandit',244,404,54);
   }
   ctx.save();ctx.globalAlpha*=1-result;
   if(reveal>=2){label(ctx,intro?`${award} FREE SPINS`:`${remaining} SPINS LEFT`,180,484,intro?34:29,'#7e1713',300,'Western');}
