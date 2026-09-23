@@ -49,3 +49,5 @@ Real physical phones and Safari have not been tested.
 
 Entry cache game259, briefing125, receipt4, CSS124, bounty82, duel8, bank133.
 Hang feature enhancement work remains paused outside this checkout.
+
+Retired gallows-frame/outlaw-clean artwork is archived under tools/retired-gallows/assets. It is no longer included in dist because the cancelled renderer is inactive and tar framing counts toward the hosting limit.
