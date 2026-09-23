@@ -1,3 +1,7 @@
+# Restored original Outlaw Wild — game258
+
+The user rejected the gallows and generated reel-drop experiments. Hang Em High again uses the original assets/outlaw-hanging full-column Outlaw Wild, its existing stepped drop, persistent reel multiplier, and existing upgrade motion. The three-bay gallows, boxed-Wild substitution, replacement character, expanded mobile gallows header, and new capture choreography are no longer active. Original Outlaw artwork also returns to the closing cards. Outcome math and all other features are unchanged. Local port 8771 serves the real game with no experimental injection.
+
 # Hang ’Em High
 
 ## Persistent gallows — game257

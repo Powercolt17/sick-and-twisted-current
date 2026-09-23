@@ -1,3 +1,7 @@
+# Restored original Outlaw Wild — game258
+
+The user rejected the gallows and generated reel-drop experiments. Hang Em High again uses the original assets/outlaw-hanging full-column Outlaw Wild, its existing stepped drop, persistent reel multiplier, and existing upgrade motion. The three-bay gallows, boxed-Wild substitution, replacement character, expanded mobile gallows header, and new capture choreography are no longer active. Original Outlaw artwork also returns to the closing cards. Outcome math and all other features are unchanged. Local port 8771 serves the real game with no experimental injection.
+
 # Current: Persistent gallows — game257
 
 Hang now has its own generated three-bay gallows and clean character sprite. Confirmed captures use a 3.1s rope/catch/lift/settle sequence, then dock beside the reels (above them on phones). Captured reels become four boxed Wilds; the old full-reel hanging art remains in other modes. After three captures, the 2.45s Tighten the Noose sequence reveals the doubled value at 1000ms. See HANG_FEATURE.md. Math and payout rules are unchanged. All 26 tests, two full desktop/phone iterations and paused/reduced/keyboard lifecycle checks pass. Cache game257.
