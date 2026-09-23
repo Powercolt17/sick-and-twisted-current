@@ -10,7 +10,7 @@ import {createMobileRenderBudget} from './mobile-render-budget.js?v=1';
 import {createActionFeedback} from './action-feedback.js?v=3';
 import {bountySources} from './bounty-timeline.js?v=109';
 import {createOutlawArt,payingOutlaws,OUTLAW_NAMES,OUTLAW_HEAD} from './blood-outlaws.js?v=91art';
-import {createFeatureScenes,confirmedBloodCells,confirmedHangCells,confirmedHellCells} from './feature-scenes.js?v=showdown1';
+import {createFeatureScenes,confirmedBloodCells,confirmedHangCells,confirmedHellCells} from './feature-scenes.js?v=hang4';
 import {createScatterAudio} from './scatter-audio.js?v=2';
 import {createThemeMusic} from './theme-music.js?v=3';
 import {createBloodBank} from './blood-bank.js?v=132';
@@ -20,11 +20,11 @@ import {createBloodBriefing} from './blood-briefing.js?v=124';
 import {freshBounty,upgradeGrid} from './blood-bounty.js?v=81';
 import {rollBloodOutcome,bloodModel,bloodDemoOutcome} from './blood-math.js?v=81';
 import {rollHangFeature,hangDemoFeature,hangAudit} from './hang-math.js?v=3';
-import {createHangPresentation} from './hang-presentation.js?v=scenery32b-mobile32-4';
+import {createHangPresentation} from './hang-presentation.js?v=4';
 import {hellPurchaseEntry} from './hell-entry.js?v=2';
 import {featurePurchaseEntry} from './feature-entry.js?v=1';
 import {createGameInfo} from './game-info.js?v=129';
-import {createMobileView,canvasScale} from './mobile-view.js?v=center33-scenery32b-mobile32-93mobile';
+import {createMobileView,canvasScale} from './mobile-view.js?v=hang4';
 import {createReelMotion,REEL_MOTION,NORMAL_SPIN_MOTION,FEATURE_BUY_MOTION} from './reel-motion.js?v=10';
 import {createTricksterGrid} from './trickster-grid.js?v=1';
 import {createScatterAnticipation,ANTICIPATION} from './scatter-anticipation.js?v=12';
@@ -45,7 +45,7 @@ import {createGhostTown} from './environment.js?v=floor35-scenery32b-95perf';
 import {createStaticRaster} from './static-raster.js?v=1';
 import * as M from './math.js?v=23';
 import {createCharacter} from './character.js?v=2';
-import {loadOutlawAssets,drawOutlaw,stepMotionAt,WILD_STEPS,WILD_LANDINGS,WILD_ENTRY_END} from './outlaw-motion.js?v=113';
+import {loadOutlawAssets,drawOutlaw,stepMotionAt,WILD_STEPS,WILD_LANDINGS,WILD_ENTRY_END} from './outlaw-motion.js?v=114';
 import {createModeBackground} from './mode-background.js?v=floor35-scenery32b-118';
 import {createShop} from './shop.js?v=51';
 const $=s=>document.querySelector(s);
@@ -192,7 +192,7 @@ function creditRound(id,value){const amount=Math.round(value*100),accepted=round
 
 const bets=[.01,.02,.05,.1,.2,.5,1,2,5,10];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const hangPresentation=createHangPresentation({stage:$('#stage'),G,reduced,announce:setStatus});
+const hangPresentation=createHangPresentation({stage:$('#stage'),G,reduced,announce:setStatus,onImpact:()=>{impactMotion.kick(reduced?0:3.2);if(!muted){soundInit();playSample('impactw',.72,.82);playSample('stamp',.58,1.08);}}});
 document.addEventListener('visibilitychange',()=>hangPresentation.setPaused(document.hidden,performance.now()));
 const bloodBank=createBloodBank({G,W,H,getTile:bloodTile,reduced,isPortrait:()=>$('#slot-shell')?.dataset.layout==='portrait',getVisibleWidth:()=>canvas.parentElement.getBoundingClientRect().width/canvas.getBoundingClientRect().width*W,announce:text=>{$('#blood-bounty-status').textContent=text;}});
 const bloodTargetGun=createBloodTargetGun({getAssets:()=>shootoutAssets,reduced,getAmbientTime:()=>environment.motionTime});
@@ -828,8 +828,8 @@ function drawWild(c,w,now){
  const fade=tumble.wildAlpha(c,now);if(fade<=0||!hangingWildArt)return;
  const state=wildFrame(w,now);
  ctx.save();ctx.globalAlpha*=fade;
- if(w.locked){ctx.beginPath();ctx.rect(G.x+c*G.cw,G.y,G.cw,G.h);ctx.clip();ctx.translate(0,hangPresentation.upgradeOffset(c,now));}
- drawOutlaw(ctx,hangingWildArt,state.t,state.mode,{multiplier:state.value,reduced,rect:{x:G.x+c*G.cw,y:G.y,w:G.cw,h:G.h}});
+ if(w.locked){ctx.beginPath();ctx.rect(G.x+c*G.cw,G.y,G.cw,G.h);ctx.clip();}
+ drawOutlaw(ctx,hangingWildArt,state.t,state.mode,{multiplier:state.value,reduced,...(w.locked?hangPresentation.motion(c,now):{}),rect:{x:G.x+c*G.cw,y:G.y,w:G.cw,h:G.h}});
  if(state.step&&!reduced)drawWildStepImpact(c,state.step);
  ctx.restore();
 }
@@ -860,7 +860,7 @@ function drawReelContacts(now){
 function drawRoundReadout(){
  if(payout.active||maxSequence)return;
  if(tumble.active)return;
- if(multiplier&&Object.keys(wilds).length>1){drawText('TOTAL',120,98,11,'#d8cdb4');drawText('×'+multiplier,120,119,multiplier>=100?24:28);}
+ if(!hangPresentation.active&&multiplier&&Object.keys(wilds).length>1){drawText('TOTAL',120,98,11,'#d8cdb4');drawText('×'+multiplier,120,119,multiplier>=100?24:28);}
 
 }
 const hudMoney=new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -888,7 +888,7 @@ function queueRender(){
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ready)queueRender();});
 function render(now){if(document.hidden)return;const renderStarted=performance.now();
  const sceneHeader=['blood','hang'].includes(featureScenes.state.feature)?230:120;
- if($('#slot-shell').dataset.sceneHeader!==String(sceneHeader)){$('#slot-shell').dataset.sceneHeader=String(sceneHeader);mobileView.measure();}
+ if($('#slot-shell').dataset.sceneHeader!==String(sceneHeader)||$('#slot-shell').dataset.sceneFeature!==(featureScenes.state.feature||'')){$('#slot-shell').dataset.sceneHeader=String(sceneHeader);$('#slot-shell').dataset.sceneFeature=featureScenes.state.feature||'';mobileView.measure();}
 if(dev.pauseRendering){queueRender();return;}lastTime=now;featureScenes.tick(now);bloodDuel.update(now);modeBackground.setSuspended(featureScenes.hasBackground);featureScenes.setMotion(environment.isMotionEnabled()&&(!phoneView||mobileRenderBudget.motion));ctx.setTransform(renderScale,0,0,renderScale,0,Math.round(sceneTop*renderScale));ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(featureScenes.active&&!featureScenes.revealing){featureScenes.drawIntro(ctx);presentScene();queueRender();return;}ctx.save();ctx.fillStyle='#060203';ctx.fillRect(0,-sceneTop,W,H+sceneTop+sceneBottom);const kick=impactMotion.sample(now),impactZoom=1+Math.max(2*Math.abs(kick.x)/W,2*Math.abs(kick.y)/H);ctx.translate(W/2+kick.x,H/2+kick.y);ctx.scale(impactZoom,impactZoom);ctx.translate(-W/2,-H/2);const shotCamera=crossfire.camera();ctx.translate(W/2+shotCamera.x,H/2+shotCamera.y);ctx.scale(shotCamera.scale,shotCamera.scale);ctx.translate(-W/2,-H/2);
  const cam=shootoutCamera(now);if(cam){ctx.translate(cam.cx+cam.dx,cam.cy+cam.dy);ctx.scale(cam.s,cam.s);ctx.translate(-cam.cx,-cam.cy);}   // the shootout's push-in and shot kicks carry everything drawn below
  const cacheStatic=!cam&&kick.x===0&&kick.y===0&&shotCamera.scale===1&&shotCamera.x===0&&shotCamera.y===0;
@@ -1222,9 +1222,9 @@ async function runTumbles(outcome,token=sequenceToken,{preview=false}={}){
   if(outcome.hang&&step.hang){
    const event=step.hang.event;hangPresentation.sync(step.hang);
    if(event){
-    if(event.type==='upgrade'){actionFeedback.upgrade(event.reel);Object.assign(wilds[event.reel],step.wilds[event.reel]);totalMultiplier();impactMotion.kick(4.5);if(!muted){soundInit();playSample('tension',.6,.85);playSample('impactw',.75,.82,false,180);playSample('stamp',.65,.85,false,200);}}
+    if(event.type==='upgrade'){actionFeedback.upgrade(event.reel);Object.assign(wilds[event.reel],step.wilds[event.reel]);totalMultiplier();if(!muted){soundInit();playSample('tension',.52,.85);}}
     hangPresentation.cue(event,performance.now());
-    while(token===sequenceToken&&hangPresentation.elapsed(performance.now())<(event.type==='upgrade'?900:750))await wait(16);
+    while(token===sequenceToken&&hangPresentation.elapsed(performance.now())<(event.type==='upgrade'?1750:1250))await wait(16);
     if(token!==sequenceToken)return null;
    }
   }

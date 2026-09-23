@@ -1,5 +1,15 @@
 # Hang ’Em High
 
+## Presentation revision — September 23, game256
+
+One continuous feature background replaces the duplicate desktop gallows crop. Portrait Hang gameplay uses a 900-unit viewport, enlarging the six reels while retaining the complete frame. Other features retain their existing view geometry.
+
+Captures have a physical catch, short reel accent and a clear notice above the grid. Upgrades pull the existing figure, catch at 560ms, reveal the doubled multiplier and settle with bounded sway. The affected reel receives a short brass highlight and sparse debris. The combined readout changes at the same reveal. Existing tension, impact and stamp samples are synchronized by the pausable presentation clock; mute is preserved. No generated media or outcome changes were introduced.
+
+The ending has sequential outlaw cards, a 1.5-second exact award count-up after a short lead-in, and a Sentence Served stamp. Hidden tabs pause the count-up; reduced motion skips it. The continuation button has keyboard support and restores the underlying controls after exit.
+
+Validation: all 25 node test files pass; two complete desktop/390px-phone walkthrough iterations finish with three locks, one doubling, 15 spins and the unchanged $1,046.40 scripted award. No runtime errors or failed assets. Lifecycle checks cover a paused reveal, once-only impact, paused count-up, exact final cents, keyboard dismissal, restored controls, reduced motion and zero payout. Final desktop/phone stills and upgrade frame sequence inspected. Physical devices, Safari and subjective sound balance were not tested.
+
 Starts with twelve free spins and up to three permanent full-reel Wilds. The first capture arrives by spin three. Captures enter at ×8. After three locks, further events double a non-maxed lock, up to ×64. Captures and upgrades can happen on a new spin or after a paying tumble. All locks survive wins, TNT, tumbles, later spins and retriggers. Multipliers add together; Win Boost remains 1×.
 
 Three or more visible scatters on an unlocked, final settled board award three extra spins, once per spin. Up to four retriggers are allowed, for a maximum of 24 spins. The counter updates at the +3 FREE SPINS announcement, before play continues. The completed-spin count includes all extra spins.

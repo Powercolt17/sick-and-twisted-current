@@ -124,14 +124,11 @@ export function createFeatureScenes({canvas,stage,isMuted,getView,onMix,onMusic,
  }
  function view(){return getView();}
  function frame(record){return record.background.readyState>=2?record.background:record.poster.complete&&record.poster.naturalWidth?record.poster:null;}
- function gallowsRect(){return {x:170,y:-10,w:1042,h:1042*1080/1920};}
  function drawBackground(ctx,at=now()){
   if(!current)return false;const src=frame(current);if(!src)return false;
   const b=view();ctx.save();if(exitAt!==null){const start=typeof exitAt==='object'?exitAt.at:exitAt;const t=typeof exitAt==='object'?exitAt.pause:at;ctx.globalAlpha=1-smooth((t-start)/650);}
   if(b.mobile)drawMobileScenery(ctx,src,b,current.poster,current.key);else drawMedia(ctx,src,b,1,current.key==='blood'?.5:.94);
-  // On phones use one continuous scene: never paste a detached gallows crop
-  // into the sky. Desktop retains its established wide composition.
-  if(current.key==='hang'&&!b.mobile){const r=gallowsRect();drawMediaFrame(ctx,src,r.x,r.y,r.w,r.h);}
+  // A single continuous scene keeps the gallows, sky and floor in one perspective.
   ctx.restore();return true;
  }
  function drawIntro(ctx){
@@ -163,7 +160,7 @@ export function createFeatureScenes({canvas,stage,isMuted,getView,onMix,onMusic,
   get foregroundAlpha(){return session?.phase==='reveal'?smooth(((paused?session.pausedAt:now())-session.revealAt)/650):1;},
   get hasBackground(){return !!current;},
   get opaqueBackground(){return !!current&&exitAt===null&&!!frame(current);},
-  get backgroundRect(){return current&&frame(current)?current.key==='hang'&&!view().mobile?gallowsRect():rect(frame(current),view(),false,current.key==='blood'?.5:.94):null;},
+  get backgroundRect(){return current&&frame(current)?rect(frame(current),view(),false,current.key==='blood'?.5:.94):null;},
   get state(){return {feature:current?.key??null,phase:session?.phase??(exitAt!==null?'exit':current?'feature':'base'),introTime:session?.record.intro.currentTime??0,backgroundTime:current?.background.currentTime??0,backgroundPaused:current?.background.paused??true,foregroundAlpha:this.foregroundAlpha};}
  };
 }

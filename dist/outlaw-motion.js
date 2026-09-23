@@ -77,6 +77,7 @@ export function stepMotionAt(time){
 export function drawOutlaw(ctx, assets, time, mode='idle', options={}) {
  const {background,figure,type}=assets,stepped=mode==='steps',step=stepped?stepMotionAt(time):null;
  const state=stepped?{y:0,angle:step.angle,visibility:1}:motionAt(time,mode);
+ if(!options.reduced){state.y+=options.pull||0;state.angle+=options.swing||0;}
  if(options.reduced){state.y=0;state.angle=0;state.visibility=1;}
  const value=Math.max(1,Math.round(options.multiplier??16));
  ctx.save();
@@ -96,6 +97,7 @@ export function drawOutlaw(ctx, assets, time, mode='idle', options={}) {
   ctx.restore();
   // The multiplier follows the drop vertically, then remains fixed as the cowboy swings.
   ctx.save();ctx.translate(0,state.y);
+  if(!options.reduced&&options.numberScale){ctx.translate(255,960);ctx.scale(options.numberScale,options.numberScale);ctx.translate(-255,-960);}
   if(stepped){const punch=options.reduced?1:1+.085*step.impact;ctx.translate(255,960);ctx.scale(punch,punch);ctx.translate(-255,-960);}
   if(value===16)drawFull(ctx,type);else ctx.drawImage(multiplierLayer(assets,value),0,700);ctx.restore();
  }

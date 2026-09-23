@@ -136,10 +136,6 @@ dialog.shop{inset:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-
 #slot-shell[data-layout=portrait] .hud-amount>span{font-size:12px;line-height:1.2}
 #slot-shell[data-layout=portrait] #crossfire-skip{top:auto!important;bottom:142px;right:calc(3% + 50px);font-size:12px;min-height:44px}
 #slot-shell[data-layout=portrait] #screen-toggle{width:44px;height:44px;right:4px;top:4px}
-#slot-shell[data-layout=portrait] .hang-toast{top:8px;max-width:calc(100% - 100px);padding:8px 0}
-#slot-shell[data-layout=portrait] .hang-toast span{font-size:12px;letter-spacing:.02em}
-#slot-shell[data-layout=portrait] .hang-toast strong{font-size:20px;white-space:normal}
-#slot-shell[data-layout=portrait] .hang-toast small{font-size:12px;line-height:1.25;letter-spacing:0}
 #slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-action{max-width:calc(100% - 24px);width:calc(100% - 24px);bottom:28px}
 #slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-award{font-size:14px}
 #slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-skip{max-width:100%;min-width:min(228px,100%)}
@@ -176,4 +172,4 @@ dialog.shop{inset:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-
 /* Keep the skyline's edge landmarks clear of the fullscreen control. */
 #slot-shell[data-layout=portrait] #screen-toggle{left:calc(50% - 22px);right:auto;top:4px}
 #slot-shell[data-layout=portrait].blood-money-active #screen-toggle,#slot-shell[data-layout=portrait].blood-intro-active #screen-toggle{top:4px}
-#slot-shell[data-layout=portrait] .hang-toast{top:auto;bottom:calc(var(--ground-height) + var(--board-width) * 608 / 1212 + 6px);max-width:94%}
+#slot-shell[data-layout=portrait][data-scene-feature=hang] #screen-toggle{left:auto;right:4px;top:4px}

@@ -1,12 +1,12 @@
 // View geometry only. The 1212×608 game world, outcomes and clocks never change.
 export const MOBILE_VIEW={worldWidth:1212,worldHeight:608,portraitX:0,portraitWidth:1212,portraitHeader:120,railWidth:156};
-export function mobileLayout({width,height,safe={},headerHeight=120}){
+export function mobileLayout({width,height,safe={},headerHeight=120,feature=null}){
  const pad={left:Math.max(8,safe.left||0),right:Math.max(8,safe.right||0),top:Math.max(8,safe.top||0),bottom:Math.max(8,safe.bottom||0)};
  const availableWidth=Math.max(0,width-pad.left-pad.right),availableHeight=Math.max(0,height-pad.top-pad.bottom);
  const portrait=width<=900&&height>width,landscape=!portrait&&height<=600;
  let boardWidth,header=0,hudHeight=0,sceneWidth,sceneX=0,shellWidth,shellHeight,layout,groundHeight;
  if(portrait){
-  layout='portrait';sceneWidth=1212;sceneX=0;header=headerHeight;
+  layout='portrait';sceneWidth=feature==='hang'?900:1212;sceneX=feature==='hang'?150:0;header=headerHeight;
   // Allocate the touch controls in CSS pixels, independent of world scaling.
   // Keep the reels legible on short embedded views; allow vertical scrolling
   // instead of shrinking the entire game and its text below usable sizes.
@@ -37,7 +37,7 @@ export function createMobileView({main,layoutElement,buttons=[],document:doc=doc
   const vv=win.visualViewport,zoomed=vv&&vv.scale>1.01;
   const width=zoomed?win.innerWidth:(vv?.width||win.innerWidth),height=zoomed?win.innerHeight:(vv?.height||win.innerHeight);
   const css=win.getComputedStyle?.(probe),safe={};for(const k of ['left','right','top','bottom'])safe[k]=parseFloat(css?.['padding'+k[0].toUpperCase()+k.slice(1)])||0;
-  current=mobileLayout({width,height,safe,headerHeight:Number(main.dataset.sceneHeader)||120});main.dataset.layout=current.layout;
+  current=mobileLayout({width,height,safe,headerHeight:Number(main.dataset.sceneHeader)||120,feature:main.dataset.sceneFeature});main.dataset.layout=current.layout;
   main.style.setProperty('--view-height',height+'px');main.style.setProperty('--shell-width',current.shellWidth+'px');main.style.setProperty('--board-width',current.boardWidth+'px');
   main.style.setProperty('--scene-width',(1212/current.sceneWidth*100)+'%');main.style.setProperty('--scene-left',(-current.sceneX/current.sceneWidth*100)+'%');
   main.style.setProperty('--view-aspect',current.sceneWidth+'/608');

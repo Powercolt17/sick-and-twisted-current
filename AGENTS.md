@@ -1,3 +1,7 @@
+# Current: Hang presentation revision — game256
+
+Hang now uses a continuous background, Hang-only portrait crop, combined multiplier readout, pausable rope-pull/catch at 560ms, highlighted upgraded reel and delayed multiplier reveal. The result has staged cards, exact count-up, stamp and keyboard continuation. Read HANG_FEATURE.md. All 25 tests and complete desktop/phone feature walkthroughs pass. Rules, payouts and Blood Money are unchanged. The static payload remains close to the hosting limit.
+
 # Current: weighted death / separated reward / pitched scatter sound
 
 Read the current polish revision in BLOOD-CONTINUITY.md first. Game255 is the latest authored source.
