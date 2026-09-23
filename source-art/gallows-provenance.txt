@@ -1,0 +1,4 @@
+Generated with built-in image_gen tool (OpenArt was unavailable due to sign-in).
+Native output: C:/Users/braca/.codex/generated_images/01a0d001-73b3-7241-9b85-b7688cf32117/exec-7b7ebb5d-9863-460f-bd1f-de6a1167e7d0.png
+Prompt: Generate ONE isolated EMPTY three-position gallows structure, frontal orthographic game-prop view. Long thick dark weathered split timber upper beam, two heavy uprights, short diagonal corner braces, rusty forged iron brackets and bolts, three evenly spaced small rope bindings around upper beam. No long ropes, no nooses, no people. Open central area for animated characters; slim lower platform. Hand-etched painted Western horror illustration with black-brown wood, muted ochre highlights, gritty linework. Landscape 3:2, whole structure visible. Requested transparent alpha. No environment, text, typography, symbols or watermark.
+References inspected for style only: hang-em-high-background.jpg and outlaw-original.png in existing dist/assets.

@@ -1,5 +1,17 @@
 # Hang ’Em High
 
+## Persistent gallows — game257
+
+Supersedes the game256 capture and upgrade choreography below. `hang-gallows.js` renders a three-position gallows from two original transparent assets: weathered timber/iron frame and intact outlaw. OpenArt was signed out; the built-in image generator produced both using the existing slot artwork as reference. Provenance is in source-art/gallows-provenance.txt and source-art/gallows-outlaw-provenance.txt.
+
+A confirmed capture brings the gallows forward over a dimmed scene, reveals the outlaw, lowers the rope, lifts him, catches at 1450ms, releases a small timber-dust accent and settles before docking at 3100ms. The occupied bay persists. The corresponding locked reel displays four approved boxed-Wild tiles and its current multiplier. Normal/other-feature full-reel hangs use their original path and artwork.
+
+Once three bays are occupied, upgrades use Tighten the Noose: pull, catch and reveal the doubled multiplier at 1000ms, then dock at 2450ms. Tension at 400ms and impact at catch are once-only pausable cues; mute is preserved. Paying spins pulse the captured multiplier plates. Mobile uses the gallows above the reels with a 440-unit header. Result cards use the intact new character.
+
+All outcomes remain owned by the existing Hang kernel: three persistent reel locks, additive multipliers, doubling up to 64, existing retriggers, crediting and caps. No new random rolls or payout model changes.
+
+Verification: 26 node test files pass. Two complete desktop/390px phone review iterations finish with three locks, one doubling, 15 spins, the same $1,046.40 scripted award and no asset/runtime failures. Lifecycle checks cover pause/resume, once-only cues, exact count-up, keyboard continuation, restored controls, zero awards and reduced motion. Physical Safari devices and subjective sound balance remain untested.
+
 ## Presentation revision — September 23, game256
 
 One continuous feature background replaces the duplicate desktop gallows crop. Portrait Hang gameplay uses a 900-unit viewport, enlarging the six reels while retaining the complete frame. Other features retain their existing view geometry.

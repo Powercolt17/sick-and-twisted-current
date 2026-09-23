@@ -1,4 +1,8 @@
-# Current: Hang presentation revision — game256
+# Current: Persistent gallows — game257
+
+Hang now has its own generated three-bay gallows and clean character sprite. Confirmed captures use a 3.1s rope/catch/lift/settle sequence, then dock beside the reels (above them on phones). Captured reels become four boxed Wilds; the old full-reel hanging art remains in other modes. After three captures, the 2.45s Tighten the Noose sequence reveals the doubled value at 1000ms. See HANG_FEATURE.md. Math and payout rules are unchanged. All 26 tests, two full desktop/phone iterations and paused/reduced/keyboard lifecycle checks pass. Cache game257.
+
+# Previous: Hang presentation revision — game256
 
 Hang now uses a continuous background, Hang-only portrait crop, combined multiplier readout, pausable rope-pull/catch at 560ms, highlighted upgraded reel and delayed multiplier reveal. The result has staged cards, exact count-up, stamp and keyboard continuation. Read HANG_FEATURE.md. All 25 tests and complete desktop/phone feature walkthroughs pass. Rules, payouts and Blood Money are unchanged. The static payload remains close to the hosting limit.
 

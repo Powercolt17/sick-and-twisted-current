@@ -66,3 +66,6 @@
 #slot-shell[data-layout=portrait] .hang-result #hang-result-details{font-size:10px;margin:14px 0;line-height:1.6}
 @media(max-height:500px) and (orientation:landscape){.hang-result-sheet{padding:10px 22px;width:80%}.hang-result h2{font-size:26px}.hang-result-outlaws{margin:8px auto}.hang-result-outlaw{height:65px;width:50px}.hang-result-total{font-size:36px}.hang-result-seal{font-size:12px;margin-top:6px}#hang-result-details{margin:9px 0}.hang-toast{top:30%;padding:9px 20px}.hang-toast[data-event=upgrade] strong{font-size:42px}}
 @media(prefers-reduced-motion:reduce){.hang-result.settled .hang-result-seal{opacity:1;transform:rotate(-4deg)}}
+.hang-toast[data-event=intro] strong{font-size:27px}
+.hang-result-outlaw{background:linear-gradient(#281e13,#0d0c09),url('assets/blood-wall/board.webp') center/cover}
+.hang-result-outlaw img{height:calc(100% - 24px);width:100%;object-fit:contain;padding-top:5px;box-sizing:border-box}

@@ -20,11 +20,11 @@ import {createBloodBriefing} from './blood-briefing.js?v=124';
 import {freshBounty,upgradeGrid} from './blood-bounty.js?v=81';
 import {rollBloodOutcome,bloodModel,bloodDemoOutcome} from './blood-math.js?v=81';
 import {rollHangFeature,hangDemoFeature,hangAudit} from './hang-math.js?v=3';
-import {createHangPresentation} from './hang-presentation.js?v=4';
+import {createHangPresentation} from './hang-presentation.js?v=5';
 import {hellPurchaseEntry} from './hell-entry.js?v=2';
 import {featurePurchaseEntry} from './feature-entry.js?v=1';
 import {createGameInfo} from './game-info.js?v=129';
-import {createMobileView,canvasScale} from './mobile-view.js?v=hang4';
+import {createMobileView,canvasScale} from './mobile-view.js?v=hang5';
 import {createReelMotion,REEL_MOTION,NORMAL_SPIN_MOTION,FEATURE_BUY_MOTION} from './reel-motion.js?v=10';
 import {createTricksterGrid} from './trickster-grid.js?v=1';
 import {createScatterAnticipation,ANTICIPATION} from './scatter-anticipation.js?v=12';
@@ -192,7 +192,7 @@ function creditRound(id,value){const amount=Math.round(value*100),accepted=round
 
 const bets=[.01,.02,.05,.1,.2,.5,1,2,5,10];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const hangPresentation=createHangPresentation({stage:$('#stage'),G,reduced,announce:setStatus,onImpact:()=>{impactMotion.kick(reduced?0:3.2);if(!muted){soundInit();playSample('impactw',.72,.82);playSample('stamp',.58,1.08);}}});
+const hangPresentation=createHangPresentation({stage:$('#stage'),G,reduced,announce:setStatus,onTension:()=>{if(!muted){soundInit();playSample('tension',.48,.78);}},onImpact:()=>{impactMotion.kick(reduced?0:3.2);if(!muted){soundInit();playSample('impactw',.72,.82);playSample('stamp',.58,1.08);}}});
 document.addEventListener('visibilitychange',()=>hangPresentation.setPaused(document.hidden,performance.now()));
 const bloodBank=createBloodBank({G,W,H,getTile:bloodTile,reduced,isPortrait:()=>$('#slot-shell')?.dataset.layout==='portrait',getVisibleWidth:()=>canvas.parentElement.getBoundingClientRect().width/canvas.getBoundingClientRect().width*W,announce:text=>{$('#blood-bounty-status').textContent=text;}});
 const bloodTargetGun=createBloodTargetGun({getAssets:()=>shootoutAssets,reduced,getAmbientTime:()=>environment.motionTime});
@@ -795,12 +795,13 @@ function wildFrame(w,now){
 }
 function wildSprite(mult,w=null){
  const value=Math.max(1,Math.round(mult||1));
- if(!w&&wildTiles[value])return wildTiles[value];
+ if(!hangPresentation.active&&!w&&wildTiles[value])return wildTiles[value];
  const art=document.createElement('canvas');art.width=G.cw*3;art.height=G.h*3;
  const ac=art.getContext('2d'),state=w?wildFrame(w,performance.now()):{t:0,mode:'idle',value};
- if(hangingWildArt)drawOutlaw(ac,hangingWildArt,state.t,state.mode,{multiplier:state.value,reduced,rect:{x:0,y:0,w:art.width,h:art.height}});
- const result={art,temporary:!!w,num:null,cx:G.cw/2,cy:G.h*.67};
- if(!w)wildTiles[value]=result;return result;
+ if(hangPresentation.active){ac.scale(3,3);ac.translate(-G.x,-G.y);hangPresentation.drawReel(ac,0,{mult:value},performance.now(),true);}
+ else if(hangingWildArt)drawOutlaw(ac,hangingWildArt,state.t,state.mode,{multiplier:state.value,reduced,rect:{x:0,y:0,w:art.width,h:art.height}});
+ const result={art,temporary:!!w||hangPresentation.active,num:null,cx:G.cw/2,cy:G.h*.67};
+ if(!w&&!hangPresentation.active)wildTiles[value]=result;return result;
 }
 // The supplied vault recording starts at its attack. Every contact is equally loud;
 // only pitch descends. Turbo compresses contact times, never the pitch sequence.
@@ -826,6 +827,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function drawWild(c,w,now){
  if(tumble.drawWild(ctx,c,now))return;
  const fade=tumble.wildAlpha(c,now);if(fade<=0||!hangingWildArt)return;
+ if(hangPresentation.active&&w.locked){hangPresentation.drawReel(ctx,c,w,now);return;}
  const state=wildFrame(w,now);
  ctx.save();ctx.globalAlpha*=fade;
  if(w.locked){ctx.beginPath();ctx.rect(G.x+c*G.cw,G.y,G.cw,G.h);ctx.clip();}
@@ -887,7 +889,7 @@ function queueRender(){
 }
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ready)queueRender();});
 function render(now){if(document.hidden)return;const renderStarted=performance.now();
- const sceneHeader=['blood','hang'].includes(featureScenes.state.feature)?230:120;
+ const sceneHeader=featureScenes.state.feature==='hang'?440:featureScenes.state.feature==='blood'?230:120;
  if($('#slot-shell').dataset.sceneHeader!==String(sceneHeader)||$('#slot-shell').dataset.sceneFeature!==(featureScenes.state.feature||'')){$('#slot-shell').dataset.sceneHeader=String(sceneHeader);$('#slot-shell').dataset.sceneFeature=featureScenes.state.feature||'';mobileView.measure();}
 if(dev.pauseRendering){queueRender();return;}lastTime=now;featureScenes.tick(now);bloodDuel.update(now);modeBackground.setSuspended(featureScenes.hasBackground);featureScenes.setMotion(environment.isMotionEnabled()&&(!phoneView||mobileRenderBudget.motion));ctx.setTransform(renderScale,0,0,renderScale,0,Math.round(sceneTop*renderScale));ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(featureScenes.active&&!featureScenes.revealing){featureScenes.drawIntro(ctx);presentScene();queueRender();return;}ctx.save();ctx.fillStyle='#060203';ctx.fillRect(0,-sceneTop,W,H+sceneTop+sceneBottom);const kick=impactMotion.sample(now),impactZoom=1+Math.max(2*Math.abs(kick.x)/W,2*Math.abs(kick.y)/H);ctx.translate(W/2+kick.x,H/2+kick.y);ctx.scale(impactZoom,impactZoom);ctx.translate(-W/2,-H/2);const shotCamera=crossfire.camera();ctx.translate(W/2+shotCamera.x,H/2+shotCamera.y);ctx.scale(shotCamera.scale,shotCamera.scale);ctx.translate(-W/2,-H/2);
  const cam=shootoutCamera(now);if(cam){ctx.translate(cam.cx+cam.dx,cam.cy+cam.dy);ctx.scale(cam.s,cam.s);ctx.translate(-cam.cx,-cam.cy);}   // the shootout's push-in and shot kicks carry everything drawn below
@@ -1091,6 +1093,7 @@ async function spinReels(target,hold=[],duration=1250,{featureEntry=false}={}){
 async function revealFullReelWild(wild,base=false,voice={count:1,index:0}){
  if(!wild){multiplier=0;return;}
  const token=sequenceToken;
+ if(hangPresentation.active&&wild.locked){wilds[wild.reel]={...wild,kind:'man',enter:0,offset:0};totalMultiplier();return;}
  const rate=wildSpeed(),delayMs=voice.index*55/rate;
  const live={mult:wild.mult,spawn:wild.spawn,kind:'man',reel:wild.reel,locked:!!wild.locked,enter:performance.now()+delayMs,offset:G.h,motionRate:rate,pausedMs:0,pausedAt:document.hidden?performance.now():null};
  wilds[wild.reel]=live;
@@ -1107,6 +1110,7 @@ function evaluate(grid){return M.evaluate(grid,wilds,bet,multiplier,roundMeta);}
 async function showWin(value,ways,cells=[],groups=[],opts={}){
  if(groups.some(g=>g.maxHit))return presentMax(value,cells,groups.find(g=>g.maxHit).maxCell,!!opts.preview,opts.creditId);
  if(value<=0&&!groups.length){payout.clear();winning=[];await sleep(180);return;}
+ if(hangPresentation.active&&value>0)hangPresentation.pay(performance.now());
  const token=sequenceToken;winning=cells;
  const wager=roundLedger?.stakeCents/100||spinCost(),stake=roundLedger?roundLedger.stakeCents/100:wager,speed=turbo?1.65:1;
  const creditId=opts.creditId??('award:'+roundSerial+':'+awardSerial++);
@@ -1222,9 +1226,9 @@ async function runTumbles(outcome,token=sequenceToken,{preview=false}={}){
   if(outcome.hang&&step.hang){
    const event=step.hang.event;hangPresentation.sync(step.hang);
    if(event){
-    if(event.type==='upgrade'){actionFeedback.upgrade(event.reel);Object.assign(wilds[event.reel],step.wilds[event.reel]);totalMultiplier();if(!muted){soundInit();playSample('tension',.52,.85);}}
+    if(event.type==='upgrade'){actionFeedback.upgrade(event.reel);Object.assign(wilds[event.reel],step.wilds[event.reel]);totalMultiplier();}
     hangPresentation.cue(event,performance.now());
-    while(token===sequenceToken&&hangPresentation.elapsed(performance.now())<(event.type==='upgrade'?1750:1250))await wait(16);
+    while(token===sequenceToken&&hangPresentation.elapsed(performance.now())<hangPresentation.duration(event.type))await wait(16);
     if(token!==sequenceToken)return null;
    }
   }
@@ -1749,7 +1753,7 @@ document.addEventListener('keydown',e=>{if(e.code==='Space'&&!$('#intro')&&!['IN
 async function loadHDArt(){
  const acquire=async path=>{const im=new Image();im.src=path;await im.decode();return im;};
  [symbolAtlas,stageHD,hangingWildArt,boxedWildArt]=await Promise.all([acquire('assets/ink-refined/symbols.webp?v=pigment2'),acquire('assets/ash-bone/stage.png'),loadOutlawAssets('assets/outlaw-hanging/'),acquire('assets/ink-western/boxed-wild.webp')]);
- prepareSymbolSprites();
+ prepareSymbolSprites();await hangPresentation.setArt(hangingWildArt,boxedWildArt);
 }
 async function loadBrandArt(){
  const acquire=async path=>{const im=new Image();im.src=path;await im.decode();return im;};
