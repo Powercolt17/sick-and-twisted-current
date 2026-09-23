@@ -1,0 +1,37 @@
+.hang-presentation{position:absolute;inset:0;z-index:25;pointer-events:none;color:#eee1c6}.hang-presentation[hidden],.hang-presentation [hidden]{display:none!important}
+.hang-toast{position:absolute;top:34%;left:50%;width:max-content;max-width:94%;transform:translateX(-50%);text-align:center;padding:18px 28px;background:linear-gradient(90deg,transparent,#100e0cf2 14%,#100e0cf2 86%,transparent);text-shadow:0 2px 5px #000}
+.hang-toast span,.hang-toast small{display:block;font:600 clamp(10px,1.1vw,15px)/1.5 Arial,sans-serif;letter-spacing:.14em;color:#c5aa7a}.hang-toast strong{display:block;margin:7px 0;font:clamp(22px,3.4vw,46px)/1.15 Outlaw,Georgia,serif;color:#f1e1bc;white-space:nowrap}.hang-toast small{color:#c1b5a0;font-size:clamp(9px,.9vw,12px)}
+.hang-toast.arrive{animation:hang-capture 1.35s both}.hang-presentation.paused *{animation-play-state:paused!important}
+@keyframes hang-capture{0%{opacity:0;transform:translate(-50%,-20px) scale(1.06)}14%{opacity:1;transform:translate(-50%,3px) scale(1)}23%,77%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,5px)}}
+.hang-result{position:absolute;inset:0;display:grid;place-items:center;pointer-events:auto;background:radial-gradient(ellipse at 50% 40%,#080c10a3,#030506ed);animation:hang-result-in .55s both}
+.hang-result-sheet{width:min(76%,730px);padding:22px 22px 24px;text-align:center;border-top:1px solid #bba37599;border-bottom:1px solid #bba37566;background:linear-gradient(90deg,transparent,#0d1112db 14%,#0d1112db 86%,transparent)}
+.hang-eyebrow{margin:0 0 8px;font:600 12px Arial,sans-serif;letter-spacing:.25em;color:#ba9b68}.hang-result h2{margin:0;font:clamp(26px,4vw,52px)/1.2 Outlaw,Georgia,serif;color:#e8dac0;text-shadow:0 3px 0 #160c08}
+.hang-result-outlaws{display:flex;justify-content:center;gap:18px;margin:20px auto 17px}.hang-result-outlaw{position:relative;height:clamp(110px,14vw,195px);width:clamp(60px,8vw,100px);overflow:hidden;box-shadow:0 6px 16px #0008;animation:hang-card-in .7s both}.hang-result-outlaw:nth-child(2){animation-delay:.09s}.hang-result-outlaw:nth-child(3){animation-delay:.18s}
+.hang-result-outlaw img{height:auto;width:100%;display:block;filter:sepia(.12)}.hang-result-outlaw span{position:absolute;bottom:0;left:0;right:0;padding:8px 0;background:#201811f5;color:#e7d3a9;border-top:1px solid #a38a61;font:bold clamp(9px,1vw,12px) Arial,sans-serif}.hang-result-outlaw.empty{opacity:.22;filter:grayscale(1)}
+.hang-total-label{margin:0 0 4px;font:600 13px Arial,sans-serif;letter-spacing:.22em;color:#a59a84}.hang-result-total{display:block;font:clamp(34px,5.9vw,78px)/1.12 Outlaw,Georgia,serif;color:#f0dfb7;text-shadow:0 3px 12px #000}
+#hang-result-details{margin:16px 0 19px;font:12px/1.6 Arial,sans-serif;color:#c6bba5;letter-spacing:.08em}.hang-continue{min-height:48px;min-width:230px;padding:10px 25px;border:1px solid #d5bb86;outline:1px solid #71512f;outline-offset:3px;background:linear-gradient(#923327,#631c17);color:#f4e4c2;font:22px Outlaw,Georgia,serif;box-shadow:0 4px 16px #0009;cursor:pointer;transition:filter .15s,transform .15s}.hang-continue:hover{filter:brightness(1.2);transform:translateY(-1px)}.hang-continue:focus-visible{outline:3px solid #f8e7b3;outline-offset:5px}.hang-continue:disabled{opacity:.6;cursor:default}.hang-result.leaving{animation:hang-result-out .26s both}
+@keyframes hang-result-in{from{opacity:0}to{opacity:1}}@keyframes hang-card-in{from{opacity:0;transform:translateY(-25px) rotate(-3deg)}to{opacity:1;transform:none}}@keyframes hang-result-out{to{opacity:0;transform:translateY(8px)}}
+[data-layout=portrait] .hang-toast{top:40%;padding:15px 18px}[data-layout=portrait] .hang-toast strong{font-size:23px}[data-layout=portrait] .hang-toast span{font-size:10px}[data-layout=portrait] .hang-toast small{font-size:9px;letter-spacing:.06em}
+[data-layout=portrait] .hang-result-sheet{width:calc(100% - 20px);box-sizing:border-box;padding:20px 10px}[data-layout=portrait] .hang-result h2{font-size:27px}[data-layout=portrait] .hang-result-outlaws{gap:13px;margin:20px 0}[data-layout=portrait] .hang-result-outlaw{height:135px;width:70px}[data-layout=portrait] .hang-result-total{font-size:40px}[data-layout=portrait] #hang-result-details{font-size:10px}[data-layout=portrait] .hang-continue{min-width:210px;font-size:20px}
+@media(prefers-reduced-motion:reduce){.hang-presentation *{animation:none!important;transition:none!important}}
+#stage[data-hang-result] #game-controls,#stage[data-hang-result] #screen-toggle{opacity:0;visibility:hidden;pointer-events:none}
+
+/* Capture notices stay out of the paying grid. Result controls remain reachable. */
+.hang-toast{top:2%;padding:10px 22px;max-width:88%;box-sizing:border-box}
+.hang-toast strong{font-size:clamp(20px,2.6vw,34px);margin:3px 0}
+.hang-toast span,.hang-toast small{letter-spacing:.08em}
+[data-layout=portrait] .hang-toast{top:2%;padding:10px 12px;max-width:94%}
+[data-layout=portrait] .hang-toast strong{font-size:21px}
+.hang-result{overflow:auto;overscroll-behavior:contain;box-sizing:border-box;padding:12px;align-items:safe center}
+.hang-result-sheet{box-sizing:border-box;container-type:inline-size}
+.hang-result-total{font-size:clamp(28px,11cqw,78px)}
+[data-layout=portrait] .hang-result-total{font-size:clamp(28px,11cqw,40px)}
+@media(max-height:500px) and (orientation:landscape){
+ .hang-toast{padding:5px 14px;top:1%}.hang-toast span{font-size:9px}.hang-toast strong{font-size:20px}.hang-toast small{font-size:9px}
+ .hang-result{padding:6px}.hang-result-sheet{width:min(90%,650px);padding:8px 12px}
+ .hang-eyebrow{font-size:10px;margin-bottom:3px}.hang-result h2{font-size:24px}
+ .hang-result-outlaws{gap:12px;margin:8px 0}.hang-result-outlaw{height:68px;width:49px}
+ .hang-result-outlaw span{font-size:8px;padding:4px 0}
+ .hang-total-label{font-size:10px}.hang-result-total{font-size:34px}
+ #hang-result-details{font-size:10px;margin:6px 0 10px}.hang-continue{min-height:44px;font-size:18px;padding:8px 22px}
+}

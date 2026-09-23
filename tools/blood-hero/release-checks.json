@@ -1,0 +1,1263 @@
+{
+  "integrated-desktop": {
+    "errors": [],
+    "failures": [],
+    "observations": [
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 2,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10003.1,
+          "bet": 1,
+          "totalWin": 3.1,
+          "multiplier": 0,
+          "remainingSpins": 7,
+          "reels": [
+            [
+              "q",
+              "guns",
+              "star",
+              "a"
+            ],
+            [
+              "guns",
+              "bandit",
+              "q",
+              "a"
+            ],
+            [
+              "a",
+              "guns",
+              "bandit",
+              "cuffs"
+            ],
+            [
+              "ten",
+              "ten",
+              "bandit",
+              "ten"
+            ],
+            [
+              "q",
+              "star",
+              "q",
+              "star"
+            ],
+            [
+              "guns",
+              "j",
+              "a",
+              "bandit"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 1,
+            "stamps": 0,
+            "multiplier": 2
+          },
+          "focused": false,
+          "total": 3.1,
+          "spinsPlayed": 3,
+          "multiplier": 2,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "bottle"
+            ],
+            [
+              "1:0",
+              "bottle"
+            ],
+            [
+              "2:1",
+              "bottle"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 2 times\nBOUNTY CLAIMED\nTHE RUSTLER\n+2\nFREE SPINS\n7 SPINS REMAINING\nWIN MULTIPLIER\n2\u00d7\nUPGRADED\nNEXT TARGET: THE GUNFIGHTER",
+        "badge": {
+          "x": 1273.484375,
+          "y": 33.171875,
+          "width": 211.90625,
+          "height": 242.171875,
+          "top": 33.171875,
+          "right": 1485.390625,
+          "bottom": 275.34375,
+          "left": 1273.484375
+        },
+        "panel": {
+          "x": 456.71875,
+          "y": 249.31466674804688,
+          "width": 629.1875,
+          "height": 396.5781555175781,
+          "top": 249.31466674804688,
+          "right": 1085.90625,
+          "bottom": 645.892822265625,
+          "left": 456.71875
+        },
+        "stage": {
+          "x": 62.578125,
+          "y": 32,
+          "width": 1438.84375,
+          "height": 887.984375,
+          "top": 32,
+          "right": 1501.421875,
+          "bottom": 919.984375,
+          "left": 62.578125
+        }
+      },
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 4,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10012.5,
+          "bet": 1,
+          "totalWin": 12.5,
+          "multiplier": 0,
+          "remainingSpins": 6,
+          "reels": [
+            [
+              "q",
+              "bandit",
+              "ten",
+              "a"
+            ],
+            [
+              "skull",
+              "skull",
+              "a",
+              "k"
+            ],
+            [
+              "star",
+              "bandit",
+              "cuffs",
+              "j"
+            ],
+            [
+              "k",
+              "j",
+              "star",
+              "a"
+            ],
+            [
+              "ten",
+              "ten",
+              "skull",
+              "star"
+            ],
+            [
+              "a",
+              "k",
+              "a",
+              "q"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 2,
+            "stamps": 0,
+            "multiplier": 4
+          },
+          "focused": false,
+          "total": 12.5,
+          "spinsPlayed": 6,
+          "multiplier": 4,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "guns"
+            ],
+            [
+              "2:1",
+              "guns"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 4 times\nBOUNTY CLAIMED\nTHE GUNFIGHTER\n+2\nFREE SPINS\n6 SPINS REMAINING\nWIN MULTIPLIER\n4\u00d7\nUPGRADED\nNEXT TARGET: THE RINGLEADER",
+        "badge": {
+          "x": 1273.484375,
+          "y": 33.171875,
+          "width": 211.90625,
+          "height": 242.171875,
+          "top": 33.171875,
+          "right": 1485.390625,
+          "bottom": 275.34375,
+          "left": 1273.484375
+        },
+        "panel": {
+          "x": 456.71875,
+          "y": 249.26185607910156,
+          "width": 629.1875,
+          "height": 396.578125,
+          "top": 249.26185607910156,
+          "right": 1085.90625,
+          "bottom": 645.8399810791016,
+          "left": 456.71875
+        },
+        "stage": {
+          "x": 62.578125,
+          "y": 32,
+          "width": 1438.84375,
+          "height": 887.984375,
+          "top": 32,
+          "right": 1501.421875,
+          "bottom": 919.984375,
+          "left": 62.578125
+        }
+      }
+    ],
+    "receipt": {
+      "amount": "$42.90",
+      "spins": "12",
+      "boost": "4\u00d7",
+      "summary": "THE RINGLEADER. 12 free spins completed. 4 times final win multiplier. Total reward $42.90.",
+      "overflow": 0
+    },
+    "end": {
+      "reelCount": 6,
+      "rows": 4,
+      "ready": true,
+      "busy": false,
+      "enhancer": null,
+      "mode": "normal",
+      "currency": "USD",
+      "winBoost": 1,
+      "maxEligible": false,
+      "bonusMaxEligible": false,
+      "balance": 10042.9,
+      "bet": 1,
+      "totalWin": 42.9,
+      "multiplier": 0,
+      "remainingSpins": 0,
+      "reels": [
+        [
+          "k",
+          "k",
+          "a",
+          "k"
+        ],
+        [
+          "q",
+          "k",
+          "k",
+          "star"
+        ],
+        [
+          "q",
+          "q",
+          "ten",
+          "star"
+        ],
+        [
+          "k",
+          "q",
+          "star",
+          "k"
+        ],
+        [
+          "k",
+          "j",
+          "a",
+          "ten"
+        ],
+        [
+          "k",
+          "bandit",
+          "bandit",
+          "ten"
+        ]
+      ],
+      "wilds": {},
+      "hang": null
+    },
+    "frameAges": [
+      5,
+      160,
+      228,
+      354,
+      490,
+      566,
+      616,
+      804,
+      1103,
+      1307,
+      1550
+    ]
+  },
+  "integrated-mobile": {
+    "errors": [],
+    "failures": [],
+    "observations": [
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 2,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10003.1,
+          "bet": 1,
+          "totalWin": 3.1,
+          "multiplier": 0,
+          "remainingSpins": 7,
+          "reels": [
+            [
+              "q",
+              "guns",
+              "star",
+              "a"
+            ],
+            [
+              "guns",
+              "bandit",
+              "q",
+              "a"
+            ],
+            [
+              "a",
+              "guns",
+              "bandit",
+              "cuffs"
+            ],
+            [
+              "ten",
+              "ten",
+              "bandit",
+              "ten"
+            ],
+            [
+              "q",
+              "star",
+              "q",
+              "star"
+            ],
+            [
+              "guns",
+              "j",
+              "a",
+              "bandit"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 1,
+            "stamps": 0,
+            "multiplier": 2
+          },
+          "focused": false,
+          "total": 3.1,
+          "spinsPlayed": 3,
+          "multiplier": 2,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "bottle"
+            ],
+            [
+              "1:0",
+              "bottle"
+            ],
+            [
+              "2:1",
+              "bottle"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 2 times\nBOUNTY CLAIMED\nTHE RUSTLER\n+2\nFREE SPINS\n7 SPINS REMAINING\nWIN MULTIPLIER\n2\u00d7\nUPGRADED\nNEXT TARGET: THE GUNFIGHTER",
+        "badge": {
+          "x": 310.5,
+          "y": 206.703125,
+          "width": 66.5,
+          "height": 76,
+          "top": 206.703125,
+          "right": 377,
+          "bottom": 282.703125,
+          "left": 310.5
+        },
+        "panel": {
+          "x": 16.4453125,
+          "y": 282.6341857910156,
+          "width": 351.546875,
+          "height": 200.546875,
+          "top": 282.6341857910156,
+          "right": 367.9921875,
+          "bottom": 483.1810607910156,
+          "left": 16.4453125
+        },
+        "stage": {
+          "x": 8,
+          "y": 206.703125,
+          "width": 374,
+          "height": 454.578125,
+          "top": 206.703125,
+          "right": 382,
+          "bottom": 661.28125,
+          "left": 8
+        }
+      },
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 4,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10012.5,
+          "bet": 1,
+          "totalWin": 12.5,
+          "multiplier": 0,
+          "remainingSpins": 6,
+          "reels": [
+            [
+              "q",
+              "bandit",
+              "ten",
+              "a"
+            ],
+            [
+              "skull",
+              "skull",
+              "a",
+              "k"
+            ],
+            [
+              "star",
+              "bandit",
+              "cuffs",
+              "j"
+            ],
+            [
+              "k",
+              "j",
+              "star",
+              "a"
+            ],
+            [
+              "ten",
+              "ten",
+              "skull",
+              "star"
+            ],
+            [
+              "a",
+              "k",
+              "a",
+              "q"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 2,
+            "stamps": 0,
+            "multiplier": 4
+          },
+          "focused": false,
+          "total": 12.5,
+          "spinsPlayed": 6,
+          "multiplier": 4,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "guns"
+            ],
+            [
+              "2:1",
+              "guns"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 4 times\nBOUNTY CLAIMED\nTHE GUNFIGHTER\n+2\nFREE SPINS\n6 SPINS REMAINING\nWIN MULTIPLIER\n4\u00d7\nUPGRADED\nNEXT TARGET: THE RINGLEADER",
+        "badge": {
+          "x": 310.5,
+          "y": 206.703125,
+          "width": 66.5,
+          "height": 76,
+          "top": 206.703125,
+          "right": 377,
+          "bottom": 282.703125,
+          "left": 310.5
+        },
+        "panel": {
+          "x": 16.4453125,
+          "y": 282.6705017089844,
+          "width": 351.546875,
+          "height": 200.546875,
+          "top": 282.6705017089844,
+          "right": 367.9921875,
+          "bottom": 483.2173767089844,
+          "left": 16.4453125
+        },
+        "stage": {
+          "x": 8,
+          "y": 206.703125,
+          "width": 374,
+          "height": 454.578125,
+          "top": 206.703125,
+          "right": 382,
+          "bottom": 661.28125,
+          "left": 8
+        }
+      }
+    ],
+    "receipt": {
+      "amount": "$42.90",
+      "spins": "12",
+      "boost": "4\u00d7",
+      "summary": "THE RINGLEADER. 12 free spins completed. 4 times final win multiplier. Total reward $42.90.",
+      "overflow": 0
+    },
+    "end": {
+      "reelCount": 6,
+      "rows": 4,
+      "ready": true,
+      "busy": false,
+      "enhancer": null,
+      "mode": "normal",
+      "currency": "USD",
+      "winBoost": 1,
+      "maxEligible": false,
+      "bonusMaxEligible": false,
+      "balance": 10042.9,
+      "bet": 1,
+      "totalWin": 42.9,
+      "multiplier": 0,
+      "remainingSpins": 0,
+      "reels": [
+        [
+          "k",
+          "k",
+          "a",
+          "k"
+        ],
+        [
+          "q",
+          "k",
+          "k",
+          "star"
+        ],
+        [
+          "q",
+          "q",
+          "ten",
+          "star"
+        ],
+        [
+          "k",
+          "q",
+          "star",
+          "k"
+        ],
+        [
+          "k",
+          "j",
+          "a",
+          "ten"
+        ],
+        [
+          "k",
+          "bandit",
+          "bandit",
+          "ten"
+        ]
+      ],
+      "wilds": {},
+      "hang": null
+    },
+    "frameAges": []
+  },
+  "rare-desktop": {
+    "errors": [],
+    "failures": [],
+    "observations": [
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 10,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10003.1,
+          "bet": 1,
+          "totalWin": 3.1,
+          "multiplier": 0,
+          "remainingSpins": 7,
+          "reels": [
+            [
+              "q",
+              "guns",
+              "star",
+              "a"
+            ],
+            [
+              "guns",
+              "bandit",
+              "q",
+              "a"
+            ],
+            [
+              "a",
+              "guns",
+              "bandit",
+              "cuffs"
+            ],
+            [
+              "ten",
+              "ten",
+              "bandit",
+              "ten"
+            ],
+            [
+              "q",
+              "star",
+              "q",
+              "star"
+            ],
+            [
+              "guns",
+              "j",
+              "a",
+              "bandit"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 1,
+            "stamps": 0,
+            "multiplier": 10
+          },
+          "focused": false,
+          "total": 3.1,
+          "spinsPlayed": 3,
+          "multiplier": 10,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "bottle"
+            ],
+            [
+              "1:0",
+              "bottle"
+            ],
+            [
+              "2:1",
+              "bottle"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 10 times\nBOUNTY CLAIMED\nTHE RUSTLER\n+2\nFREE SPINS\n7 SPINS REMAINING\nWIN MULTIPLIER\n10\u00d7\nMAXIMUM\nNEXT TARGET: THE GUNFIGHTER",
+        "badge": {
+          "x": 1257.453125,
+          "y": 33.171875,
+          "width": 211.90625,
+          "height": 242.171875,
+          "top": 33.171875,
+          "right": 1469.359375,
+          "bottom": 275.34375,
+          "left": 1257.453125
+        },
+        "panel": {
+          "x": 456.71875,
+          "y": 249.23780822753906,
+          "width": 629.1875,
+          "height": 396.578125,
+          "top": 249.23780822753906,
+          "right": 1085.90625,
+          "bottom": 645.8159332275391,
+          "left": 456.71875
+        },
+        "stage": {
+          "x": 62.578125,
+          "y": 32,
+          "width": 1438.84375,
+          "height": 887.984375,
+          "top": 32,
+          "right": 1501.421875,
+          "bottom": 919.984375,
+          "left": 62.578125
+        }
+      },
+      {
+        "game": {
+          "reelCount": 6,
+          "rows": 4,
+          "ready": true,
+          "busy": true,
+          "enhancer": null,
+          "mode": "free",
+          "currency": "USD",
+          "winBoost": 10,
+          "maxEligible": false,
+          "bonusMaxEligible": false,
+          "balance": 10050.1,
+          "bet": 1,
+          "totalWin": 50.1,
+          "multiplier": 0,
+          "remainingSpins": 6,
+          "reels": [
+            [
+              "q",
+              "bandit",
+              "ten",
+              "a"
+            ],
+            [
+              "skull",
+              "skull",
+              "a",
+              "k"
+            ],
+            [
+              "star",
+              "bandit",
+              "cuffs",
+              "j"
+            ],
+            [
+              "k",
+              "j",
+              "star",
+              "a"
+            ],
+            [
+              "ten",
+              "ten",
+              "skull",
+              "star"
+            ],
+            [
+              "a",
+              "k",
+              "a",
+              "q"
+            ]
+          ],
+          "wilds": {},
+          "hang": null
+        },
+        "bounty": {
+          "active": true,
+          "state": {
+            "level": 2,
+            "stamps": 0,
+            "multiplier": 10
+          },
+          "focused": false,
+          "total": 50.1,
+          "spinsPlayed": 6,
+          "multiplier": 10,
+          "rewardActive": true,
+          "defeated": [
+            [
+              "0:1",
+              "guns"
+            ],
+            [
+              "2:1",
+              "guns"
+            ]
+          ]
+        },
+        "text": "Win multiplier: 10 times\nBOUNTY CLAIMED\nTHE GUNFIGHTER\n+2\nFREE SPINS\n6 SPINS REMAINING\nWIN MULTIPLIER\n10\u00d7\nBEST KEPT\nNEXT TARGET: THE RINGLEADER",
+        "badge": {
+          "x": 1257.453125,
+          "y": 33.171875,
+          "width": 211.90625,
+          "height": 242.171875,
+          "top": 33.171875,
+          "right": 1469.359375,
+          "bottom": 275.34375,
+          "left": 1257.453125
+        },
+        "panel": {
+          "x": 456.71875,
+          "y": 249.25418090820312,
+          "width": 629.1875,
+          "height": 396.5780944824219,
+          "top": 249.25418090820312,
+          "right": 1085.90625,
+          "bottom": 645.832275390625,
+          "left": 456.71875
+        },
+        "stage": {
+          "x": 62.578125,
+          "y": 32,
+          "width": 1438.84375,
+          "height": 887.984375,
+          "top": 32,
+          "right": 1501.421875,
+          "bottom": 919.984375,
+          "left": 62.578125
+        }
+      }
+    ],
+    "receipt": {
+      "amount": "$126.10",
+      "spins": "12",
+      "boost": "10\u00d7",
+      "summary": "THE RINGLEADER. 12 free spins completed. 10 times final win multiplier. Total reward $126.10.",
+      "overflow": 0
+    },
+    "end": {
+      "reelCount": 6,
+      "rows": 4,
+      "ready": true,
+      "busy": false,
+      "enhancer": null,
+      "mode": "normal",
+      "currency": "USD",
+      "winBoost": 1,
+      "maxEligible": false,
+      "bonusMaxEligible": false,
+      "balance": 10126.1,
+      "bet": 1,
+      "totalWin": 126.1,
+      "multiplier": 0,
+      "remainingSpins": 0,
+      "reels": [
+        [
+          "k",
+          "k",
+          "a",
+          "k"
+        ],
+        [
+          "q",
+          "k",
+          "k",
+          "star"
+        ],
+        [
+          "q",
+          "q",
+          "ten",
+          "star"
+        ],
+        [
+          "k",
+          "q",
+          "star",
+          "k"
+        ],
+        [
+          "k",
+          "j",
+          "a",
+          "ten"
+        ],
+        [
+          "k",
+          "bandit",
+          "bandit",
+          "ten"
+        ]
+      ],
+      "wilds": {},
+      "hang": null
+    },
+    "frameAges": [
+      6,
+      161,
+      233,
+      354,
+      499,
+      587,
+      685,
+      805,
+      1110,
+      1308,
+      1553
+    ]
+  },
+  "integrated-fallback": {
+    "errors": [],
+    "failures": [],
+    "layouts": [
+      {
+        "width": 1564,
+        "height": 928,
+        "stage": {
+          "x": 62.578125,
+          "y": 32,
+          "width": 1438.84375,
+          "height": 887.984375,
+          "top": 32,
+          "right": 1501.421875,
+          "bottom": 919.984375,
+          "left": 62.578125
+        },
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "badge": {
+          "x": 1257.453125,
+          "y": 33.171875,
+          "width": 211.90625,
+          "height": 242.171875,
+          "top": 33.171875,
+          "right": 1469.359375,
+          "bottom": 275.34375,
+          "left": 1257.453125
+        },
+        "labels": [
+          {
+            "x": 1257.453125,
+            "y": 33.171875,
+            "width": 211.90625,
+            "height": 242.171875,
+            "top": 33.171875,
+            "right": 1469.359375,
+            "bottom": 275.34375,
+            "left": 1257.453125
+          },
+          {
+            "x": 1257.453125,
+            "y": 33.171875,
+            "width": 211.90625,
+            "height": 242.171875,
+            "top": 33.171875,
+            "right": 1469.359375,
+            "bottom": 275.34375,
+            "left": 1257.453125
+          }
+        ],
+        "bodyOverflow": 0
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "stage": {
+          "x": 93.203125,
+          "y": 32,
+          "width": 1179.578125,
+          "height": 727.984375,
+          "top": 32,
+          "right": 1272.78125,
+          "bottom": 759.984375,
+          "left": 93.203125
+        },
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "badge": {
+          "x": 1072.765625,
+          "y": 32.96875,
+          "width": 173.71875,
+          "height": 198.53125,
+          "top": 32.96875,
+          "right": 1246.484375,
+          "bottom": 231.5,
+          "left": 1072.765625
+        },
+        "labels": [
+          {
+            "x": 1072.765625,
+            "y": 32.96875,
+            "width": 173.71875,
+            "height": 198.53125,
+            "top": 32.96875,
+            "right": 1246.484375,
+            "bottom": 231.5,
+            "left": 1072.765625
+          },
+          {
+            "x": 1072.765625,
+            "y": 32.96875,
+            "width": 173.71875,
+            "height": 198.53125,
+            "top": 32.96875,
+            "right": 1246.484375,
+            "bottom": 231.5,
+            "left": 1072.765625
+          }
+        ],
+        "bodyOverflow": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "stage": {
+          "x": 8,
+          "y": 206.703125,
+          "width": 374,
+          "height": 454.578125,
+          "top": 206.703125,
+          "right": 382,
+          "bottom": 661.28125,
+          "left": 8
+        },
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "badge": {
+          "x": 310.5,
+          "y": 206.703125,
+          "width": 66.5,
+          "height": 76,
+          "top": 206.703125,
+          "right": 377,
+          "bottom": 282.703125,
+          "left": 310.5
+        },
+        "labels": [
+          {
+            "x": 310.5,
+            "y": 206.703125,
+            "width": 66.5,
+            "height": 76,
+            "top": 206.703125,
+            "right": 377,
+            "bottom": 282.703125,
+            "left": 310.5
+          },
+          {
+            "x": 310.5,
+            "y": 206.703125,
+            "width": 66.5,
+            "height": 76,
+            "top": 206.703125,
+            "right": 377,
+            "bottom": 282.703125,
+            "left": 310.5
+          }
+        ],
+        "bodyOverflow": 0
+      },
+      {
+        "width": 320,
+        "height": 568,
+        "stage": {
+          "x": 8,
+          "y": 92.90625,
+          "width": 304,
+          "height": 406.1875,
+          "top": 92.90625,
+          "right": 312,
+          "bottom": 499.09375,
+          "left": 8
+        },
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "badge": {
+          "x": 240.5,
+          "y": 92.90625,
+          "width": 66.5,
+          "height": 76,
+          "top": 92.90625,
+          "right": 307,
+          "bottom": 168.90625,
+          "left": 240.5
+        },
+        "labels": [
+          {
+            "x": 240.5,
+            "y": 92.90625,
+            "width": 66.5,
+            "height": 76,
+            "top": 92.90625,
+            "right": 307,
+            "bottom": 168.90625,
+            "left": 240.5
+          },
+          {
+            "x": 240.5,
+            "y": 92.90625,
+            "width": 66.5,
+            "height": 76,
+            "top": 92.90625,
+            "right": 307,
+            "bottom": 168.90625,
+            "left": 240.5
+          }
+        ],
+        "bodyOverflow": 0
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "stage": {
+          "x": 15,
+          "y": 8,
+          "width": 814,
+          "height": 374,
+          "top": 8,
+          "right": 829,
+          "bottom": 382,
+          "left": 15
+        },
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "badge": {
+          "x": 518.25,
+          "y": 8.5,
+          "width": 89.25,
+          "height": 102,
+          "top": 8.5,
+          "right": 607.5,
+          "bottom": 110.5,
+          "left": 518.25
+        },
+        "labels": [
+          {
+            "x": 518.25,
+            "y": 8.5,
+            "width": 89.25,
+            "height": 102,
+            "top": 8.5,
+            "right": 607.5,
+            "bottom": 110.5,
+            "left": 518.25
+          },
+          {
+            "x": 518.25,
+            "y": 8.5,
+            "width": 89.25,
+            "height": 102,
+            "top": 8.5,
+            "right": 607.5,
+            "bottom": 110.5,
+            "left": 518.25
+          }
+        ],
+        "bodyOverflow": 0
+      }
+    ],
+    "states": [
+      {
+        "before": "Win multiplier: 1 times",
+        "early": "true",
+        "after": "Win multiplier: 2 times",
+        "value": 2
+      },
+      {
+        "before": "Win multiplier: 1 times",
+        "early": "true",
+        "after": "Win multiplier: 4 times",
+        "value": 4
+      },
+      {
+        "before": "Win multiplier: 1 times",
+        "early": "true",
+        "after": "Win multiplier: 6 times",
+        "value": 6
+      },
+      {
+        "before": "Win multiplier: 1 times",
+        "early": "true",
+        "after": "Win multiplier: 8 times",
+        "value": 8
+      },
+      {
+        "before": "Win multiplier: 1 times",
+        "early": "true",
+        "after": "Win multiplier: 10 times",
+        "value": 10
+      }
+    ],
+    "held": {
+      "stable": true,
+      "held": 10,
+      "text": "BEST KEPT"
+    },
+    "reduced": {
+      "angle": "0.0",
+      "scale": "1",
+      "reset": 1
+    }
+  },
+  "nodeTests": 24
+}

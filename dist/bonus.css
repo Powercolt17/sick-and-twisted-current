@@ -1,0 +1,148 @@
+/* BLOOD MONEY — the bonus feature reveal. Illustrated layers cut from the approved comic mockup
+   (assets/bonus/, built by tools/make-blood-money.py) sit over the dimmed canvas in stage coordinates
+   (percent of the 1212x608 canvas), animated as a forceful comic-book entrance, then held with restrained life.
+   Internal ids (#bonus-intro, #continue-bonus, #bonus-word) are unchanged. */
+#bonus-intro{position:absolute;inset:0 0 auto;aspect-ratio:1212/608;container-type:size;overflow:hidden;z-index:1;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+#bonus-intro[hidden]{display:none}
+.bm-dim{position:absolute;inset:0;background:rgba(7,4,3,.66);opacity:0}
+.bm-dim::after{content:'';position:absolute;left:20.38%;top:13%;width:59.4%;height:78%;background:rgba(7,4,3,.8)}   /* the reel frame goes almost black; the town stays readable at the edges */
+.bm-stage{position:absolute;inset:0;container-type:size;transform-origin:50% 55%}
+.bm-theme{position:absolute;inset:0}.bm-theme[hidden]{display:none}
+.bm-layer{position:absolute;display:block;max-width:none;pointer-events:none;will-change:transform,opacity;transform-origin:50% 50%;opacity:0;backface-visibility:hidden}
+.bm-flash{mix-blend-mode:screen}
+.bm-smoke{transform-origin:40% 100%}
+#continue-bonus{position:absolute;padding:0;margin:0;border:0;background:url('assets/bonus/button.webp') center/100% 100% no-repeat;cursor:pointer;opacity:0;border-radius:2%/14%;filter:brightness(1) contrast(1);transition:filter .12s ease,transform .08s ease;-webkit-tap-highlight-color:transparent}
+#bonus-intro.bm-theme-deader #continue-bonus{background-image:url('assets/bonus-hang/hh-button.webp')}
+#continue-bonus:hover,#continue-bonus:focus-visible{filter:brightness(1.18) contrast(1.05)}
+#continue-bonus:focus-visible{outline:3px solid #eadcbf;outline-offset:4px;box-shadow:0 0 0 7px rgba(7,4,3,.85)}
+#continue-bonus:active{filter:brightness(.86) contrast(1.05);transform:scale(.97)}
+
+/* ---- entrance (class bm-enter on #bonus-intro). Times are from the moment the trigger presentation ends. */
+.bm-enter .bm-dim{animation:bmDim .14s ease-out both}
+.bm-enter .bm-flash{animation:bmFlash .26s cubic-bezier(.1,.8,.2,1) both}
+.bm-enter .bm-main{animation:bmMain .34s cubic-bezier(.2,.95,.25,1) .09s both}
+.bm-enter .bm-eyes{animation:bmEyes .22s cubic-bezier(.2,.95,.25,1) .25s both}
+.bm-enter .bm-safe{animation:bmSafe .24s cubic-bezier(.2,.95,.25,1) .33s both}
+.bm-enter .bm-note{animation:bmNote var(--dur,.5s) cubic-bezier(.35,.4,.3,1) var(--delay,.4s) both}
+.bm-enter .bm-blood{animation:bmStamp .17s cubic-bezier(.15,1,.3,1) .55s both}
+.bm-enter .bm-money{animation:bmStamp .17s cubic-bezier(.15,1,.3,1) .66s both}
+.bm-enter .bm-smoke{animation:bmSmokeIn .3s ease-out .12s both}
+.bm-enter .bm-caption{animation:bmCaption .2s ease-out 1.05s both}
+.bm-enter #continue-bonus{animation:bmButton .26s cubic-bezier(.2,.95,.25,1) 1.12s both}
+.bm-enter .bm-stage{animation:bmShake .1s linear .27s,bmShake .08s linear .45s,bmShake .11s linear .62s,bmShake .1s linear .73s}
+
+@keyframes bmDim{from{opacity:0}to{opacity:1}}
+@keyframes bmFlash{0%{opacity:0;transform:scale(.55) rotate(-8deg)}18%{opacity:1;transform:scale(1.18) rotate(0)}55%{opacity:.85;transform:scale(1.02)}100%{opacity:0;transform:scale(1.12)}}
+@keyframes bmMain{0%{opacity:0;transform:translate(-13cqw,9cqh) rotate(-7deg) scale(1.16)}55%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}72%{transform:translate(1.1cqw,-.7cqh) rotate(.7deg) scale(1.005)}100%{opacity:1;transform:none}}
+@keyframes bmEyes{0%{opacity:0;transform:translate(26cqw,-30cqh) rotate(5deg) scale(1.12)}60%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}78%{transform:translate(-.6cqw,.9cqh) rotate(-.5deg)}100%{opacity:1;transform:none}}
+@keyframes bmSafe{0%{opacity:0;transform:translate(30cqw,22cqh) rotate(-4deg) scale(1.14)}58%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}76%{transform:translate(-.8cqw,-1cqh) rotate(.4deg)}100%{opacity:1;transform:none}}
+/* Notes burst out of the safe's mouth (the offset from each note's resting place is --sx/--sy) on a curved path. */
+@keyframes bmNote{0%{opacity:0;transform:translate(var(--sx),var(--sy)) rotate(var(--r0)) scale(.55)}12%{opacity:1}35%{transform:translate(calc(var(--sx)*.55 + var(--bx)),calc(var(--sy)*.45 - var(--lift))) rotate(calc(var(--r0)*.4)) scale(.9)}70%{transform:translate(calc(var(--sx)*.15 + var(--bx)*.5),calc(var(--sy)*.05 + var(--lift)*.2)) rotate(calc(var(--r0)*-.25)) scale(1.02)}100%{opacity:1;transform:none}}
+@keyframes bmStamp{0%{opacity:0;transform:scale(1.7)}45%{opacity:1;transform:scale(.965)}72%{transform:scale(1.02)}100%{opacity:1;transform:none}}
+@keyframes bmSmokeIn{from{opacity:0}to{opacity:.95}}
+@keyframes bmCaption{from{opacity:0;transform:translateY(1.4cqh)}to{opacity:1;transform:none}}
+@keyframes bmButton{0%{opacity:0;transform:translateY(3.2cqh) scale(1.07)}62%{opacity:1;transform:translateY(0) scale(1)}82%{transform:translateY(.5cqh) scale(.995)}100%{opacity:1;transform:none}}
+@keyframes bmShake{0%{transform:translate(0,0)}25%{transform:translate(5px,-4px)}50%{transform:translate(-4px,3px)}75%{transform:translate(2px,2px)}100%{transform:translate(0,0)}}
+
+/* ---- held screen (class bm-held): every layer is at rest; smoke drifts off, the late notes settle, slow depth. */
+.bm-held .bm-dim,.bm-held .bm-layer,.bm-held #continue-bonus{opacity:1;animation:none}
+.bm-held .bm-flash{opacity:0}
+.bm-held .bm-smoke{animation:bmSmokeDrift 5.5s cubic-bezier(.3,.2,.6,1) forwards}
+.bm-held .bm-main{animation:bmDepthMain 9s ease-in-out infinite alternate}
+.bm-held .bm-safe{animation:bmDepthSafe 11s ease-in-out infinite alternate}
+.bm-held .bm-eyes{animation:bmDepthEyes 13s ease-in-out infinite alternate}
+.bm-held .bm-note.bm-late{animation:bmNoteSettle var(--dur,1.4s) cubic-bezier(.3,.6,.4,1) forwards}
+@keyframes bmSmokeDrift{0%{opacity:.95;transform:none}100%{opacity:0;transform:translate(-4cqw,-14cqh) scale(1.35) rotate(-6deg)}}
+@keyframes bmDepthMain{from{transform:translate(0,0) scale(1)}to{transform:translate(.35cqw,-.25cqh) scale(1.012)}}
+@keyframes bmDepthSafe{from{transform:translate(0,0)}to{transform:translate(-.3cqw,.2cqh)}}
+@keyframes bmDepthEyes{from{transform:translate(0,0)}to{transform:translate(.2cqw,.25cqh)}}
+@keyframes bmNoteSettle{0%{transform:translate(0,calc(var(--lift)*-1.4)) rotate(calc(var(--r0)*-.3))}45%{transform:translate(.6cqw,calc(var(--lift)*-.55)) rotate(calc(var(--r0)*.1))}100%{transform:none}}
+
+/* Reduced motion: no flight, no shake, no drift — the composition simply appears, fast. */
+@media(prefers-reduced-motion:reduce){
+ .bm-enter .bm-layer,.bm-enter #continue-bonus{animation:bmFade .18s ease-out both}
+ .bm-enter .bm-flash{animation:bmFlashFade .3s ease-out both}
+ .bm-enter .bm-main{animation-delay:.05s}.bm-enter .bm-eyes,.bm-enter .bm-safe{animation-delay:.2s}.bm-enter .bm-note{animation-delay:.35s}.bm-enter .bm-blood{animation-delay:.5s}.bm-enter .bm-money{animation-delay:.6s}.bm-enter .bm-caption,.bm-enter #continue-bonus{animation-delay:.8s}
+ .bm-enter .bm-stage,.bm-held .bm-main,.bm-held .bm-safe,.bm-held .bm-eyes,.bm-held .bm-note.bm-late{animation:none}
+ .bm-held .bm-smoke{animation:bmSmokeFade 4s ease-out forwards}
+ #continue-bonus{transition:none}
+}
+@keyframes bmFade{from{opacity:0}to{opacity:1}}
+@keyframes bmFlashFade{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@keyframes bmSmokeFade{from{opacity:.95}to{opacity:0}}
+
+/* Narrow screens: the title, caption and button grow around their own centres so they stay readable. */
+@media(max-width:540px){
+ .bm-blood,.bm-money{--bm-s:1.2}.bm-caption{--bm-s:1.15;translate:0 .6cqh}
+ #continue-bonus{--bm-s:1.3;translate:0 1.2cqh}
+ .bm-held .bm-blood,.bm-held .bm-money,.bm-held .bm-caption,.bm-held #continue-bonus,.bm-enter .bm-blood,.bm-enter .bm-money,.bm-enter .bm-caption,.bm-enter #continue-bonus{scale:var(--bm-s)}
+}
+
+/* ================================================================ HANG 'EM HIGH (theme deader) — layers from assets/bonus-hang/ */
+.bm-hh-wipe{transform-origin:0 50%}
+.bm-hh-rope{transform-origin:50% 0}
+.bm-hh-hang{transform-origin:13% 0}      /* the rope's top: the boots swing from it */
+.bm-hh-feather1{transform-origin:20% 20%}.bm-hh-feather2{transform-origin:50% 50%}
+.bm-dust{position:absolute;width:var(--sz,2px);height:var(--sz,2px);border-radius:50%;background:#e6d6b4;opacity:0;pointer-events:none;box-shadow:0 0 2px #e6d6b4}
+/* ---- entrance: 0–200 ink wipe + wooden impact; 150–550 sheriff and moon punch in; 350–800 panels strike; 650–1050 title slams; 1000–1500 caption + CONTINUE */
+.bm-enter .bm-hh-wipe{animation:hhWipe .3s cubic-bezier(.3,0,.2,1) both}
+.bm-enter .bm-hh-main{animation:hhMain .4s cubic-bezier(.2,.9,.25,1) .15s both}
+.bm-enter .bm-hh-rope,.bm-enter .bm-hh-feather1,.bm-enter .bm-hh-feather2{animation:hhWith .4s cubic-bezier(.2,.9,.25,1) .15s both}
+.bm-enter .bm-hh-eyes{animation:hhEyes .2s cubic-bezier(.2,.95,.25,1) .35s both}
+.bm-enter .bm-hh-boots,.bm-enter .bm-hh-hang{animation:hhBoots .22s cubic-bezier(.2,.95,.25,1) .47s both}
+.bm-enter .bm-hh-poster{animation:hhPoster .18s cubic-bezier(.2,.95,.25,1) .62s both}
+.bm-enter .bm-hh-title{animation:hhMain .4s cubic-bezier(.2,.9,.25,1) .15s both}
+.bm-enter .bm-hh-caption{animation:bmCaption .2s ease-out 1.05s both}
+.bm-theme-deader.bm-enter #continue-bonus{animation:bmButton .26s cubic-bezier(.2,.95,.25,1) 1.15s both}
+.bm-theme-deader.bm-enter .bm-stage{animation:bmShake .1s linear .02s,bmShake .09s linear .42s}
+.bm-theme-deader.bm-enter .bm-dim{animation:bmDim .16s ease-out both}
+@keyframes hhWipe{0%{opacity:1;transform:translateX(-60%) skewX(-6deg)}55%{opacity:1;transform:translateX(70%) skewX(-3deg)}100%{opacity:0;transform:translateX(140%) skewX(0)}}
+@keyframes hhMain{0%{opacity:0;transform:scale(1.28) translate(-1cqw,2cqh)}58%{opacity:1;transform:scale(.985) translate(0,0)}78%{transform:scale(1.008)}100%{opacity:1;transform:none}}
+@keyframes hhWith{0%{opacity:0;transform:scale(1.28)}58%{opacity:1;transform:scale(.985)}78%{transform:scale(1.008)}100%{opacity:1;transform:none}}
+@keyframes hhEyes{0%{opacity:0;transform:translate(22cqw,-24cqh) rotate(4deg) scale(1.1)}62%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}80%{transform:translate(-.5cqw,.7cqh) rotate(-.4deg)}100%{opacity:1;transform:none}}
+@keyframes hhBoots{0%{opacity:0;transform:translate(28cqw,10cqh) rotate(-3deg) scale(1.1)}60%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}78%{transform:translate(-.7cqw,-.8cqh) rotate(.3deg)}100%{opacity:1;transform:none}}
+@keyframes hhPoster{0%{opacity:0;transform:translate(9cqw,-9cqh) rotate(9deg) scale(1.25)}62%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}82%{transform:translate(.4cqw,.5cqh) rotate(-.8deg)}100%{opacity:1;transform:none}}
+@keyframes hhTitle{0%{opacity:0;transform:scale(1.9)}40%{opacity:1;transform:scale(.96)}62%{transform:scale(1.02) translate(.4cqw,-.3cqh)}78%{transform:scale(.995) translate(-.3cqw,.2cqh)}100%{opacity:1;transform:none}}
+/* ---- held: feathers drift, the noose and the boots sway, sparse dust; title steady */
+.bm-held .bm-hh-wipe{opacity:0}
+.bm-held .bm-hh-rope{animation:hhRopeSway 5.2s ease-in-out infinite alternate}
+.bm-held .bm-hh-hang{animation:hhHangSway 4.6s ease-in-out infinite alternate}
+.bm-held .bm-hh-feather1{animation:hhFeather1 7s ease-in-out infinite alternate}
+.bm-held .bm-hh-feather2{animation:hhFeather2 6s ease-in-out infinite alternate}
+.bm-held .bm-hh-main,.bm-held .bm-hh-title{animation:bmDepthMain 10s ease-in-out infinite alternate}
+.bm-held .bm-hh-boots{animation:bmDepthSafe 12s ease-in-out infinite alternate}
+.bm-held .bm-dust{animation:hhDust var(--dur,6s) linear var(--delay,0s) infinite}
+@keyframes hhRopeSway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+@keyframes hhHangSway{from{transform:rotate(-.9deg) translateX(-.1cqw)}to{transform:rotate(.9deg) translateX(.1cqw)}}
+@keyframes hhFeather1{from{transform:translate(0,0) rotate(0)}to{transform:translate(.6cqw,.9cqh) rotate(-3deg)}}
+@keyframes hhFeather2{from{transform:translate(0,0) rotate(0)}to{transform:translate(-.5cqw,.6cqh) rotate(4deg)}}
+@keyframes hhDust{0%{opacity:0;transform:translate(0,0)}12%{opacity:.55}70%{opacity:.35}100%{opacity:0;transform:translate(var(--dx,1cqw),var(--dy,-2cqh))}}
+@media(prefers-reduced-motion:reduce){
+ .bm-enter .bm-hh-wipe{animation:bmFlashFade .3s ease-out both}
+ .bm-enter .bm-hh-main,.bm-enter .bm-hh-rope,.bm-enter .bm-hh-feather1,.bm-enter .bm-hh-feather2{animation:bmFade .18s ease-out .05s both}
+ .bm-enter .bm-hh-eyes,.bm-enter .bm-hh-boots,.bm-enter .bm-hh-hang,.bm-enter .bm-hh-poster{animation:bmFade .18s ease-out .2s both}
+ .bm-enter .bm-hh-title{animation:bmFade .18s ease-out .05s both}.bm-enter .bm-hh-caption{animation:bmFade .18s ease-out .8s both}
+ .bm-theme-deader.bm-enter .bm-stage,.bm-held .bm-hh-rope,.bm-held .bm-hh-hang,.bm-held .bm-hh-feather1,.bm-held .bm-hh-feather2,.bm-held .bm-hh-main,.bm-held .bm-hh-title,.bm-held .bm-hh-boots,.bm-held .bm-dust{animation:none}
+}
+@media(max-width:540px){
+ .bm-hh-title{--bm-s:1.18}.bm-hh-caption{--bm-s:1.15;translate:0 .6cqh}
+ .bm-held .bm-hh-title,.bm-held .bm-hh-caption,.bm-enter .bm-hh-title,.bm-enter .bm-hh-caption{scale:var(--bm-s)}
+}
+
+/* Directed entrances are sampled by feature-reveal.js. Existing held artwork
+   keeps its gentle life; CSS and audio no longer race independent clocks. */
+.bm-directed.bm-enter .bm-stage,.bm-directed.bm-enter .bm-layer,
+.bm-directed.bm-enter .bm-dim,.bm-directed.bm-enter #continue-bonus{animation:none!important}
+.bm-directed .bm-caption,.bm-directed .bm-hh-caption{visibility:hidden}
+#feature-award{position:absolute;z-index:65;opacity:0;display:flex;align-items:center;justify-content:center;white-space:nowrap;
+ background:rgba(12,8,5,.90);color:#eddfc1;font:bold 1.95cqw Western;letter-spacing:.035em;text-shadow:0 1px 1px #000;pointer-events:none}
+#feature-award.max-active{font-size:1.58cqw}
+.bm-hell-title{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8f160e;font:7cqw/.9 Outlaw;text-align:center;paint-order:stroke fill;-webkit-text-stroke:.26cqw #efdab5;filter:drop-shadow(.22cqw .24cqw 0 #160b07)}
+.bm-theme-hell #continue-bonus{display:none}
+.bm-held .bm-hell-title{opacity:1;animation:bmDepthMain 10s ease-in-out infinite alternate}
+.bm-held #feature-award{opacity:1}
+.bm-directed.bm-held .bm-note.bm-late{animation:bmNoteLife 6s ease-in-out infinite alternate}
+@keyframes bmNoteLife{from{transform:none}to{transform:translate(.2cqw,.4cqh) rotate(1deg)}}
+.bm-paused *{animation-play-state:paused!important}
+@media(max-width:540px){#feature-award{font-size:2.15cqw}#feature-award.max-active{font-size:1.65cqw}}
+@media(prefers-reduced-motion:reduce){.bm-directed.bm-held .bm-note.bm-late,.bm-held .bm-hell-title{animation:none}}

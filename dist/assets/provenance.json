@@ -1,0 +1,67 @@
+{
+  "source": "User-supplied Recording 2026-09-11 094621.mp4",
+  "sprites": {
+    "a": [
+      42,
+      1,
+      0
+    ],
+    "k": [
+      42,
+      1,
+      2
+    ],
+    "q": [
+      18,
+      0,
+      1
+    ],
+    "j": [
+      18,
+      0,
+      2
+    ],
+    "ten": [
+      42,
+      4,
+      0
+    ],
+    "bottle": [
+      18,
+      0,
+      0
+    ],
+    "bandit": [
+      42,
+      2,
+      0
+    ],
+    "guns": [
+      42,
+      0,
+      2
+    ],
+    "cuffs": [
+      42,
+      2,
+      2
+    ],
+    "star": [
+      42,
+      0,
+      0
+    ],
+    "skull": [
+      42,
+      4,
+      2
+    ],
+    "scatter": [
+      57,
+      4,
+      1
+    ]
+  },
+  "animationTextures": "13.2\u201319.0 seconds, original 30 fps",
+  "scope": "Visual recreation; demo-only outcomes, not original certified math"
+}

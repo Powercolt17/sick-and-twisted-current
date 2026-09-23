@@ -1,0 +1,18 @@
+{
+  "source": "Existing source-extracted slot artwork",
+  "method": "One built-in imagegen restoration edit per atlas and stage, without retries",
+  "symbols": [
+    1893,
+    831
+  ],
+  "wilds": [
+    1093,
+    1439
+  ],
+  "stage": [
+    1680,
+    936
+  ],
+  "rendering": "Original symbol proportions preserved in compact 120 by 118.5 logical cells; display render resolution 2x to 3x",
+  "note": "Higher-resolution reinterpretation of ink edges and paper texture, not a recovery of original source masters."
+}

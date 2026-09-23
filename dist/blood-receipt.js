@@ -1,0 +1,34 @@
+import {BLOOD_LADDER} from './blood-bounty.js?v=81';
+import {OUTLAW_NAMES,OUTLAW_FILES} from './blood-outlaws.js?v=91art';
+import {BOUNTY_TIME} from './bounty-timeline.js?v=109';
+const clamp=n=>Math.max(0,Math.min(1,n)),ease=n=>1-(1-clamp(n))**3;
+const currency=n=>'$'+(n/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+// Shares the bank's pausable clock. This renderer cannot award or collect money.
+export function bloodReceiptFrame({age,totalCents,exitAge},reduced=false){
+ const progress=reduced?1:ease((age-BOUNTY_TIME.closeTotal)/950);
+ const seal=reduced?1:clamp((age-BOUNTY_TIME.closeStamp+140)/140),reveal=reduced?1:clamp((age-BOUNTY_TIME.closeTotal-950)/700);
+ const rebound=clamp((age-BOUNTY_TIME.closeStamp)/220),sealKick=reduced?0:Math.sin(rebound*Math.PI)*.045*(1-rebound);
+ return {seal,sealKick,reveal,amount:currency(Math.round(totalCents*progress)),sealed:reduced||age>=BOUNTY_TIME.closeStamp,settled:progress===1,exiting:exitAge!==null};
+}
+export function createBloodReceipt({stage,reduced=false,onContinue=()=>false}){
+ const panel=document.createElement('section');panel.className='blood-receipt blood-overlay';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-labelledby','blood-receipt-title');panel.setAttribute('aria-describedby','blood-receipt-summary');
+ panel.innerHTML=`<div class="blood-dossier blood-receipt-card"><div class="blood-hardware" aria-hidden="true"><i class="timber top"></i><i class="timber bottom"></i><i class="timber left"></i><i class="timber right"></i></div>
+  <header class="blood-dossier-header"><span class="blood-eyebrow">BLOOD MONEY · THE HUNT IS OVER</span><h2 id="blood-receipt-title">BOUNTY PAID</h2><div class="blood-header-rule" aria-hidden="true"><span>★</span></div></header>
+  <div class="blood-dossier-content">
+   <figure class="blood-target"><div class="blood-target-art"><img alt="" draggable="false"><div class="blood-closed"><span>CONTRACT<br><b>CLOSED</b></span></div></div><figcaption class="blood-final-target"></figcaption></figure>
+   <div class="blood-reward"><div class="blood-reward-dust" aria-hidden="true"><i style="--i:0;--dx:-50;--dy:-25;--twist:0deg"></i><i style="--i:1;--dx:-13;--dy:-48;--twist:41deg"></i><i style="--i:2;--dx:24;--dy:-71;--twist:82deg"></i><i style="--i:3;--dx:-39;--dy:-94;--twist:123deg"></i><i style="--i:4;--dx:-2;--dy:-32;--twist:164deg"></i><i style="--i:5;--dx:35;--dy:-55;--twist:205deg"></i><i style="--i:6;--dx:-28;--dy:-78;--twist:246deg"></i><i style="--i:7;--dx:9;--dy:-101;--twist:287deg"></i><i style="--i:8;--dx:46;--dy:-39;--twist:328deg"></i><i style="--i:9;--dx:-17;--dy:-62;--twist:369deg"></i><i style="--i:10;--dx:20;--dy:-85;--twist:410deg"></i><i style="--i:11;--dx:-43;--dy:-108;--twist:451deg"></i><i style="--i:12;--dx:-6;--dy:-46;--twist:492deg"></i><i style="--i:13;--dx:31;--dy:-69;--twist:533deg"></i></div><span class="blood-eyebrow">TOTAL REWARD</span><strong class="blood-reward-amount" aria-hidden="true">$0.00</strong><span class="blood-reward-rule" aria-hidden="true">✦</span></div>
+   <div class="blood-receipt-stats"><div><strong class="blood-receipt-spins"></strong><span>FREE SPINS COMPLETED</span></div><div><strong class="blood-receipt-boost"></strong><span>FINAL WIN MULTIPLIER</span></div></div>
+   <div class="blood-dossier-action"><button id="bounty-return" type="button" class="blood-continue" aria-label="Close bounty result and return to base spins" hidden>CONTINUE <span aria-hidden="true">→</span></button><p class="blood-receipt-note">FREE SPINS COMPLETE</p></div>
+  </div><p id="blood-receipt-summary" class="blood-sr-only"></p><span class="blood-corner tl" aria-hidden="true"></span><span class="blood-corner tr" aria-hidden="true"></span><span class="blood-corner bl" aria-hidden="true"></span><span class="blood-corner br" aria-hidden="true"></span>
+ </div>`;
+ stage.append(panel);
+ const button=panel.querySelector('button'),amount=panel.querySelector('.blood-reward-amount'),hud=stage.querySelector('#game-controls');let priorFocus=null,previousInert=false;
+ button.addEventListener('click',()=>{if(onContinue())button.hidden=true;});
+ panel.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();(button.hidden?panel:button).focus({preventScroll:true});}else if(e.repeat&&['Enter','Space'].includes(e.code)){e.preventDefault();}});
+ function update(snapshot){if(!snapshot||panel.hidden)return;const frame=bloodReceiptFrame(snapshot,reduced);if(amount.textContent!==frame.amount)amount.textContent=frame.amount;amount.dataset.long=String(currency(snapshot.totalCents).length>8);panel.dataset.sealed=String(frame.sealed);panel.dataset.settled=String(frame.settled);panel.dataset.exiting=String(frame.exiting);panel.style.setProperty('--seal',frame.seal);panel.style.setProperty('--seal-size',1+.7*(1-frame.seal)**3+frame.sealKick);panel.style.setProperty('--seal-rise',(-26*(1-frame.seal))+'px');panel.style.setProperty('--reward-light',String(Math.sin(frame.reveal*Math.PI)*.32+.26));panel.style.setProperty('--reward-pulse',1+Math.sin(frame.reveal*Math.PI)*.045);panel.style.setProperty('--reveal',frame.reveal);panel.style.setProperty('--dust-alpha',reduced?'0':String(Math.sin(frame.reveal*Math.PI)));}
+ return {panel,button,update,
+  show(snapshot){const target=BLOOD_LADDER[snapshot.state.level],name=OUTLAW_NAMES[target];panel.querySelector('#blood-receipt-title').textContent=snapshot.totalCents>0?'BOUNTY PAID':'HUNT COMPLETE';panel.querySelector('.blood-final-target').textContent=name;panel.dataset.rewarded=String(snapshot.totalCents>0);priorFocus=document.activeElement;previousInert=!!hud?.inert;const im=panel.querySelector('img');im.src=`assets/ink-western/${OUTLAW_FILES[target]}.webp`;im.alt=`Wanted: ${name}`;panel.querySelector('.blood-receipt-spins').textContent=String(snapshot.award);panel.querySelector('.blood-receipt-boost').textContent=`${snapshot.boost}×`;panel.querySelector('#blood-receipt-summary').textContent=`${name}. ${snapshot.award} free spins completed. ${snapshot.boost} times final win multiplier. Total reward ${currency(snapshot.totalCents)}.`;panel.hidden=false;button.hidden=true;panel.tabIndex=-1;if(hud){hud.inert=true;hud.setAttribute('aria-hidden','true');}stage.setAttribute('data-blood-receipt','');update(snapshot);panel.focus({preventScroll:true});},
+  offer(){button.hidden=false;button.focus({preventScroll:true});},
+  hide(){button.hidden=true;panel.hidden=true;stage.removeAttribute('data-blood-receipt');if(hud){hud.inert=previousInert;hud.setAttribute('aria-hidden',String(previousInert));}if(priorFocus?.isConnected)priorFocus.focus({preventScroll:true});}
+ };
+}

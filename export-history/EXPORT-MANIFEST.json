@@ -1,0 +1,1927 @@
+{
+  "project": "Sick & Twisted",
+  "published_version": 122,
+  "commit": "0bad648cc0837123e0fc000973e4b40eb4fc299f",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 30,
+      "sha256": "1dda7942c6002a70c97d3f50886605adac3d13ce598b954f7c96f6dc3e475039"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 106,
+      "sha256": "07c423ef214245f41a0f4a470c35ac575cde83f31f0b74833ee88d3f84fbcda8"
+    },
+    {
+      "path": "HANG_FEATURE.md",
+      "bytes": 1931,
+      "sha256": "92577c2fd8f718b54718b6a7560c395d3cb70b1a41e719dd00b433ecc701ab31"
+    },
+    {
+      "path": "TRICKSTER_BACKGROUND.md",
+      "bytes": 3740,
+      "sha256": "a488b79f327344faaa372de55dfded57499d3862f2b325ae202f9f39e0eda05e"
+    },
+    {
+      "path": "dist/approved-win.css",
+      "bytes": 912,
+      "sha256": "d1f68a6ba7090ec5282d6a7c7b28084ce59b287e0c8d55ac5bfffe9100101482"
+    },
+    {
+      "path": "dist/approved-win.js",
+      "bytes": 6319,
+      "sha256": "5920322dd323ddf03fac3bd004e4692522c079806ad59522b2f590340f778a69"
+    },
+    {
+      "path": "dist/assets/a.webp",
+      "bytes": 8302,
+      "sha256": "78f3eeae69ad12293ffde6df4afee448e04807e7a7bc84758aa077f485f1117e"
+    },
+    {
+      "path": "dist/assets/approved-win/rye-OFL.txt",
+      "bytes": 4393,
+      "sha256": "399b33eb38cdfc76b8665defa5f81d52e8193d630ad5858c893db6bc20031bc9"
+    },
+    {
+      "path": "dist/assets/approved-win/rye.ttf",
+      "bytes": 183244,
+      "sha256": "b7edee5e615ae1b6b07e9d030c1309152bf3672a0e8a2a46293e273730f5adba"
+    },
+    {
+      "path": "dist/assets/approved-win/western.otf",
+      "bytes": 100984,
+      "sha256": "e0ad81923bc6d85d5426f796217c87963ca1ae3c65e22c87a25b6c6353de299e"
+    },
+    {
+      "path": "dist/assets/approved-win/win-cards.webp",
+      "bytes": 917332,
+      "sha256": "9fc9de04b61b5f4546a26987e7afdc683698686976b81385d6b73aa15127a18a"
+    },
+    {
+      "path": "dist/assets/approved-win/win-reference-sync.mp3",
+      "bytes": 92205,
+      "sha256": "1d6ae24c2f23bc8c00ca127e74e4d57ec0a976f327e0b011b9d02696914ed56c"
+    },
+    {
+      "path": "dist/assets/approved-win/win-reference-sync.wav",
+      "bytes": 723658,
+      "sha256": "8cc4b361b9d7483020c7aa19f102af30ee3f2ff1c5bc9ebb80f05e2cf495d791"
+    },
+    {
+      "path": "dist/assets/approved-win/win-timeline.wav",
+      "bytes": 1190478,
+      "sha256": "c211fc76e86518650d777d4f2e6479e2eb8ac2f44e62a4e70e446e5e4645fa2b"
+    },
+    {
+      "path": "dist/assets/ash-bone/stage.png",
+      "bytes": 2835895,
+      "sha256": "eb7ad9788f3d4feafa02cbd1e79f5885780ee1150e95bd01dfc52a626bd2474e"
+    },
+    {
+      "path": "dist/assets/ash-bone/symbols.png",
+      "bytes": 3206036,
+      "sha256": "dda9b0a9e5672b1550590983c26dd3852f4b3526192388cad12dbf2d01bd33d7"
+    },
+    {
+      "path": "dist/assets/backdrop-bonus.webp",
+      "bytes": 211706,
+      "sha256": "7f56fc30fabb2cc0429d1b7bc5d55a673bdc44d376ae7a82414b4e8acfc78844"
+    },
+    {
+      "path": "dist/assets/backdrop-wild.webp",
+      "bytes": 193000,
+      "sha256": "ff4a92a40c04104c78beaf97da841199ad693cb8af0207cd1144596351f95895"
+    },
+    {
+      "path": "dist/assets/backdrop.webp",
+      "bytes": 186112,
+      "sha256": "48d927119457e3de26d3e625fef948c1f14eee355a6f1ab27d6b4bfa35d1140e"
+    },
+    {
+      "path": "dist/assets/bandit.webp",
+      "bytes": 8294,
+      "sha256": "7259e2a25bdb108f2c076e85e922e788de7dc44a793a98d9b705276a8baf0c29"
+    },
+    {
+      "path": "dist/assets/big-win/gallop-source.png",
+      "bytes": 1991903,
+      "sha256": "0f1adf566570f4eb62dcf003bc41c0bd3c9ad01fa7eeff1febf7defc453bfa10"
+    },
+    {
+      "path": "dist/assets/big-win/skid-source.png",
+      "bytes": 2022053,
+      "sha256": "ca021366751017e200a2280f7d1725dca8bfa05820cf496cff7bafad780d7060"
+    },
+    {
+      "path": "dist/assets/blood-bank/bank.webp",
+      "bytes": 483088,
+      "sha256": "64354ae34435a43efdafdcf82b17a62eb8d6e0dbae0849475edbb7faa2adf2d5"
+    },
+    {
+      "path": "dist/assets/blood-bank/poster-knife.webp",
+      "bytes": 453922,
+      "sha256": "87a8b6432f869fcdb2a96cd674498eebc2c2618bf12e9019c6f4656a99074bfb"
+    },
+    {
+      "path": "dist/assets/blood-money/provenance.json",
+      "bytes": 582,
+      "sha256": "bc2c99266053c456cca3e8b2d4a67ea8cd412678be38db5cf37a48f26a1385a0"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/gunfighter-dead.png",
+      "bytes": 3070087,
+      "sha256": "e77c76eb966a709b4e9698a1b14b7b5b944ab3b505546babc2df1ec64edcc308"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/gunfighter.png",
+      "bytes": 3271826,
+      "sha256": "cec3f819b61c4098eb3055ec8486c35d18b946f0bb5d6b8fe3a7ad7020d30f04"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/ringleader-dead.png",
+      "bytes": 3158381,
+      "sha256": "76d56d20b230ba17848697aa8021bcf0e600f08e3c82d7669b4b267102508cd0"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/ringleader.png",
+      "bytes": 3341196,
+      "sha256": "62fa0e0e58b8d874b211d29a620631d8ccb5c7bac635fbd151f1a7cd388dd232"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/rustler-dead.png",
+      "bytes": 3114142,
+      "sha256": "086d21fc4acb5288bd3d63d7112bc1e6c6a02c3d40a4ea7382c4c2a0f6b48075"
+    },
+    {
+      "path": "dist/assets/blood-outlaws/rustler.png",
+      "bytes": 3318979,
+      "sha256": "e96fe209f904c0e284129ab714554a23c270b554ac9b499e47465b1b9fea05bc"
+    },
+    {
+      "path": "dist/assets/blood-win/stains-0.webp",
+      "bytes": 814464,
+      "sha256": "1c68e8763a4602079f700240133b50f23ea6ab245724ee915f0fe9e9c961d31d"
+    },
+    {
+      "path": "dist/assets/blood-win/stains-1.webp",
+      "bytes": 815978,
+      "sha256": "17ca14862f17a513244a40953f25ff6398809d24a841993ae235b228c4545719"
+    },
+    {
+      "path": "dist/assets/blood-win/stains-2.webp",
+      "bytes": 812668,
+      "sha256": "2f831e6830816342220ba067f499698c4cfd4b128f336c95def2576589b44494"
+    },
+    {
+      "path": "dist/assets/bomb/blast-atlas.png",
+      "bytes": 1173616,
+      "sha256": "fcb3a435188503612c48bf9a142c92ec1d4fc6a4b69df28885905ffa50a0214a"
+    },
+    {
+      "path": "dist/assets/bomb/blast.wav",
+      "bytes": 119084,
+      "sha256": "902e30f4bb45c957e2df1916b88cdc7e25ca57985b9fd1edd320f237a3b59470"
+    },
+    {
+      "path": "dist/assets/bomb/brutally-loud-blast.wav",
+      "bytes": 384078,
+      "sha256": "9fe454c0c24ddb9426ffa51c282372e12aa2ee2cacf9bcdcfc077efe09d94fc9"
+    },
+    {
+      "path": "dist/assets/bomb/fuse.wav",
+      "bytes": 32684,
+      "sha256": "ca603d519f8f69a4d08dea2e48909e40f507b9cf81f6a071c7e74e1004193079"
+    },
+    {
+      "path": "dist/assets/bomb/gamemaster-large-close-blast.wav",
+      "bytes": 971114,
+      "sha256": "ebf9b1ad005b90c9901718c0babd6f94242470efb6587bcc78b549cbca652f68"
+    },
+    {
+      "path": "dist/assets/bomb/tnt.png",
+      "bytes": 3499958,
+      "sha256": "a19612d104f0a196bfea8baa36b0f64dd5bc50dd5ebc43785be6eccea68dc1d2"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-boots.webp",
+      "bytes": 77282,
+      "sha256": "225597d8396bfd11057207bce84e8b6552c2f37c7b4fcc18fd05eb0e62fd13f9"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-button.webp",
+      "bytes": 13734,
+      "sha256": "79d7943802085da1a2a1572b30bd70fd1962da59bc1945bf3dc96c5fbc55cd8f"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-caption.webp",
+      "bytes": 11440,
+      "sha256": "c1324fe5fd8b3b196771aef3fc5dca9ef704eed6048d3087b855152209e13b2a"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-eyes.webp",
+      "bytes": 38850,
+      "sha256": "fafdfa32ca29fe9cc13a95511ea6dccee690e49507f56154b7a2a7a4781e16e4"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-feather1.webp",
+      "bytes": 3476,
+      "sha256": "126b9e7f15d50d64c115d47a85035c1f4cf4b74eee9bbdaac05e45894233105f"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-feather2.webp",
+      "bytes": 2468,
+      "sha256": "c94216ca91db347a4493a40129dda4e30c0839377776cb728afb8a4937dc6d17"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-hang.webp",
+      "bytes": 26290,
+      "sha256": "5cabfc589260b20c24f55bc1f72c0679a3cbb13368b8f6551f26a72401d3171c"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-main.webp",
+      "bytes": 279628,
+      "sha256": "9b69523d6ae6a9be0770d336d2c356f335fac1f85248d0ebb4248625f4704aaa"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-poster.webp",
+      "bytes": 23232,
+      "sha256": "21a8b6a28d8bcc1836417d7d503daa84c41aa71b1bc719515613a89b7f05e3c0"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-rope.webp",
+      "bytes": 4590,
+      "sha256": "47fecd025149452cb24ef5ca5be53c032a42fe352956b1169a52ddaf859cf7e5"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-title.webp",
+      "bytes": 55968,
+      "sha256": "81ea34d896c0d1a4892e9f8517481aaa7be08cc59e32933a1b6bf3227a720fe0"
+    },
+    {
+      "path": "dist/assets/bonus-hang/hh-wipe.webp",
+      "bytes": 16148,
+      "sha256": "effba4bbe158724d843152bc8cb781dbef35d297e3ca5099ae3a39c3feb6ee58"
+    },
+    {
+      "path": "dist/assets/bonus-hang/layout.json",
+      "bytes": 1655,
+      "sha256": "819b68c364d2a28a5c8b2b07c97a5157101ec0e517cf7f96ac5ef00803ec9aad"
+    },
+    {
+      "path": "dist/assets/bonus-tease/fire-rails.webp",
+      "bytes": 669130,
+      "sha256": "09f27d97d07b6633664a1219af3f7f87660d4006e59505675a1e61a8559610cf"
+    },
+    {
+      "path": "dist/assets/bonus-tease/tease-final.wav",
+      "bytes": 606798,
+      "sha256": "baa83c9cfa3877d37deccf3d5036cb6964f0e020f577d0fd126e88eafa6350d6"
+    },
+    {
+      "path": "dist/assets/bonus-tease/tease-reel.wav",
+      "bytes": 553038,
+      "sha256": "1f21042813e35b8c8d8f10932ad8cc997236d18cf8baa4adfd5b8751bd2ba75b"
+    },
+    {
+      "path": "dist/assets/bonus/blood.webp",
+      "bytes": 30084,
+      "sha256": "74e3eba6a027b677aaaf19a45af795e71cdd898c00d8fff88bf4dba839b96162"
+    },
+    {
+      "path": "dist/assets/bonus/button.webp",
+      "bytes": 17188,
+      "sha256": "0c60b30693f78e5dd8820655f1d4c8211b4786d0a284e90c921ed7dc18863d25"
+    },
+    {
+      "path": "dist/assets/bonus/caption.webp",
+      "bytes": 10376,
+      "sha256": "69ecf434e6e8114add1589a5eb21f9e94d721f016c1c1a94ebe9935c3dce7e15"
+    },
+    {
+      "path": "dist/assets/bonus/eyes.webp",
+      "bytes": 43194,
+      "sha256": "a587955ce2578ad37d1e784836953f1a93ea5434cfd9c802d80e4e7c32f2be62"
+    },
+    {
+      "path": "dist/assets/bonus/flash.webp",
+      "bytes": 30476,
+      "sha256": "c3bc9fda0db839911b54c594b2919364f8225bd275fd6ea97acceefb9047d42a"
+    },
+    {
+      "path": "dist/assets/bonus/layout.json",
+      "bytes": 1530,
+      "sha256": "9eb5443a64080e395e5c5a2828834f724202e47f0efc037ae990b30b6825e99c"
+    },
+    {
+      "path": "dist/assets/bonus/main.webp",
+      "bytes": 274688,
+      "sha256": "24730b4c14639b852e3f4617d25fdd54ba14edb93864be719858826fd5d0a7e5"
+    },
+    {
+      "path": "dist/assets/bonus/money.webp",
+      "bytes": 33994,
+      "sha256": "483431c0f86bed9602f140fcabe4ed29a0523b08b163e8232dad61d46671f84c"
+    },
+    {
+      "path": "dist/assets/bonus/note1.webp",
+      "bytes": 4468,
+      "sha256": "63d50f4c7dd819b51016e035ce06eaeae7ecd354a8e7599603566f20929425ef"
+    },
+    {
+      "path": "dist/assets/bonus/note3.webp",
+      "bytes": 10022,
+      "sha256": "0d83c2535e7a9b090760713955db03643588ff590b1f7065e153bba588690b74"
+    },
+    {
+      "path": "dist/assets/bonus/safe.webp",
+      "bytes": 124530,
+      "sha256": "1d1bb7e5f8d47cddf551e4c631407a6dcd32811346d597239b61acc5a11dc022"
+    },
+    {
+      "path": "dist/assets/bonus/smoke.webp",
+      "bytes": 26270,
+      "sha256": "225dd397b572ea8dfba99dff427a475411283691ac4c1a062ead5cd27f7e95c1"
+    },
+    {
+      "path": "dist/assets/boost-card.webp",
+      "bytes": 10374,
+      "sha256": "289b79a2300daf4a043575b0a0940b7455a280f534ac0b262e61b3fa40ab3b90"
+    },
+    {
+      "path": "dist/assets/bottle.webp",
+      "bytes": 6524,
+      "sha256": "b1b71f77c1978481c3c4fae5f6e16f26d1f1f0fda42419627ac5d4a87ad3a182"
+    },
+    {
+      "path": "dist/assets/brand/sick-and-twisted-panel.png",
+      "bytes": 3320132,
+      "sha256": "80e12246edcc74fb7daa77ebe587117c9e1b2dc63b3ed2c74fefee1d85c1db33"
+    },
+    {
+      "path": "dist/assets/brand/stage-clean.png",
+      "bytes": 2554995,
+      "sha256": "fd8bc57a2653894dc53046694415af16273dcef655d59ed289fccce3a00bdc61"
+    },
+    {
+      "path": "dist/assets/character/layers.json",
+      "bytes": 147,
+      "sha256": "8f17d77cb926e8ef5b3463e0d8fb0da19fc6ab2f9890a33598621ceffed5ec60"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/blood-splatter.webp",
+      "bytes": 814464,
+      "sha256": "1c68e8763a4602079f700240133b50f23ea6ab245724ee915f0fe9e9c961d31d"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/bullet-whizz.wav",
+      "bytes": 9644,
+      "sha256": "94b1981c881d6ebd117ac7a3b5c6f57e7d5a9cad897f21218017eae9a3dfb131"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/crossfire-sync.wav",
+      "bytes": 518444,
+      "sha256": "67a9712a9c18a4defcf070a4cfbbf5f83120a909980b9605dbf2ff92c9e973d5"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/impact-atlas.png",
+      "bytes": 849300,
+      "sha256": "22dfbe7d8ade90e9202c9bc763460aaa2ff1b2781a0612b0e0368bbbb3ab473c"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/revolver-shot.wav",
+      "bytes": 145594,
+      "sha256": "1064246b4becdd4d889db696e614dbfb5660881a0042ba17b8d570fc1caaf9b2"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/tile-impact.wav",
+      "bytes": 45164,
+      "sha256": "03bb57d00d195ae9a314450ea55568d72750a6751f6f39c104fe964b9946f307"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/win-impact-approved.wav",
+      "bytes": 232398,
+      "sha256": "733290f7075f612c655bfd04caf5c0e3728cc2ef9ee74ab830a5e30c59202822"
+    },
+    {
+      "path": "dist/assets/crossfire-v2/win-impact-refined.wav",
+      "bytes": 348582,
+      "sha256": "708a0b27d2468724cf9b5744471612454104c2906b3a7e343ede1c6e5aa1fc61"
+    },
+    {
+      "path": "dist/assets/cuffs.webp",
+      "bytes": 7238,
+      "sha256": "3682106e1c67d67de048c886ce7c52fe6de3b2af162f1659f0f740e95c5c47ea"
+    },
+    {
+      "path": "dist/assets/cursor-patch.webp",
+      "bytes": 382,
+      "sha256": "0a11b280fb5becb3b27a71fbfc2dc4e388307a2e5076af6dbaf7f4724444c7df"
+    },
+    {
+      "path": "dist/assets/dead-card.webp",
+      "bytes": 9162,
+      "sha256": "263e0f787a217d1e3116fa0958fad0ad931106e01f6b350d2127297863c197b8"
+    },
+    {
+      "path": "dist/assets/deader-card.webp",
+      "bytes": 9926,
+      "sha256": "0da268394e4df0dee41af4b959be8a1ff7970b25e85f7a3af5e95dfa35e20251"
+    },
+    {
+      "path": "dist/assets/empty-128.webp",
+      "bytes": 21624,
+      "sha256": "8b69d417ceed223845fa9b609c3eac495b7926ffa6c58287f163788664c9f3b6"
+    },
+    {
+      "path": "dist/assets/faithful-character/figure-0.webp",
+      "bytes": 1458676,
+      "sha256": "1716846a1a8345c55ff4ff84dee1760682d6e6cab19ac00d83b31aab27aaad38"
+    },
+    {
+      "path": "dist/assets/faithful-character/figure-1.webp",
+      "bytes": 1451270,
+      "sha256": "d04fd35b69c8a91c066b3a129d632d804b3114c69bfe9927f92273b3219c7b25"
+    },
+    {
+      "path": "dist/assets/faithful-character/figure-2.webp",
+      "bytes": 1428788,
+      "sha256": "e927e63ddb07e2fca0ae887d97fcdcf17b9a4b2230c01fa425640b521e2148e7"
+    },
+    {
+      "path": "dist/assets/faithful-character/figure-3.webp",
+      "bytes": 1424084,
+      "sha256": "bf11c9d45374fdf9b9063e66ee0cd6868d1fe9c285d269daf703cc655c926b8e"
+    },
+    {
+      "path": "dist/assets/faithful-character/figure-4.webp",
+      "bytes": 1384548,
+      "sha256": "794d83f55bc6b7fb622165896caf893bb27220705029d0ccb8ae3f67b2e142c4"
+    },
+    {
+      "path": "dist/assets/faithful-character/foreground.webp",
+      "bytes": 282472,
+      "sha256": "30b801213f8363535b99521909d8a081def3838ff41f0cad557a493757acf0b7"
+    },
+    {
+      "path": "dist/assets/feature-live/scatter-skeleton.png",
+      "bytes": 3022362,
+      "sha256": "76aa05603361b940dee2877c667b5cbd54deec649c3d56b2f8823b4d858ffedb"
+    },
+    {
+      "path": "dist/assets/feature-scenes/blood-money-background.jpg",
+      "bytes": 187567,
+      "sha256": "f7b1031353e78ec4399a4211c3ba47f07ad38d04c2ae3d80a953e36c31726525"
+    },
+    {
+      "path": "dist/assets/feature-scenes/blood-money-background.mp4",
+      "bytes": 3018887,
+      "sha256": "18f0a648e6a1f80376eee2a235f6e45963d53258b07e91af1d26e1848b962829"
+    },
+    {
+      "path": "dist/assets/feature-scenes/blood-money-intro.mp4",
+      "bytes": 5292050,
+      "sha256": "628ab654ee34fbe10b0eb1fc1d2ed54b6d36fdc7dda81e2cfe5345e363878dee"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hang-em-high-background.jpg",
+      "bytes": 184727,
+      "sha256": "456251b9154e78f0c8f0e850194e650087aec12d64fa8641f7f325d292ff1cbd"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hang-em-high-background.mp4",
+      "bytes": 2910293,
+      "sha256": "cd6882d1f9485ec35c080a366f06f632a1db3ac6175f26798d18ac54d0eea6ef"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hang-em-high-intro.mp4",
+      "bytes": 12445304,
+      "sha256": "604245d957ce8324ef2993a64fca1ad121d218eb860421a644352afbd323044e"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hell-to-pay-background.jpg",
+      "bytes": 178212,
+      "sha256": "b209c848faf258c6ee601736e2b8ea3fc04a82fa90de29eb131d9d6e755dab26"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hell-to-pay-background.mp4",
+      "bytes": 5306536,
+      "sha256": "f1f85af5792a8986439db7a1c9402754bf3d8a9b71d22c3c45201e64ca3ce9ea"
+    },
+    {
+      "path": "dist/assets/feature-scenes/hell-to-pay-intro.mp4",
+      "bytes": 6767241,
+      "sha256": "62f10dbc06567f7ddaeca6c5119c0de5f5f260ecbce066db981c6b38b82b0e32"
+    },
+    {
+      "path": "dist/assets/fifty-card.webp",
+      "bytes": 10830,
+      "sha256": "e31aa4a4e648e40f538f360d788a15245e46498739c733aee09e391e8b7dfa61"
+    },
+    {
+      "path": "dist/assets/ghost-town/backdrop.webp",
+      "bytes": 581128,
+      "sha256": "4f1cb6a599401f085b5fb1bda769ad01c26acb8ff9985bc2f8b013914cf18934"
+    },
+    {
+      "path": "dist/assets/ghost-town/brush-clean-plate.webp",
+      "bytes": 687194,
+      "sha256": "917640384891815a6fc612c05ce97bf39706059994219f94a393d2a75c485508"
+    },
+    {
+      "path": "dist/assets/ghost-town/brush-sprite-atlas.webp",
+      "bytes": 1263836,
+      "sha256": "c2e359a99976ded7ab544b020bf37f1fdc38f7321ff89b147b37f964601bee50"
+    },
+    {
+      "path": "dist/assets/ghost-town/foreground.png",
+      "bytes": 1618082,
+      "sha256": "aeb7d459e16102522ef989fafc650c0331de97f4852e94e8375820783a7dd919"
+    },
+    {
+      "path": "dist/assets/ghost-town/mist.webp",
+      "bytes": 68326,
+      "sha256": "ab6365142bd205585012b06d462a71a11ee49131fb5451c16bfa4e51057b8f9c"
+    },
+    {
+      "path": "dist/assets/ghost-town/saloon-reference.webp",
+      "bytes": 743704,
+      "sha256": "9e186d385a4653dff3bc974f006441c4f70120be8d36c92a6ca6b4fba76e611d"
+    },
+    {
+      "path": "dist/assets/guns.webp",
+      "bytes": 6780,
+      "sha256": "9154b4e103b539335b331500440662fbd554736cebfd6aeea8c574943e9c6f68"
+    },
+    {
+      "path": "dist/assets/hang-em-high/provenance.json",
+      "bytes": 398,
+      "sha256": "d041bb230e5a7ad9e14e4a23eea0b1a3c02c3e220b289ed9942f4ff376fce266"
+    },
+    {
+      "path": "dist/assets/hd/provenance.json",
+      "bytes": 511,
+      "sha256": "eb5e6cdf39e286c4429994c2aeac611584e7db208da08caf4bf070b5bced1c8a"
+    },
+    {
+      "path": "dist/assets/hd/stage.png",
+      "bytes": 2960468,
+      "sha256": "87caed711a58c4c466a0151c932034b0deae733181e85917cd794b7bdaeb7cc4"
+    },
+    {
+      "path": "dist/assets/hd/symbols.png",
+      "bytes": 2784747,
+      "sha256": "e68afe32bb09c065ee5f8a142b8b9005e985a5084e90a5df944ea69c425d9855"
+    },
+    {
+      "path": "dist/assets/hell-to-pay/ink-fire-atlas.png",
+      "bytes": 1042368,
+      "sha256": "8a17feee4cb215c47920d6460b21add107a5eec9a5339233f5be083709e84068"
+    },
+    {
+      "path": "dist/assets/hell-to-pay/rye-OFL.txt",
+      "bytes": 4393,
+      "sha256": "399b33eb38cdfc76b8665defa5f81d52e8193d630ad5858c893db6bc20031bc9"
+    },
+    {
+      "path": "dist/assets/hell-to-pay/rye.ttf",
+      "bytes": 183244,
+      "sha256": "b7edee5e615ae1b6b07e9d030c1309152bf3672a0e8a2a46293e273730f5adba"
+    },
+    {
+      "path": "dist/assets/ink-refined/foreground.webp",
+      "bytes": 305612,
+      "sha256": "50c8bd24ca6a28e8160201da55e56d3101e83240fb63bffa79626d57e51f7309"
+    },
+    {
+      "path": "dist/assets/ink-refined/frontier.webp",
+      "bytes": 373996,
+      "sha256": "60d4f26208ceeffceec190014926bbefdf53f05164c27032fb2740d5765e9123"
+    },
+    {
+      "path": "dist/assets/ink-refined/scatter-clean.webp",
+      "bytes": 1240552,
+      "sha256": "80a09ab851ebe19acb32df2cd2592a04435fb3aa48ca497ab2c8f395f2dd9670"
+    },
+    {
+      "path": "dist/assets/ink-refined/scatter.webp",
+      "bytes": 1607800,
+      "sha256": "6f0c66f23f10cfa5977274cb2ea6134a0c49371ed2834ae25f5e34dd9fb06457"
+    },
+    {
+      "path": "dist/assets/ink-refined/symbols.webp",
+      "bytes": 1961878,
+      "sha256": "be5f364c07913b89c1fff3e9f18c689d97371795ba00220fc7d4a899f5caa9a8"
+    },
+    {
+      "path": "dist/assets/ink-western/bounty-board-dark.webp",
+      "bytes": 31966,
+      "sha256": "60d38992f4dad308666eb5125b643d2bc6899366462e80410677feb6f922e033"
+    },
+    {
+      "path": "dist/assets/ink-western/boxed-wild.webp",
+      "bytes": 805468,
+      "sha256": "607288868a3dd001e61a5557e73235e247cf93d017fa7487f47a8fa5a007c5a3"
+    },
+    {
+      "path": "dist/assets/ink-western/brush.webp",
+      "bytes": 634752,
+      "sha256": "e783282f8868bbafcbaf56cf63c9f20140868caa9f55abf161e21971901078cc"
+    },
+    {
+      "path": "dist/assets/ink-western/crow.webp",
+      "bytes": 26116,
+      "sha256": "355c6d5fc76e9a20799b100ff9c1205424d833a89564e64f62479f424cfcb350"
+    },
+    {
+      "path": "dist/assets/ink-western/figure-0.webp",
+      "bytes": 1164304,
+      "sha256": "05d5a8f0bd8014e02177fd310508605787069316ca72b849d1ac9b39f441da9a"
+    },
+    {
+      "path": "dist/assets/ink-western/figure-1.webp",
+      "bytes": 1162646,
+      "sha256": "132b95c552a8ac130ceca050de5f5a52da4fdb169fec35936e2bdaf9e18e578b"
+    },
+    {
+      "path": "dist/assets/ink-western/figure-2.webp",
+      "bytes": 1118536,
+      "sha256": "9c257edf768dd04e0fc7c4d17198821267ee7fe343d9e661269bd0d8180df335"
+    },
+    {
+      "path": "dist/assets/ink-western/figure-3.webp",
+      "bytes": 1105974,
+      "sha256": "0c96489e350f62eea23f0fc7f498479fdaa84dcddf99f79089e0a835970eaf94"
+    },
+    {
+      "path": "dist/assets/ink-western/figure-4.webp",
+      "bytes": 1094492,
+      "sha256": "3e0514793eb8e1ffba08875ca64c20e88da54d3c231109e5ee7803b687a96262"
+    },
+    {
+      "path": "dist/assets/ink-western/foreground.webp",
+      "bytes": 277274,
+      "sha256": "6839bac13ff33283f065abf5c542a11b7d69c2d61c10f8b28b6c5628667f63b2"
+    },
+    {
+      "path": "dist/assets/ink-western/frame-bottom.webp",
+      "bytes": 78526,
+      "sha256": "e9d85616f4040f942b5fa5cb338c3d434a43d87c52e5aeb9718ab58df7f67ef2"
+    },
+    {
+      "path": "dist/assets/ink-western/frame-left.webp",
+      "bytes": 34924,
+      "sha256": "3e00d7d32c862051de46503d62c0bea5c68fb202b3ac5e9924a8a68b2a9cc89d"
+    },
+    {
+      "path": "dist/assets/ink-western/frame-right.webp",
+      "bytes": 42166,
+      "sha256": "cb28150f18361e9d6f0210b52dc8643f2a66708a9a3f8aeb8c46099403ec4ec5"
+    },
+    {
+      "path": "dist/assets/ink-western/frontier.webp",
+      "bytes": 690382,
+      "sha256": "c5dc38e537819959ff0fbc7329d8dc6de89484772d0e600076502127856e36a7"
+    },
+    {
+      "path": "dist/assets/ink-western/gunfighter-dead.webp",
+      "bytes": 675152,
+      "sha256": "fc1307361a99803c7c9f22e698ab74ea7e12c0b4b03e7c50170c8bbffb35bd12"
+    },
+    {
+      "path": "dist/assets/ink-western/gunfighter.webp",
+      "bytes": 719476,
+      "sha256": "d69abeb186d6b195380dfd69f64caa1c3417f1b10d5a1212e216f24a01b48fa3"
+    },
+    {
+      "path": "dist/assets/ink-western/max.webp",
+      "bytes": 830102,
+      "sha256": "0596d1b2f84a8f32903f925ca8758ba864aaa6475b4764a8f275995b700ea617"
+    },
+    {
+      "path": "dist/assets/ink-western/poster-knife.webp",
+      "bytes": 401192,
+      "sha256": "551d1aad330115ec9addf86be23adb9c0ae6efde158822105d1b7c02f20fe456"
+    },
+    {
+      "path": "dist/assets/ink-western/ringleader-dead.webp",
+      "bytes": 685196,
+      "sha256": "b38b5f85a6f3ca9cd024e280e77017990a5dda6365b90db5a4fd1b2d27425fed"
+    },
+    {
+      "path": "dist/assets/ink-western/ringleader.webp",
+      "bytes": 721868,
+      "sha256": "1910981845e80640a0defd2e950d5259e3d9b6b64a82fd37d3e382eaeb02868f"
+    },
+    {
+      "path": "dist/assets/ink-western/rustler-dead.webp",
+      "bytes": 686496,
+      "sha256": "b52bcb1c07e0596f30d7e870382d7826eb05f0c856da87c4b315e06d8bc96b01"
+    },
+    {
+      "path": "dist/assets/ink-western/rustler.webp",
+      "bytes": 703454,
+      "sha256": "4708cdf18c9e3abfeb117774bcef6bdfd32db0f2d9a3ba5ea307c26dd03f4973"
+    },
+    {
+      "path": "dist/assets/ink-western/scatter-clean.webp",
+      "bytes": 660580,
+      "sha256": "c7e85e28b65b87e0c318401de196fad356b5a7629cd94d537a6571dae32b1534"
+    },
+    {
+      "path": "dist/assets/ink-western/scatter.webp",
+      "bytes": 667698,
+      "sha256": "be95b7708fc3b31265bab36ccec1a70fa07f52f2bf7ffe1c7b19b519ab8b83e2"
+    },
+    {
+      "path": "dist/assets/ink-western/skull-hat.webp",
+      "bytes": 33344,
+      "sha256": "ddfdb72708531861335386ac0e3442f9c35bf195f70f0858d408daf419ecd351"
+    },
+    {
+      "path": "dist/assets/ink-western/skull-right.webp",
+      "bytes": 18194,
+      "sha256": "e80ed7fae945ac5dc6a4624c85a384c5a05d95fb293a707b989c599ad2ac52b7"
+    },
+    {
+      "path": "dist/assets/ink-western/symbols.webp",
+      "bytes": 844628,
+      "sha256": "df56c8f0fea649a6cfe1f2b6d39a68ffba0f3b4d3d2cd5d14de0c5025701b401"
+    },
+    {
+      "path": "dist/assets/ink-western/title.webp",
+      "bytes": 100616,
+      "sha256": "c75b2c05621f11cc9a370fad3639e9bb1cf54d70347d76c6b154864d4037dcc7"
+    },
+    {
+      "path": "dist/assets/ink-western/tnt.webp",
+      "bytes": 982402,
+      "sha256": "9a9c46c4a383e238ca54766f5634d139bf50cacc8e3af620f2bfb892815c02f2"
+    },
+    {
+      "path": "dist/assets/intro/intro.mp4",
+      "bytes": 2377041,
+      "sha256": "8bc06b04c025a67ac796f93434960fb455f27504d66d8ff5ee35e2ec3e1fee75"
+    },
+    {
+      "path": "dist/assets/intro/intro.webm",
+      "bytes": 1859359,
+      "sha256": "b1b0e205064667030f4274623df71bc4575271bd8d82f37b0743f6bb0d8e28f0"
+    },
+    {
+      "path": "dist/assets/intro/poster.jpg",
+      "bytes": 112238,
+      "sha256": "23663cfb5a4c355dae31348cf13ba88f6c3d50a8cefd2f5796ecf41c7ed078a4"
+    },
+    {
+      "path": "dist/assets/j.webp",
+      "bytes": 8150,
+      "sha256": "e4e3d3baaec899c1dc4147c30748855b6d74f3d5f65f529d2e69409a907b5f5a"
+    },
+    {
+      "path": "dist/assets/k.webp",
+      "bytes": 5544,
+      "sha256": "3bb3c546a5b35fc293d4fc0ea6ffc73ad5480f194f509e2af260ed3d70f847ff"
+    },
+    {
+      "path": "dist/assets/man-1.webp",
+      "bytes": 22354,
+      "sha256": "ca801c58fa39ec80dda741332cefa1482afcf88901b84f99c7a8a638a69d7c38"
+    },
+    {
+      "path": "dist/assets/man-128.webp",
+      "bytes": 20244,
+      "sha256": "6e266ed0b5d260b4441867df8874268cdc9a2bae9a44e5401e5c04673d270394"
+    },
+    {
+      "path": "dist/assets/man-16.webp",
+      "bytes": 20754,
+      "sha256": "aa7b4e1b8fdd696e3c7c9146af10fd8167996eb24702dbd6ea03b64b62774771"
+    },
+    {
+      "path": "dist/assets/man-2.webp",
+      "bytes": 21148,
+      "sha256": "a537c2449ddc6782bbba9871e377d364b8b4736ce1378ab4ba5fbf7a69af9e53"
+    },
+    {
+      "path": "dist/assets/man-3.webp",
+      "bytes": 19864,
+      "sha256": "868ac4380115f4064e6fa5905d00cb134c659f1ef7963c2239cc6a2db72c41f8"
+    },
+    {
+      "path": "dist/assets/man-32.webp",
+      "bytes": 20482,
+      "sha256": "aab50e035973c3ca578237839c786d3dc77e4845080c6e5c5017208d19bf0057"
+    },
+    {
+      "path": "dist/assets/man-4.webp",
+      "bytes": 20634,
+      "sha256": "654adc7e9522ae91ba8b687bc83a8667096c20baf015bc0ccdd2f1429ddb0452"
+    },
+    {
+      "path": "dist/assets/man-64.webp",
+      "bytes": 20958,
+      "sha256": "aae8bba990a38d85fb5a4b94c992ec6a17eee7f76426ee2c8d2b2c2e81aae16e"
+    },
+    {
+      "path": "dist/assets/man-8.webp",
+      "bytes": 20486,
+      "sha256": "1a9aea296dfa43b4c5eadeb8a1d9789163890ace13ba54f367e487295a40b4af"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-0.webp",
+      "bytes": 1257742,
+      "sha256": "ff17d8f2317b97197fa894ac1f43cdd8abd0f3713ea1c21aa9be63fe7a680501"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-1.webp",
+      "bytes": 1255984,
+      "sha256": "50416b5a828896a0f329f0295a02e4ca6ed1f9e8116bdb9f9b1f23469598db9a"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-2.webp",
+      "bytes": 1243256,
+      "sha256": "217271cd92bcd8b39f39262052fa968d1372eb704fc221e957b60f24adcd58be"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-3.webp",
+      "bytes": 1425618,
+      "sha256": "f6c7df79ca4c1f853c0d2553542b548de8e51d00fb29cac4c3516461532e7690"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-4.webp",
+      "bytes": 2080882,
+      "sha256": "ee235bd4a8012310d2da15fb16d04c4c19d2f969b9c57baf89b2fbdb147760f8"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-5.webp",
+      "bytes": 2468052,
+      "sha256": "3de3443d70adda19ca891c545e761fd9391b7d9c7be0c256aa6019fefa9de68a"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight-6.webp",
+      "bytes": 256144,
+      "sha256": "4d53dca82da5d84e7c6dd906153d1ef6f84bc095844d7d95b72b22cd48393495"
+    },
+    {
+      "path": "dist/assets/max-win/coin-flight.json",
+      "bytes": 7141,
+      "sha256": "781cfb52765909be40028b4d3eb1c6110c27b2ab4aa82a70fe91e6f3395098e9"
+    },
+    {
+      "path": "dist/assets/max-win/title.png",
+      "bytes": 2877092,
+      "sha256": "b3ed1ca4b36e8e2b139a3ce471c3f26d6c8d61d068ce3d6fb3d033123de2844c"
+    },
+    {
+      "path": "dist/assets/modes/all-in-last-stand.jpg",
+      "bytes": 214764,
+      "sha256": "890daabd513a40a7918cde5513c48c0cc4b7079ffdf996c2c1ee76105ef46447"
+    },
+    {
+      "path": "dist/assets/modes/all-in-last-stand.mp4",
+      "bytes": 2319877,
+      "sha256": "7390850723060fbee86d4af4fdac4449c7b51a025a6098f0322314e4b85c9c37"
+    },
+    {
+      "path": "dist/assets/modes/trickster-copper-frontier.jpg",
+      "bytes": 375924,
+      "sha256": "26bcefca0e513fd94b9fded4cc6a5b0346d260eb169a6c49abe2e76732739b46"
+    },
+    {
+      "path": "dist/assets/modes/trickster-copper-frontier.mp4",
+      "bytes": 6430787,
+      "sha256": "3152fe0d04b32497e986904434ebaa0e14d677ad0560733958b9ba5449894a52"
+    },
+    {
+      "path": "dist/assets/music/blood-money.flac",
+      "bytes": 6843533,
+      "sha256": "6ce80bbe1893c6368632120dd073e62b86cb6b41f58799f6e21945d1403a5c75"
+    },
+    {
+      "path": "dist/assets/music/last-stand-at-dusk.flac",
+      "bytes": 5219145,
+      "sha256": "ce350bebaf53ababc023e1c8846409c8ecdc48d8606c85b5e7251e9034fa4e7e"
+    },
+    {
+      "path": "dist/assets/music/theme.mp3",
+      "bytes": 2747348,
+      "sha256": "e919c358a425c168b69aec3f97564a68cb140df8b7bfa27785f5a9c8574e1089"
+    },
+    {
+      "path": "dist/assets/nudge-0.mp4",
+      "bytes": 254885,
+      "sha256": "e8c4e4e699b8994def411fac67693b127e6ccb1e502c788e4336381a5d5ccae0"
+    },
+    {
+      "path": "dist/assets/nudge-1.mp4",
+      "bytes": 311760,
+      "sha256": "c696a6d21328554a02f51769b681faef557cae44888ad3ac74a998e665f6990e"
+    },
+    {
+      "path": "dist/assets/nudge-2.mp4",
+      "bytes": 266431,
+      "sha256": "12044e4435b45ae904ff7d41372bfa0de78006ecb768c1b9381e2d159da46f6f"
+    },
+    {
+      "path": "dist/assets/nudge-card.webp",
+      "bytes": 10336,
+      "sha256": "204ddf56174d1e62830b92ddb1dbf49813b69fb2cdd2733b8c29298f1d17ba3c"
+    },
+    {
+      "path": "dist/assets/outlaw-card.webp",
+      "bytes": 7528,
+      "sha256": "ca04c6904ad1a601455cc205e401212a36af3db4bd81dfb09b630a7cc0e238fa"
+    },
+    {
+      "path": "dist/assets/outlaw-hanging/outlaw-original.png",
+      "bytes": 2500111,
+      "sha256": "1a805b69e7373300dee2a2f21a664e264198be0f511539908644f1a709b1a55c"
+    },
+    {
+      "path": "dist/assets/outlaw-hanging/reel-clean-plate.png",
+      "bytes": 2537982,
+      "sha256": "05229e024f5d6a9ba26e49e1917f587be491be4bae227f90f7d5218528fec21e"
+    },
+    {
+      "path": "dist/assets/outlaw-super-card.webp",
+      "bytes": 8546,
+      "sha256": "fb258277217b35b5b8ea2c5d1175910cc864cc5136c828bae78466a4064444f6"
+    },
+    {
+      "path": "dist/assets/payout/cowboy-rig.json",
+      "bytes": 521,
+      "sha256": "b5a529b0eceebc979b9538ee7dd258966833841177ea501d97f74ad39644d082"
+    },
+    {
+      "path": "dist/assets/payout/cowboy-rig.png",
+      "bytes": 849300,
+      "sha256": "22dfbe7d8ade90e9202c9bc763460aaa2ff1b2781a0612b0e0368bbbb3ab473c"
+    },
+    {
+      "path": "dist/assets/provenance.json",
+      "bytes": 801,
+      "sha256": "5abfbaaafe6db860d7a4ec46dc9ff16b529022c42a3d6d028d58bbed93a96e80"
+    },
+    {
+      "path": "dist/assets/q.webp",
+      "bytes": 5550,
+      "sha256": "fe80533a605e18d346f68551c6919aa461d3d9f3d1cb4d3ad16d1ecab893bcd7"
+    },
+    {
+      "path": "dist/assets/reactions/liquid-engraving.png",
+      "bytes": 420245,
+      "sha256": "73a566a78681f76cda5f766cc9a6f4788541269da3150aead4efb3478235c1c5"
+    },
+    {
+      "path": "dist/assets/reel-frame/approved-skull-frame.png",
+      "bytes": 3908973,
+      "sha256": "b18c107df4f934dc53d8f692e36bc41bde640f4dfff49f2eb47247ea63d0e859"
+    },
+    {
+      "path": "dist/assets/reel-frame/knife-skull.png",
+      "bytes": 1615649,
+      "sha256": "1c7709bc6046c6fd66a20e562e945844651281a4ba7e4a49b1b2e577932b8927"
+    },
+    {
+      "path": "dist/assets/reel-frame/wood-and-brass.png",
+      "bytes": 2311853,
+      "sha256": "f5c34e9946f7517be77f8b89f457e0514045de90e8621f677c4d9c6aac2c9453"
+    },
+    {
+      "path": "dist/assets/reference.mp4",
+      "bytes": 13832666,
+      "sha256": "23a575de83217b13d0f3634c3452401fb6df08acf772694b7cfe793575c30496"
+    },
+    {
+      "path": "dist/assets/rokkitt-OFL.txt",
+      "bytes": 4483,
+      "sha256": "31501a9490dce395cdb40015237d3684186b79f81dd6a31442d669eb7da81066"
+    },
+    {
+      "path": "dist/assets/rokkitt.ttf",
+      "bytes": 133344,
+      "sha256": "737b2881d2e98f85424b473ab049da3216289a1f84266becb972c87664de2b40"
+    },
+    {
+      "path": "dist/assets/rope-1.webp",
+      "bytes": 22458,
+      "sha256": "a3315bfb0f4e88271a987ac4fc65194410148b7a78fa5e532343bc312defaf82"
+    },
+    {
+      "path": "dist/assets/rope-2.webp",
+      "bytes": 22856,
+      "sha256": "6e4eca5345f34ddf6a1b1fddfc78fb2e5c2b9ec51ffbb632b0a258b1eb0951e7"
+    },
+    {
+      "path": "dist/assets/rope-3.webp",
+      "bytes": 22168,
+      "sha256": "d316538bbd019151d7ea8ad9abd6f94b272937b476450843631ee71f40c4bf2d"
+    },
+    {
+      "path": "dist/assets/rye-OFL.txt",
+      "bytes": 4393,
+      "sha256": "399b33eb38cdfc76b8665defa5f81d52e8193d630ad5858c893db6bc20031bc9"
+    },
+    {
+      "path": "dist/assets/rye.ttf",
+      "bytes": 183244,
+      "sha256": "b7edee5e615ae1b6b07e9d030c1309152bf3672a0e8a2a46293e273730f5adba"
+    },
+    {
+      "path": "dist/assets/scatter.webp",
+      "bytes": 8354,
+      "sha256": "f292b20494143728c12c535948b11cc9dc81b45d3abe2ee3d084b3e0580d798b"
+    },
+    {
+      "path": "dist/assets/scatters/condemned-headless.png",
+      "bytes": 2309701,
+      "sha256": "22ab9e2cadc7bd9a260f36316b1890a21c0103788ee107930cbba873720a3c4f"
+    },
+    {
+      "path": "dist/assets/scatters/condemned.png",
+      "bytes": 2830795,
+      "sha256": "6819e6007ff29b8e87fa319f4acacd7b158df9f05f3891fcfbec603c587c036f"
+    },
+    {
+      "path": "dist/assets/screen-shootout/figure-0.webp",
+      "bytes": 1324304,
+      "sha256": "821d4e3df2d9f1bf452f924e8c0d6f072b75e51f8298280324489834c9bbadf1"
+    },
+    {
+      "path": "dist/assets/screen-shootout/figure-1.webp",
+      "bytes": 1318380,
+      "sha256": "c6bf8c899edc30027d19a819764188ab7f438f6ce8a264f1156ad50862b47b3c"
+    },
+    {
+      "path": "dist/assets/screen-shootout/figure-2.webp",
+      "bytes": 1279472,
+      "sha256": "461d563d665694f2973648d3a056578384e50efc5b3c48be7d640db788804215"
+    },
+    {
+      "path": "dist/assets/screen-shootout/figure-3.webp",
+      "bytes": 1255038,
+      "sha256": "bbdf2f6d86919bbd0ab5437a20f6cd8e761a8820a1ae704b37748263764b4491"
+    },
+    {
+      "path": "dist/assets/screen-shootout/figure-4.webp",
+      "bytes": 1251526,
+      "sha256": "f78bd8eb7c3e1c2f1eecf4314954c4cbde94aceb12b79b2acc9b32fd9861bb85"
+    },
+    {
+      "path": "dist/assets/screen-shootout/glass.webp",
+      "bytes": 490036,
+      "sha256": "6b34e9df68183753a0248da6dbe56009b065512f60b788e9440f78742dc44bf8"
+    },
+    {
+      "path": "dist/assets/screen-shootout/screen-shootout.json",
+      "bytes": 8840,
+      "sha256": "ff18ed136f078f93c7c38f8ec78628af9dffa281218f456c4ab4fdd5f1668d50"
+    },
+    {
+      "path": "dist/assets/sfx/blood-spill.wav",
+      "bytes": 394006,
+      "sha256": "a8038a3f99ef847970affec94ea0c9c8764a6b225d9e2624f6550f4f88a13eda"
+    },
+    {
+      "path": "dist/assets/sfx/crow-calls.wav",
+      "bytes": 180888,
+      "sha256": "d788116b08c532266c231310aa6b504abb41a6b70ee1fcc4aaea0d017b6a8488"
+    },
+    {
+      "path": "dist/assets/sfx/feature-start-blood-money.wav",
+      "bytes": 3476218,
+      "sha256": "6270e18f93544ecdf546f95faedb81906a11f592c695d059a7845ecfa1aba93f"
+    },
+    {
+      "path": "dist/assets/sfx/feature-start-hang-em-high.wav",
+      "bytes": 3857654,
+      "sha256": "b4ec56f0909ade45ee9cac629d75f205119730c2500daf4bbab1ff4c31578aa7"
+    },
+    {
+      "path": "dist/assets/sfx/feature-start-hell-to-pay.wav",
+      "bytes": 3675464,
+      "sha256": "983914aad1fb8a09942529882f061d1888d02b237124963046b507964ba4abf6"
+    },
+    {
+      "path": "dist/assets/sfx/gunslinger-shot.wav",
+      "bytes": 768078,
+      "sha256": "9effc096aa6aa4f9a75e55ad2a9e1078b6af8a6e65b3dc2f4b7355c555e9dc0e"
+    },
+    {
+      "path": "dist/assets/sfx/gunslinger-thunder.wav",
+      "bytes": 384078,
+      "sha256": "59d39e091cd74979590efc6dd3b496bc2f837fa423660cd0a756e6477d73be8e"
+    },
+    {
+      "path": "dist/assets/sfx/holster-draw.wav",
+      "bytes": 53294,
+      "sha256": "95751f6750870708efb3c9a820a330e32c619c7a6aad70fd6cc3b3cd926da067"
+    },
+    {
+      "path": "dist/assets/sfx/max-win.wav",
+      "bytes": 1136684,
+      "sha256": "bc87c6dae38bc00d326e2c82344a3559be43e3234cbf646b992b7c379c8e522e"
+    },
+    {
+      "path": "dist/assets/sfx/reel-spin.wav",
+      "bytes": 165894,
+      "sha256": "b7bdc2874126dd9fe82144c2369fbed8fdeb3f805b6add6d664140551e7e5a29"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-1.wav",
+      "bytes": 17684,
+      "sha256": "ca2af473bb3cd4a8934a5129f030d0d726846f1df0d758d8598445366ef6d107"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-2.wav",
+      "bytes": 17684,
+      "sha256": "989524b4e0904b7898d7a76b95f17396159942aa54cc8d03d55cd7093e48602e"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-3.wav",
+      "bytes": 17684,
+      "sha256": "846f337113b7e5d50b73093fa6b9b31456361d73822ce9bc6f3091c0d4ed5166"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-4.wav",
+      "bytes": 17684,
+      "sha256": "724c5df9fa42d4939be98efe2abb0c861cb349c8e6407ac6ef155a30aa40f1e6"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-5.wav",
+      "bytes": 17684,
+      "sha256": "a78471139630c0b61892dbadaa4b811f5831cd76a17d33059daa77f27f897397"
+    },
+    {
+      "path": "dist/assets/sfx/reel-stop-6.wav",
+      "bytes": 17684,
+      "sha256": "96f5bf53f4c9301eea2dd55cf6d5b7fc2da5c397aac18d9a750b251e7ff0eedc"
+    },
+    {
+      "path": "dist/assets/sfx/revolver-shot.wav",
+      "bytes": 134118,
+      "sha256": "8f85c595150afe5eb4975970684fa452fde0efd0a531801da6edaf6f9c6fc134"
+    },
+    {
+      "path": "dist/assets/sfx/scatter-anticipation.wav",
+      "bytes": 499244,
+      "sha256": "17f1e7d37b06ef4e60a99016844bf87a3c324ff0cb99fca779892fc47ef3ba02"
+    },
+    {
+      "path": "dist/assets/sfx/scatter-drop.wav",
+      "bytes": 318614,
+      "sha256": "0d335cf8070c52f616814e4f3385d059019177384fa140b7fcfa39862d453da9"
+    },
+    {
+      "path": "dist/assets/sfx/shootout-cock.wav",
+      "bytes": 18160,
+      "sha256": "929b9c5cc7ae95f1c3b6cc5809d44b91df82ffe382cd27013d87f8c701e63af4"
+    },
+    {
+      "path": "dist/assets/sfx/shootout-draw.wav",
+      "bytes": 39768,
+      "sha256": "017d13752bc87c62f4af1dfd6c72c32ae10dd7017014371d7145a0fdeec0c31f"
+    },
+    {
+      "path": "dist/assets/sfx/western-scatter.wav",
+      "bytes": 576078,
+      "sha256": "64630c596a473f56a6b48cc49dc6fe68ac64febef327ab8eb459b55595c334ce"
+    },
+    {
+      "path": "dist/assets/sfx/wild-click.wav",
+      "bytes": 38886,
+      "sha256": "dc8895f5a1b8fcbfad6acf14fe18278ecff8175e17843fb49044d5e7a1fb0dd0"
+    },
+    {
+      "path": "dist/assets/sfx/wild-impact.wav",
+      "bytes": 13748,
+      "sha256": "3190e6bd8f752aa9cd94ef8884d35175d4ad4e7e7a92f0df11123e0cddf5b4d5"
+    },
+    {
+      "path": "dist/assets/sfx/wild-rip.wav",
+      "bytes": 30066,
+      "sha256": "3bc776ba854d561df952d3e42ab3951c7cefc738dae92ed8014ab1350eccf2d6"
+    },
+    {
+      "path": "dist/assets/sfx/wild-slam.wav",
+      "bytes": 511604,
+      "sha256": "91e771c87b1280b75e40b5121906087376b5e932bc09e1729ce4d0eb21047f91"
+    },
+    {
+      "path": "dist/assets/sfx/wild-stamp.wav",
+      "bytes": 39238,
+      "sha256": "fdf0dc21b9aaa2b8e072516c3dcd96a32c5897206b1250cda071dd290ebef455"
+    },
+    {
+      "path": "dist/assets/sfx/wild-tension.wav",
+      "bytes": 14190,
+      "sha256": "0304922a97a3c7cf9596b975b332a089e9fd58507a64d35289df44403a210cd1"
+    },
+    {
+      "path": "dist/assets/shootout/sheet-0.webp",
+      "bytes": 454694,
+      "sha256": "e34a469b8a2a7365e0845c0fea9a903f286c6717eedb15bfafeee56a38073c32"
+    },
+    {
+      "path": "dist/assets/shootout/shootout.json",
+      "bytes": 14015,
+      "sha256": "155b0ffe3649f95f82eebecccafdaf945dec9d4aeb23616ecf6dd39f0248300a"
+    },
+    {
+      "path": "dist/assets/shop/all-in-card.webp",
+      "bytes": 148462,
+      "sha256": "d8890ef41656a13613a9e525b34dcede2598853ecc4c08c68c3e6518e246b1cf"
+    },
+    {
+      "path": "dist/assets/shop/all-in-spin.webp",
+      "bytes": 111142,
+      "sha256": "74d11e77c0c4937edfdece1cbf89e5b459219dca4c505bafe6bd0ec394fa1cf7"
+    },
+    {
+      "path": "dist/assets/shop/approved-buy-menu.png",
+      "bytes": 3449399,
+      "sha256": "2317b0932d92dce7ee775b29bceba71e769321249c244e83c3abddb9e9485097"
+    },
+    {
+      "path": "dist/assets/shop/blood-money-card.webp",
+      "bytes": 161464,
+      "sha256": "082693357b13fd1d170c6070bd00565377c237567a770c3e65536f9459df7f9b"
+    },
+    {
+      "path": "dist/assets/shop/blood-money-ink.webp",
+      "bytes": 154632,
+      "sha256": "0329deabe6ebc600e5533e0a8f7189d31a361c8144f890d9fcdcb15d73182d4f"
+    },
+    {
+      "path": "dist/assets/shop/blood-money-woodcut.png",
+      "bytes": 1658074,
+      "sha256": "5057e3445133d1810cf393e5f432396e3b8f77e1ce1dfb587d32a5bf883f38f0"
+    },
+    {
+      "path": "dist/assets/shop/blood-money.webp",
+      "bytes": 69102,
+      "sha256": "3e25572ba59bdd7ea785649ae171c6e03d7c3bbfede86d5427eb591703273b6b"
+    },
+    {
+      "path": "dist/assets/shop/bounty-booster-card.webp",
+      "bytes": 140766,
+      "sha256": "869b23401a1de0113e0d174d290840ed8adc9f118e46af76a2f8e63d2e2f6b7d"
+    },
+    {
+      "path": "dist/assets/shop/bounty-booster.webp",
+      "bytes": 65678,
+      "sha256": "7514613373d75827af389dc5ecc2e4daaca9e198039d07e5fab952deead53e53"
+    },
+    {
+      "path": "dist/assets/shop/double-cross-card.webp",
+      "bytes": 176804,
+      "sha256": "b249e0b80db3ed15cf21f6dcaad62470c6d5e140022f1c1324f504240b052265"
+    },
+    {
+      "path": "dist/assets/shop/grain.png",
+      "bytes": 32318,
+      "sha256": "4dafa78b14bdc62b996532463bffdcb56bb81af1fbeb13cf7bbb148d005507a7"
+    },
+    {
+      "path": "dist/assets/shop/hang-em-card.webp",
+      "bytes": 181084,
+      "sha256": "779c7503fe642a53f1f0a9ad5c82825897959853b5b6769acb241018bc04465f"
+    },
+    {
+      "path": "dist/assets/shop/hang-em-high-print.png",
+      "bytes": 1179975,
+      "sha256": "a36d2c1cf1fd549b4228d34e5a56bb049e7279190cad588827b9e9f5a2eed066"
+    },
+    {
+      "path": "dist/assets/shop/hang-em-high-woodcut.png",
+      "bytes": 545324,
+      "sha256": "d91d2c4b82f786330217c70314eadcdc8cd1e98ad9e04ccf9f86701dfe153f09"
+    },
+    {
+      "path": "dist/assets/shop/hell-to-pay-card.webp",
+      "bytes": 155604,
+      "sha256": "c0c554aa75bdc0d9ba218f8c945057ea50e3145bbd8703eb376451b189f4a580"
+    },
+    {
+      "path": "dist/assets/shop/hell-to-pay-woodcut.png",
+      "bytes": 1360625,
+      "sha256": "9944f2d40eb86aba5b81ff587fdeae1bfa2602a4b4ae35f86f33e97ee2948a2d"
+    },
+    {
+      "path": "dist/assets/shop/hell-to-pay.webp",
+      "bytes": 71498,
+      "sha256": "bdf5a88be54a62d559d07bd4f46693739d4025766a60132b28eea830573ae691"
+    },
+    {
+      "path": "dist/assets/shop/letterpress-paper.png",
+      "bytes": 2649376,
+      "sha256": "5ea4eff7374114f8f500a824e340eb723fbb974a2a7c741ac64139b0f98026c4"
+    },
+    {
+      "path": "dist/assets/shop/no-mercy.webp",
+      "bytes": 69560,
+      "sha256": "dbc0093fa714d76c4ebbfe731737d97d41759093cc9adead74e64f38a70d25d9"
+    },
+    {
+      "path": "dist/assets/shop/outlaw-spin.webp",
+      "bytes": 33538,
+      "sha256": "848a3bea8e103a7b7a99b3c18fb120ba2374c0d31f1d22528f12d8cfdc2b0ef5"
+    },
+    {
+      "path": "dist/assets/shop/trickster-buy-menu.png",
+      "bytes": 2853374,
+      "sha256": "57f6e3cb4c54c8da918e29021589965b4aeb09dfca1ff7d1c9d616fa6ce9f1f7"
+    },
+    {
+      "path": "dist/assets/skull.webp",
+      "bytes": 8884,
+      "sha256": "18189f0beb17e986bc2b0fb1ff3feecfbc25bab82cc5f795b9ba9be93306648e"
+    },
+    {
+      "path": "dist/assets/snap-0.mp4",
+      "bytes": 41395,
+      "sha256": "ca798efbd53facddfb4fce434c7921562dd12be9b3dae50602b875018da2b02a"
+    },
+    {
+      "path": "dist/assets/snap-1.mp4",
+      "bytes": 157555,
+      "sha256": "fff7ac8323adfe2175f85806db99e7dd6135f7a0bd1b36cbe65033fc7e8e4923"
+    },
+    {
+      "path": "dist/assets/snap-2.mp4",
+      "bytes": 213448,
+      "sha256": "09dee37297d5de284c5b9986c8e14e41727896d4178c9bb14c6e1f5149a27dce"
+    },
+    {
+      "path": "dist/assets/star.webp",
+      "bytes": 7354,
+      "sha256": "486165444298d44bdb827b104a12245520f8409df02328316e48976166598442"
+    },
+    {
+      "path": "dist/assets/super-card.webp",
+      "bytes": 10602,
+      "sha256": "4c8a7f8febe11aaeddc572fa10096fb35418f2bdd6645c4081623d5e5a537b0a"
+    },
+    {
+      "path": "dist/assets/ten.webp",
+      "bytes": 8260,
+      "sha256": "dbc39add0f83fa09bc12761ad1465b092292501984cf038197e9ca6063a3f7fc"
+    },
+    {
+      "path": "dist/assets/tokens/max.png",
+      "bytes": 3955117,
+      "sha256": "7ef9e26567827ff9534e6b978123c5a2e110e4354830541f6be81d1ae639ec68"
+    },
+    {
+      "path": "dist/assets/top.webp",
+      "bytes": 27330,
+      "sha256": "d82ff80c88dd40cb99e00493461a7f322e3a8f7f59fc6e5fd1183561ec6f0268"
+    },
+    {
+      "path": "dist/assets/ui/godless-crow.png",
+      "bytes": 852414,
+      "sha256": "7c2bb33e8e680837b2e43b25fcddebce52b7b84b0fa32d9b9db132ad3e6908a1"
+    },
+    {
+      "path": "dist/assets/western.otf",
+      "bytes": 100984,
+      "sha256": "e0ad81923bc6d85d5426f796217c87963ca1ae3c65e22c87a25b6c6353de299e"
+    },
+    {
+      "path": "dist/assets/wilds/boxed-wild.png",
+      "bytes": 4241680,
+      "sha256": "49a50530ebc19114df5b063a53b9e4e6a8d5a9906c235720e7e6d42a01cc6904"
+    },
+    {
+      "path": "dist/assets/win-shots/first-person-loud.wav",
+      "bytes": 288102,
+      "sha256": "5973c673f3797c8541f57797154265f15693879114c385a2b9f3589b1f1d66dc"
+    },
+    {
+      "path": "dist/assets/win-shots/impact-0.wav",
+      "bytes": 13962,
+      "sha256": "49d4048a8701f9889b07b223412ba5f7934e73c9bf82d031b41f5157ec9990d9"
+    },
+    {
+      "path": "dist/assets/win-shots/impact-1.wav",
+      "bytes": 13962,
+      "sha256": "d5108db03410bc1ce94c29907ee93acd0501013e520427dc4a2a96ceb6902257"
+    },
+    {
+      "path": "dist/assets/win-shots/m2-browning-fast.wav",
+      "bytes": 267450,
+      "sha256": "51e122e48f2ad120b617edc4935680cf59b9cf3b5e28b7fb7d7ec5add276b469"
+    },
+    {
+      "path": "dist/assets/win-shots/provenance.json",
+      "bytes": 880,
+      "sha256": "3069969f77879d54f2013836d77246ddb200a77f015556e3711bf70ad946826b"
+    },
+    {
+      "path": "dist/assets/win-shots/shot-0.wav",
+      "bytes": 30764,
+      "sha256": "08d3b2cba9ae7f6c08b4ac0505772b5e5613f64e989f0858d37d99e5b0c9c6b0"
+    },
+    {
+      "path": "dist/assets/win-shots/shot-1.wav",
+      "bytes": 30764,
+      "sha256": "a0532a2d35a34e4247dcdbc1e5a60be2963ce4e71164bb8c4dc8a253f6022249"
+    },
+    {
+      "path": "dist/assets/win-shots/shot-2.wav",
+      "bytes": 30764,
+      "sha256": "d3c72da889df39322e9a71a76ef4b65fd394926d0c37dfe64b15caf1ec9c58b7"
+    },
+    {
+      "path": "dist/assets/win-shots/thompson-provenance.json",
+      "bytes": 566,
+      "sha256": "ade60633211dfaecaeea5a84c9afe6ccc26b658d4f260f9f54b83fca923e12f9"
+    },
+    {
+      "path": "dist/assets/win-shots/thompson-win-burst.wav",
+      "bytes": 392108,
+      "sha256": "ef883459e1fc52c33d034aa33d05a4990c3d3e9f6bf48a5021283c94f0396f5f"
+    },
+    {
+      "path": "dist/big-win.js",
+      "bytes": 12480,
+      "sha256": "a06861d87ecd9d33df8b8160264aef22cffd36d2d353981948e2749b09c030c8"
+    },
+    {
+      "path": "dist/blood-artwork.js",
+      "bytes": 4311,
+      "sha256": "af216d265fdeb9a5e6f5075e4583f01b15f95005bce831e2d6065461a1ba3bd6"
+    },
+    {
+      "path": "dist/blood-audio.js",
+      "bytes": 2149,
+      "sha256": "d5821af70b9f198661308c9f623bf9d4276bc4a017a1c73fb3cad346086c791b"
+    },
+    {
+      "path": "dist/blood-bank.js",
+      "bytes": 9086,
+      "sha256": "496893863d51a6ea6e6060d7d587f00cd42ee7154576a1c7d2699b47ddf75938"
+    },
+    {
+      "path": "dist/blood-bounty.js",
+      "bytes": 3776,
+      "sha256": "92e57b1eef31cec8f980add6e65410fc6660370e5f526075296d60c1be354a77"
+    },
+    {
+      "path": "dist/blood-briefing.js",
+      "bytes": 2527,
+      "sha256": "cb6ae9f5fc8babdf254cf2e436cad76184ce490b178052f4f3011412591e3c7b"
+    },
+    {
+      "path": "dist/blood-capture.js",
+      "bytes": 3555,
+      "sha256": "e56086952c8f9cec9fb3f0f212c092c1f5e7ecb01619f57cee4c3fa66c37d27b"
+    },
+    {
+      "path": "dist/blood-catalog.js",
+      "bytes": 150413,
+      "sha256": "b9f459f258c3064e8a587926708ea414bd7fb70785dc188aebef31cb97b1d34b"
+    },
+    {
+      "path": "dist/blood-cinematic.js",
+      "bytes": 5417,
+      "sha256": "4b39dc28b486a22f946d94edd405572b42a4d2c4bb82b608bba363a6500bbc5f"
+    },
+    {
+      "path": "dist/blood-contract.css",
+      "bytes": 3838,
+      "sha256": "ae948b7a9046dd64d79141230d9fc9edcd589ca67a97a6b15fde4a883bb6d50f"
+    },
+    {
+      "path": "dist/blood-contract.js",
+      "bytes": 8935,
+      "sha256": "88548304f0d05636874546ec2ca9f8c05d450eb0858dea8b0a3f86ebbc6db622"
+    },
+    {
+      "path": "dist/blood-intro.js",
+      "bytes": 2824,
+      "sha256": "faba37ceb7da1ac09e3b6d2cf790503431a2f0e874362b23d2df8b6ad536c63e"
+    },
+    {
+      "path": "dist/blood-math.js",
+      "bytes": 2836,
+      "sha256": "d5d841268fe6ebbd3d6029499feb6bc060575cabb0cb44ea9e4f89b9e869d4ff"
+    },
+    {
+      "path": "dist/blood-outlaws.js",
+      "bytes": 1653,
+      "sha256": "73b902c7d4c72a153d46c80dbb297d5e7deed5213b6d277a8c8daf02c7ea3054"
+    },
+    {
+      "path": "dist/blood-reveal.js",
+      "bytes": 8793,
+      "sha256": "61f228465331e4d3ea2bd2251bec85aa28a61af61045d423f0c68276c0f06059"
+    },
+    {
+      "path": "dist/bomb-fx.js",
+      "bytes": 13562,
+      "sha256": "48686b1f6befe96cd02b12a036c3a3d42d7a29d60895dd166bed937d246094c1"
+    },
+    {
+      "path": "dist/bomb-kernel.js",
+      "bytes": 965,
+      "sha256": "fa97269e492ee30a23e16ad093f3a519923c83e58dec5a0b8caae3ff1cc50eac"
+    },
+    {
+      "path": "dist/bomb-paths.js",
+      "bytes": 593264,
+      "sha256": "0c7444e69f68e1880f400a83a11828e3017f5088d7c1be9b8be019ede6c03a71"
+    },
+    {
+      "path": "dist/bonus.css",
+      "bytes": 14814,
+      "sha256": "a14b1db5015261827a03fc6f1b5443522a94e99e8ce158c282fe56f1f80d43d1"
+    },
+    {
+      "path": "dist/bounty-poster.js",
+      "bytes": 7678,
+      "sha256": "f5de830390153b5251aa3af94f30643d4088590a99bb594b3ce3c87ecec3e5e2"
+    },
+    {
+      "path": "dist/bounty-timeline.js",
+      "bytes": 3424,
+      "sha256": "5f293b29899775293660185f01337a062a70c486e453303efb49f469255b85af"
+    },
+    {
+      "path": "dist/brush-wind.js",
+      "bytes": 2694,
+      "sha256": "5e979f63f8c2f2405934b4a4fe7197c66c4608708aef0d14340ffe8c5c5a1407"
+    },
+    {
+      "path": "dist/cascade-data.js",
+      "bytes": 2090607,
+      "sha256": "a1161f06aa9fbd277ac44833401aa287886c0e1a196bf12274c0e680850b0388"
+    },
+    {
+      "path": "dist/cascade-kernel.js",
+      "bytes": 1045,
+      "sha256": "6930c3a87c1bd9ddd7019f2c0fc569fced94c87a8f623afe19f82b71a267f20f"
+    },
+    {
+      "path": "dist/character.js",
+      "bytes": 6634,
+      "sha256": "063d781680876f9d2c65b7cb9f5a2e1d22ca5dd4066d4578b58c966c6d282949"
+    },
+    {
+      "path": "dist/crossfire-controller.js",
+      "bytes": 9204,
+      "sha256": "f1ca0c9b2e694173238d386bd8d57c80c659aeb273255f58988173a6bfacfbb4"
+    },
+    {
+      "path": "dist/crossfire.js",
+      "bytes": 13995,
+      "sha256": "70c3c25909e0d5c675af61a18a83ff38f90a8053d41987ea58ba59545f489ef8"
+    },
+    {
+      "path": "dist/crow-idle.js",
+      "bytes": 5227,
+      "sha256": "d5139b081cb4288c65145b647a6db4bd955ba0e704731affe0f878a09c290a6d"
+    },
+    {
+      "path": "dist/environment.js",
+      "bytes": 7455,
+      "sha256": "d0aa397f7591497c0d21ca134a5fdcbaa80611e1ea0dff9cab6e9069082c42cb"
+    },
+    {
+      "path": "dist/feature-audio.js",
+      "bytes": 2708,
+      "sha256": "381b22976068f5145659729fc520154eb115ffd0517103f37dfe239b66cb9971"
+    },
+    {
+      "path": "dist/feature-entry.js",
+      "bytes": 1215,
+      "sha256": "1d7191205414aa72b324c3611051dbea047b6155b02e9a4d0f5fccff2e44e22b"
+    },
+    {
+      "path": "dist/feature-reveal.js",
+      "bytes": 4297,
+      "sha256": "8e1ecc317d04f0f2d4a756801f0288c6358b1fb2ff52a9e0ee5d9682f68071a3"
+    },
+    {
+      "path": "dist/feature-scenes.css",
+      "bytes": 4790,
+      "sha256": "e5d2e434c438ef62aafacba12db061e5cf98c5ccf011f1702621c05839a01ff4"
+    },
+    {
+      "path": "dist/feature-scenes.js",
+      "bytes": 15130,
+      "sha256": "713b35eb1c7d33fe323a0364a56023be430aae2063c237f38d8f349b89b6181c"
+    },
+    {
+      "path": "dist/game-info.css",
+      "bytes": 7628,
+      "sha256": "272ee95661ffd813bc73f44d0a63ed18f944ed4deda594ad4aee2b0e9f92f4cb"
+    },
+    {
+      "path": "dist/game-info.js",
+      "bytes": 22263,
+      "sha256": "8bbe59c1a0946fc2ba2b93b65e2bb0e17e96b86531642fa5fd22d124963bd7ff"
+    },
+    {
+      "path": "dist/game.js",
+      "bytes": 142979,
+      "sha256": "cd5e7af449320da84d2bd4c93df5aa0377b8d18f161ef87096b064374bee58eb"
+    },
+    {
+      "path": "dist/gunslinger-motion.js",
+      "bytes": 2198,
+      "sha256": "dda67a52f4818157a56966de77d6ecf809ff4c1801cdf59462c0112e30e59405"
+    },
+    {
+      "path": "dist/hang-artwork.js",
+      "bytes": 885,
+      "sha256": "679f82887790ee7cb8e40750bf34595ee32e8581d8bfd3884532ada1100ab3ad"
+    },
+    {
+      "path": "dist/hang-catalog.js",
+      "bytes": 248097,
+      "sha256": "894c2bbb9b6b34cd14a775c3d945040543e364afbe104fc3a5ed76f72d40455d"
+    },
+    {
+      "path": "dist/hang-feature.css",
+      "bytes": 4544,
+      "sha256": "85509cc60e26cbee7b9b2e6b659203be515c913a42157afa97b536ea7fb216e9"
+    },
+    {
+      "path": "dist/hang-intro.js",
+      "bytes": 928,
+      "sha256": "d68cde2d3fef8cba4825f6bd16928c01292de323d96bcd9121e5e8c3e2ae43e6"
+    },
+    {
+      "path": "dist/hang-kernel.js",
+      "bytes": 3140,
+      "sha256": "86047a427e3482efbe02733f50964c450a0f9633a5971c36f212ec389afc15ce"
+    },
+    {
+      "path": "dist/hang-math.js",
+      "bytes": 1915,
+      "sha256": "e7f7a0b73426de7e502385de5a013c887ef73c96acdc58b8c99d6fbb29c12a7b"
+    },
+    {
+      "path": "dist/hang-offer.js",
+      "bytes": 2045,
+      "sha256": "78dbb9d0755f92b9c9002eaa14a72357839e9825d2e536940ee1e838c49dfc1b"
+    },
+    {
+      "path": "dist/hang-presentation.js",
+      "bytes": 7567,
+      "sha256": "1ccfffc4965c54704f9d1f1125cfd1107133fab9fc06a6c58bc90ccaec51005a"
+    },
+    {
+      "path": "dist/hell-artwork.js",
+      "bytes": 8187,
+      "sha256": "be63efc14514d732d301adb3563b3c8f6d4dd890630cc3cdc9a372e064b35f28"
+    },
+    {
+      "path": "dist/hell-entry.js",
+      "bytes": 548,
+      "sha256": "c71cfe1d38ffdc13e812ff4354c07608b883681cd245ca9c17a1fb75895bc0f9"
+    },
+    {
+      "path": "dist/hell-intro.js",
+      "bytes": 9717,
+      "sha256": "5e67adb6e71cddcdefeda5958c81f3bf57a1af7b816ddbb104f1792ca5863312"
+    },
+    {
+      "path": "dist/hell-offer.js",
+      "bytes": 3147,
+      "sha256": "06f24b81a8689ec60e4c5371141349336bf9722bd6d4998d7b2e1c9dba4716f4"
+    },
+    {
+      "path": "dist/horse-gallop.js",
+      "bytes": 4462,
+      "sha256": "b2330b56c7d7baac61b5e4dde4332a6a4c08e86cb16488c872d9b42254dc2c46"
+    },
+    {
+      "path": "dist/hud.css",
+      "bytes": 6215,
+      "sha256": "679a249529873e803fa5aab5e5fe08bf425a4f54095c0ae8d726541844b65c38"
+    },
+    {
+      "path": "dist/impact-motion.js",
+      "bytes": 588,
+      "sha256": "d0bf019800c5a658351341c66098952da8c26905aa8cfa70b2b54a746e69441a"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 10037,
+      "sha256": "467f1853e09f2ae4bb5092ca3c2778c2739e6aa0c7c9f1ebb3e7d9138c3b7052"
+    },
+    {
+      "path": "dist/intro.css",
+      "bytes": 487,
+      "sha256": "c9ea555d057f0a12639e21ed2f2b1ea5b620675d5baf2fc305119c970d9c3ba7"
+    },
+    {
+      "path": "dist/live-scatter-burn.js",
+      "bytes": 3214,
+      "sha256": "453dc1516da2cff8152022e6edb7b0a3252c6a305e308804cc95192d4409dd47"
+    },
+    {
+      "path": "dist/math.js",
+      "bytes": 24796,
+      "sha256": "d125fd7cae60c964ce717990cd4ec0c3e3233624e7724c5d14e4f517f1a16100"
+    },
+    {
+      "path": "dist/mobile-view.js",
+      "bytes": 6259,
+      "sha256": "1eb312bfb8c50bdfe1626de9088a931b241690e93512857f1b7f660165f55001"
+    },
+    {
+      "path": "dist/mobile.css",
+      "bytes": 14563,
+      "sha256": "744c8e02601f410fe37ca81ed52c41aa171e0d1d1f7af600dc4f4e248264a068"
+    },
+    {
+      "path": "dist/mode-background.js",
+      "bytes": 4292,
+      "sha256": "8ad760e33699465db9e3f52ceacdee474d11dce911a9706b0e6f1252ef048164"
+    },
+    {
+      "path": "dist/outlaw-motion.js",
+      "bytes": 9487,
+      "sha256": "8187b54308614340eaf55881a964ccff8a8edfd2011c57037f77bc1319d428bd"
+    },
+    {
+      "path": "dist/payout.js",
+      "bytes": 12887,
+      "sha256": "bc80566f2e417cf954d59c45607862d4962d6350e8418712bb27d271511eeae6"
+    },
+    {
+      "path": "dist/qa-assets/html2canvas-LICENSE.txt",
+      "bytes": 1061,
+      "sha256": "86200ce4e92d9a22c41c8647a55f7a5fddff304ff89b4d36ecc699ed8c123d2c"
+    },
+    {
+      "path": "dist/qa-assets/html2canvas.min.js",
+      "bytes": 198689,
+      "sha256": "e87e550794322e574a1fda0c1549a3c70dae5a93d9113417a429016838eab8cb"
+    },
+    {
+      "path": "dist/reel-frame.js",
+      "bytes": 6028,
+      "sha256": "907e1893a3d70471c58eae8ed93d119e1279c7ed8618b69b86ee4d710d232a54"
+    },
+    {
+      "path": "dist/reel-motion.js",
+      "bytes": 6745,
+      "sha256": "ceb7aed47f7ef70ffe9a5424b241f257f2ba84b9212a834efd41c3d43c99a6a0"
+    },
+    {
+      "path": "dist/round-ledger.js",
+      "bytes": 973,
+      "sha256": "fa67a00297286656425b7c419e924d0bb65594dc4ebb913aeb8e0e51ae076ed4"
+    },
+    {
+      "path": "dist/scatter-anticipation.js",
+      "bytes": 7342,
+      "sha256": "556bea3647994d0d263728e4c12bfd22c12002c5da21e8cce254e045ac8da8e5"
+    },
+    {
+      "path": "dist/scatter-audio.js",
+      "bytes": 2623,
+      "sha256": "fc61a9ab2d127f914820525ba7b6e62d9162e0375f02e90e8db32bb286e7e110"
+    },
+    {
+      "path": "dist/scatter-paths.js",
+      "bytes": 634259,
+      "sha256": "36bd647e51293680b1c0d610d30078cc8cca594be5e1ed238a4cc143b91b504c"
+    },
+    {
+      "path": "dist/scene-motion.js",
+      "bytes": 1103,
+      "sha256": "b9578645c163b0c65cb5ae2c7e0e64cb4baeee0d6ff88a66b2a033e4b162064c"
+    },
+    {
+      "path": "dist/screen-shootout.js",
+      "bytes": 21679,
+      "sha256": "7ba1396f6099562b03e1636370e1a2e5e9af03783f9ded0ba9b78a758d6c06d8"
+    },
+    {
+      "path": "dist/shop-artwork.js",
+      "bytes": 6628,
+      "sha256": "079b49a6131a2a22916ffbc1b58e6455f7c5d9da466a8c0584d7327b96f6978b"
+    },
+    {
+      "path": "dist/shop.css",
+      "bytes": 16850,
+      "sha256": "2b04c611d692c878aded8797886b0ffc83e4fda453c9d79401fc4b59d250cd13"
+    },
+    {
+      "path": "dist/shop.js",
+      "bytes": 9397,
+      "sha256": "5eb7a4cae0f6f05eeb9c4d39ecc700da330983640309252c9e2b2e18c36f2318"
+    },
+    {
+      "path": "dist/static-raster.js",
+      "bytes": 1257,
+      "sha256": "90207b57e5d646c02fb3760791264575d8a9fbd92385786d406416e59f8e7078"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 8645,
+      "sha256": "44bac3a264c970b1cefde6df34b33e1764ada38f3b74d7ca7edd3ca6329c957e"
+    },
+    {
+      "path": "dist/symbol-reactions.js",
+      "bytes": 9036,
+      "sha256": "4d1a7cae7f30714876afeb024154a6e587f599886b8ce84489b4b87fd1854b75"
+    },
+    {
+      "path": "dist/tease-strip.js",
+      "bytes": 1378,
+      "sha256": "12551b86f4dce9c8124732c2a179cb18b94d710d76bbf523628a3d228a04c3f2"
+    },
+    {
+      "path": "dist/theme-music.js",
+      "bytes": 3250,
+      "sha256": "fb5855b34373524342fbf270aa6b1b741c2ba2aef6935a4764764bae0ac8c664"
+    },
+    {
+      "path": "dist/trickster-grid.js",
+      "bytes": 2486,
+      "sha256": "9be6c59f2bea6299654c0113b9b3174bf485ee2e5463032a12157157c833ed6c"
+    },
+    {
+      "path": "dist/tumble-motion.js",
+      "bytes": 7164,
+      "sha256": "70723d83ec767678c850d39105685b9ae3149b1b73acd65c0d9424f9ef9e143f"
+    },
+    {
+      "path": "dist/tumble-tiles.js",
+      "bytes": 1618,
+      "sha256": "86b2c7954e0fc5494f8002f3670bf44e2583fb9bddf7a4f66fa6026100c0c1ef"
+    },
+    {
+      "path": "dist/wild-shots.js",
+      "bytes": 7716,
+      "sha256": "e559008ce78cce4923efbdba5ea37f0eeafeff38fe658d68e9ff23ec5d5d92ca"
+    },
+    {
+      "path": "dist/win-animation.js",
+      "bytes": 11216,
+      "sha256": "530d693aae0926a6a820a10cd637b110dc04a051636112221afa4179a89802b8"
+    },
+    {
+      "path": "dist/win-cell-borders.js",
+      "bytes": 1994,
+      "sha256": "2f9d08fcb88873b34c495c4ba673eefe6b0534b2ea73fe0dd60de55d15251fe0"
+    },
+    {
+      "path": "dist/win-controller.js",
+      "bytes": 4299,
+      "sha256": "e9dac417b0657d608a7700ba6185ca782cbcb51feb4828a4a5e1f7752e1dad80"
+    },
+    {
+      "path": "dist/win-qa.js",
+      "bytes": 20148,
+      "sha256": "4726c7732830477f5b27c0409dfcf19440c9ff4c8cd8f39efd7ce2c8bbfc714b"
+    },
+    {
+      "path": "dist/win-shot-audio.js",
+      "bytes": 527,
+      "sha256": "d3cdec8b588916f6c315378db5c2beca9467fac4d29780f314321eb2061d5129"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 24929,
+      "sha256": "533e1730eae022d425e466c465907a42176fe863a09d9fbbb8cd7ee4a94dd501"
+    },
+    {
+      "path": "package.json",
+      "bytes": 137,
+      "sha256": "1030cd90b6e04d8e30a6298b196e5895d59fff1153d9caec4e828ea2c6018b4f"
+    },
+    {
+      "path": "tests/bounty-booster.test.mjs",
+      "bytes": 1730,
+      "sha256": "7ea7125aa94550b3877d92ecbfba52b04ffc488dd49074f9468e5918b98789bd"
+    },
+    {
+      "path": "tests/hang-feature.test.mjs",
+      "bytes": 3422,
+      "sha256": "3a79d2946850d2c9ffdb1e6391bd5e8478ec0384297ef22f752ed5b4586057e6"
+    },
+    {
+      "path": "tests/outlaw-motion.test.mjs",
+      "bytes": 2586,
+      "sha256": "f32d6abed6b58bcf3cfb4eabd35ac7ff89f7076fcb55e7040cf60ba66f7206fd"
+    },
+    {
+      "path": "tools/bake-hang.mjs",
+      "bytes": 661,
+      "sha256": "c09db2ffcd527d1ee3387487a838b1fe85375278a78072f3085c69cceecdfc05"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 135,
+      "sha256": "852446ab3f6a48f3ade59e47a369b3bc93507d2a6ed283d2206356ec4ff46af0"
+    }
+  ]
+}

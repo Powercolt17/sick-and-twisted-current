@@ -1,0 +1,165 @@
+{
+  "name": "Blood Money registered rightward quick draw",
+  "atlas": "hero-draw-atlas.webp",
+  "atlasWidth": 5120,
+  "atlasHeight": 2560,
+  "frameWidth": 640,
+  "frameHeight": 640,
+  "columns": 8,
+  "rows": 4,
+  "frameCount": 32,
+  "bytes": 1415016,
+  "hasAlpha": true,
+  "format": "WebP quality88 alphaQuality100",
+  "nativeSource": {
+    "image": "faithful-character/figure-0.webp",
+    "frame": 0,
+    "crop": {
+      "x": 0,
+      "y": 0,
+      "width": 274,
+      "height": 491
+    },
+    "sha256": "1716846A1A8345C55FF4FF84DEE1760682D6E6CAB19AC00D83B31AAB27AAAD38",
+    "placement": {
+      "x": 8,
+      "y": 198,
+      "width": 243,
+      "height": 435.45
+    }
+  },
+  "registration": {
+    "originalNativeTo640": {
+      "scale": 1.25,
+      "x": 40,
+      "y": 10
+    },
+    "originalNativeTo1536": {
+      "scale": 3,
+      "x": 96,
+      "y": 24
+    },
+    "nativeCanvasExtent": {
+      "left": -32,
+      "top": -8,
+      "width": 512,
+      "height": 512
+    },
+    "drawDestinationFormula": {
+      "x": "p.x - 32*p.width/274",
+      "y": "p.y - 8*p.height/491",
+      "width": "512*p.width/274",
+      "height": "512*p.height/491"
+    },
+    "lowerBodyExactFrom640Y": 396,
+    "seamTransition640Y": [
+      375,
+      395.8333333333
+    ]
+  },
+  "timing": {
+    "videoFps": 24,
+    "videoDuration": 3.041667,
+    "drawSourceStart": 0,
+    "drawSourceEnd": 1.7916666666666667,
+    "observedHandMotionBegins": 0.3,
+    "observedRightwardAimReached": 1.65,
+    "selectedFinalAim": 1.7916666666666667,
+    "recommendedRuntimeDraw": 0.5,
+    "rootRequestedPreFireAimHold": 0.06,
+    "recommendedFirstShotAt": 0.56,
+    "hasBakedFlash": false,
+    "hasBakedRecoil": false,
+    "lowering": "Reverse the same indices at desired slower runtime duration; add recoil independently."
+  },
+  "landmarks": {
+    "coordinates": "640px cell coordinates; measured visually on final frame31, approximately \u00b13px",
+    "final640": {
+      "muzzle": [
+        412,
+        98
+      ],
+      "rearBarrel": [
+        346,
+        106
+      ],
+      "shoulderPivot": [
+        141,
+        158
+      ],
+      "elbow": [
+        202,
+        165
+      ],
+      "wrist": [
+        293,
+        135
+      ],
+      "neckPivot": [
+        184,
+        119
+      ],
+      "eye": [
+        202,
+        85
+      ]
+    },
+    "finalNative": {
+      "muzzle": [
+        297.6,
+        70.4
+      ],
+      "rearBarrel": [
+        244.8,
+        76.8
+      ],
+      "shoulderPivot": [
+        80.8,
+        118.4
+      ],
+      "elbow": [
+        129.6,
+        124
+      ],
+      "wrist": [
+        202.4,
+        100
+      ],
+      "neckPivot": [
+        115.2,
+        87.2
+      ],
+      "eye": [
+        129.6,
+        60
+      ]
+    },
+    "barrelUnitDirection": [
+      0.9927337820337083,
+      -0.12033136751923736
+    ],
+    "barrelAngleDegrees": -6.911227119024681,
+    "note": "The selected final pose retains a slight upward settle angle; use muzzle-to-rearBarrel vector to align with exact target direction."
+  },
+  "qa": {
+    "firstPngExactlyEqualsScaledOriginal": true,
+    "firstAtlasAlphaMatchesOriginal": true,
+    "lowerBody32FrameMismatchChannels": 0,
+    "strongGreenOpaquePixels": 0,
+    "visual": "Connected continuous hand/elbow/gun draw, head turns right, no crossfade or ghosts; static planted legs; no baked flash/recoil.",
+    "joinNote": "Exact base atlas idle, before existing procedural cloth, wrist, breath or cigarette overlays. Apply existing idle transform consistently or ease its modulation at transition."
+  },
+  "provenance": {
+    "endpointTool": "built-in image_gen",
+    "endpointOriginal": "C:/Users/braca/.codex/generated_images/01a0cf70-43fe-7c83-b7d0-302f17d12852/exec-f74294ae-878b-4b32-88a0-381d54bcd572.png",
+    "endpointPrompt": "aim-endpoint-prompt.txt",
+    "videoService": "OpenArt",
+    "videoModel": "kling-3-omni",
+    "videoMode": "image2video",
+    "generationId": "teJQCWvYtVV84la6Oj0f",
+    "resourceId": "xtC5TeZe7h1mxzx9wczl",
+    "videoUrl": "https://cdn.openart.ai/openart-ai/production/2026-09/create-video/0zgsglviXDk1n2viBhvD/7c892471810a928bb30fc555166b4985-d26d51b5-7707-4255-8ef9-df483a9f5c56_1790188411999_ed13c9f3.mp4",
+    "videoPrompt": "video-generation-request.json",
+    "processing": "Exact idle extraction, endpoint registration with original lower-body lock, chroma key/despill, unchanged original lower-body overlay, 32 source frame selections; no temporal blending."
+  }
+}

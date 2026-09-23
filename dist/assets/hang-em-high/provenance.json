@@ -1,0 +1,10 @@
+{
+  "feature": "Hang \u2019Em High",
+  "scatters": 4,
+  "cardAt": 3.5966666666666667,
+  "duration": 9.116666666666667,
+  "burn": "Native procedural mask over the actual live scatter cells; per-play random effect seed",
+  "audio": "Clean generated PCM: feature-audio.js, no media element or recording",
+  "artworkMotion": "Live separate cloth and painted fire layers",
+  "recordedPlayback": false
+}

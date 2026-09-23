@@ -1,0 +1,33 @@
+{
+  "source": "Existing isolated revolver-shot.wav and tile-impact.wav game effects",
+  "processing": "Short acoustic attacks; band-limited dry tails; three gunshot and two contact variations; peak headroom; sample-boundary fades",
+  "excluded": "win-impact-approved.wav, win-impact-refined.wav and crossfire-sync.wav are never loaded by the live win-shot controller",
+  "sampleRate": 48000,
+  "assets": [
+    {
+      "file": "shot-0.wav",
+      "seconds": 0.32,
+      "peakDbFS": -3.0
+    },
+    {
+      "file": "shot-1.wav",
+      "seconds": 0.32,
+      "peakDbFS": -3.0
+    },
+    {
+      "file": "shot-2.wav",
+      "seconds": 0.32,
+      "peakDbFS": -3.0
+    },
+    {
+      "file": "impact-0.wav",
+      "seconds": 0.14497916666666666,
+      "peakDbFS": -5.5
+    },
+    {
+      "file": "impact-1.wav",
+      "seconds": 0.14497916666666666,
+      "peakDbFS": -5.5
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+/* Responsive framing preserves the original world; only its view is rearranged. */
+html{min-height:100%;overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{display:block;min-height:100vh;min-height:100dvh;padding:0!important;overflow-x:hidden}
+#slot-shell,#slot-shell:fullscreen{width:100%;max-width:none;height:auto;min-height:100vh;min-height:100dvh;margin:0;padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:center;background:#090909}
+#slot-shell:fullscreen{height:100dvh;overflow:auto}
+#slot-shell:-webkit-full-screen{width:100%;height:100%;overflow:auto}
+#slot-shell.is-expanded{position:fixed;inset:0;z-index:100;width:100%;height:var(--view-height,100dvh);min-height:0;overflow:auto}
+html.slot-expanded,html.slot-expanded body{overflow:hidden}
+#slot-layout{width:var(--shell-width,min(1560px,100%));max-width:100%;flex:none}
+.safe-area-probe{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.page-top{height:24px;padding:0;font-size:10px;line-height:16px;letter-spacing:1.2px}
+#stage{position:relative;display:block;width:100%;overflow:visible}
+#scene-stack{position:relative;width:var(--board-width,100%);max-width:100%;overflow:hidden;isolation:isolate}
+#portrait-character{display:none}
+#game-viewport{position:relative;width:100%;aspect-ratio:var(--view-aspect,1212/608);overflow:hidden;background:#090909}
+#game-viewport #game{position:relative;display:block;width:var(--scene-width,100%);max-width:none;height:auto;aspect-ratio:1212/608;margin-left:var(--scene-left,0%);object-fit:fill}
+#game-viewport #screen-glass,#game-viewport #max-celebration{position:absolute;inset:0 auto auto var(--scene-left,0%);width:var(--scene-width,100%);max-width:none;height:auto;aspect-ratio:1212/608;margin:0;object-fit:fill}
+#screen-toggle{position:absolute;right:4px;top:4px;z-index:5;display:grid;place-items:center;width:44px;height:44px;border:1px solid #7c705953;border-radius:3px;color:#e8dcc0;background:#0d0b09bd;touch-action:manipulation}
+#screen-toggle svg,#rail-screen-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+#screen-toggle .exit-view,#rail-screen-toggle .exit-view{display:none}#screen-toggle[aria-pressed=true] .enter-view,#rail-screen-toggle[aria-pressed=true] .enter-view{display:none}#screen-toggle[aria-pressed=true] .exit-view,#rail-screen-toggle[aria-pressed=true] .exit-view{display:block}
+#rail-screen-toggle{display:none}
+#slot-shell button{touch-action:manipulation}#slot-shell button:focus-visible{outline-color:#ecdcb8;outline-offset:2px}
+.hud{width:100%;height:88px;margin:0;padding:4px 0;display:grid;grid-template-columns:56px minmax(260px,1fr) minmax(160px,.5fr) 56px 76px 56px;gap:8px;align-items:center}
+.hud .hud-turbo,.hud .hud-autoplay,.hud .hud-provider{width:100%;height:52px;min-height:44px;aspect-ratio:1}
+.hud .hud-spin{width:76px;height:76px;min-height:44px;aspect-ratio:1}
+.hud .hud-readouts{height:64px;min-height:64px;grid-template-columns:48px minmax(0,1fr) minmax(0,1fr);padding-right:8px}
+.hud .hud-menu{width:44px;min-width:44px;min-height:44px}
+.hud .hud-bet{height:64px;min-height:44px;padding:0 4px 0 8px;gap:4px}
+.hud .hud-bet-arrows{width:88px;min-width:88px;height:44px;display:flex;flex-direction:row}
+.hud .hud-bet-arrows button{width:44px;height:44px;min-width:44px;min-height:44px}
+.hud .hud-bet-arrows svg{width:20px;height:20px}
+.hud .hud-amount>strong{font-size:clamp(13px,1.4cqw,20px);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.hud .hud-amount>span{font-size:12px}
+#bonus-intro{width:100%;height:100%;aspect-ratio:auto;z-index:2}
+.bm-stage{inset:0 auto auto 0;width:100%;height:auto;aspect-ratio:1212/608}
+#continue-bonus{min-height:44px;min-width:128px;scale:1!important;translate:none!important}
+#features{max-height:calc(100dvh - 16px);overscroll-behavior:contain;touch-action:pan-y}
+#features .close{width:44px;height:44px}
+dialog.shop{inset:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));width:auto;height:auto;max-height:none;max-width:none}
+#game-info .info-scroll{touch-action:pan-y;overflow-x:hidden}
+#game-info .info-pay-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+#game-info .info-rtp-table th{overflow-wrap:anywhere}
+#intro{overflow:hidden}#intro-skip{position:absolute;right:12px;bottom:12px;z-index:1;min-width:76px;min-height:44px;border:1px solid #b1a084;background:#14110de6;color:#eadebd;font:700 14px Offers,Georgia,serif;letter-spacing:1px}
+#close-reference{width:44px;height:44px;top:10px;right:10px}
+#slot-shell[data-layout=portrait] #portrait-character{display:block;width:100%;height:var(--hero-height);aspect-ratio:760/230}
+#slot-shell[data-layout=portrait] .hud{height:156px;grid-template-columns:44px minmax(0,1fr) 44px 56px;grid-template-rows:52px 88px;gap:6px 4px;padding:6px 0 4px}
+#slot-shell[data-layout=portrait] .hud-readouts{grid-column:1/4;grid-row:1;height:52px;min-height:52px;grid-template-columns:44px minmax(0,1fr) minmax(0,1fr)}
+#slot-shell[data-layout=portrait] .hud-provider{grid-column:4;grid-row:1;width:48px;height:48px;justify-self:center}
+#slot-shell[data-layout=portrait] .hud-turbo{grid-column:1;grid-row:2;width:44px;height:44px}
+#slot-shell[data-layout=portrait] .hud-bet{grid-column:2;grid-row:2;height:84px;flex-direction:column;justify-content:center;padding:3px;gap:4px}
+#slot-shell[data-layout=portrait] .hud-bet .hud-amount{flex-direction:row;align-items:baseline;justify-content:center;gap:5px}
+#slot-shell[data-layout=portrait] .hud-autoplay{grid-column:3;grid-row:2;width:44px;height:48px}
+#slot-shell[data-layout=portrait] .hud-spin{grid-column:4;grid-row:2;width:56px;height:56px}
+#slot-shell[data-layout=portrait] .hud-amount>strong{font-size:13px}
+#slot-shell[data-layout=portrait] .hud-amount>span{font-size:10px}
+#slot-shell[data-layout=portrait] .bm-stage{top:12%;width:100%;height:auto;aspect-ratio:1212/608}
+#slot-shell[data-layout=portrait] #feature-award{left:5%!important;top:auto!important;bottom:78px;width:90%!important;height:40px!important;font-size:clamp(16px,4.5cqw,24px)!important;white-space:normal;text-align:center}
+#slot-shell[data-layout=portrait] #continue-bonus{left:20%!important;top:auto!important;bottom:20px;width:60%!important;height:48px!important;transform:none!important}
+#slot-shell[data-layout=landscape] .page-top{display:none}
+#slot-shell[data-layout=landscape] #stage{display:grid;grid-template-columns:var(--board-width) 156px;gap:8px;align-items:center}
+#slot-shell[data-layout=landscape] .hud{height:266px;grid-template-columns:repeat(3,44px);grid-template-rows:70px 66px 44px 56px;gap:6px;justify-content:center;padding:4px 0}
+#slot-shell[data-layout=landscape] .hud-readouts{grid-column:1/4;grid-row:1;grid-template-columns:44px minmax(0,1fr);grid-template-rows:1fr 1fr;gap:0 4px;width:144px;height:70px;min-height:70px;padding:0 4px 0 0}
+#slot-shell[data-layout=landscape] .hud-menu{grid-column:1;grid-row:1/3}
+#slot-shell[data-layout=landscape] .hud-balance{grid-column:2;grid-row:1}
+#slot-shell[data-layout=landscape] .hud-win{grid-column:2;grid-row:2;text-align:left;padding:0}
+#slot-shell[data-layout=landscape] .hud-bet{grid-column:1/4;grid-row:2;width:144px;height:66px;flex-direction:column;justify-content:center;padding:1px 3px;gap:0}
+#slot-shell[data-layout=landscape] .hud-bet .hud-amount{flex-direction:row;align-items:baseline;gap:5px}
+#slot-shell[data-layout=landscape] .hud-amount>strong{font-size:12px}
+#slot-shell[data-layout=landscape] .hud-amount>span{font-size:10px}
+#slot-shell[data-layout=landscape] .hud-turbo{grid-column:1;grid-row:3;width:44px;height:44px}
+#slot-shell[data-layout=landscape] .hud-autoplay{grid-column:2;grid-row:3;width:44px;height:44px;min-height:44px}
+#slot-shell[data-layout=landscape] .hud-provider{grid-column:3;grid-row:3;width:44px;height:44px}
+#slot-shell[data-layout=landscape] .hud-spin{grid-column:2;grid-row:4;width:52px;height:52px;justify-self:center}
+#slot-shell[data-layout=landscape] #screen-toggle{display:none}
+#slot-shell[data-layout=landscape] #rail-screen-toggle{grid-column:3;grid-row:4;display:grid;width:44px;height:44px;color:#d8cdb6}
+@media(prefers-reduced-motion:reduce){#intro.leaving{transition:none}}
+
+#slot-shell[data-layout=portrait].blood-money-active #screen-toggle,#slot-shell[data-layout=portrait].blood-intro-active #screen-toggle{top:calc(var(--hero-height) + 4px)}
+
+/* Floating controls: the approved scene continues below the cabinet and HUD. */
+#ground-rail{position:relative;display:block;width:var(--scene-width,100%);max-width:none;margin-left:var(--scene-left,0%);height:var(--ground-height);object-fit:fill}
+#slot-shell:not([data-layout=portrait]) #stage{display:block}
+#slot-shell:not([data-layout=portrait]) .hud{position:absolute;left:50%;bottom:2.7cqw;transform:translateX(-50%);width:88%;height:9cqw;min-height:48px;margin:0;padding:0;display:grid;grid-template-columns:6.9% minmax(0,1fr) 18.5% 8.4% 10.4% 6.6%;grid-template-rows:1fr;gap:1.3%;align-items:center}
+#slot-shell:not([data-layout=portrait]) .hud>*{grid-column:auto;grid-row:auto;justify-self:stretch}
+#slot-shell:not([data-layout=portrait]) .hud .hud-readouts{width:auto;height:6.1cqw;min-height:38px;grid-template-columns:17% minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr;gap:0;padding-right:1.4cqw}
+#slot-shell:not([data-layout=portrait]) .hud .hud-menu{width:100%;height:100%;min-width:0;min-height:0;grid-column:auto;grid-row:auto}
+#slot-shell:not([data-layout=portrait]) .hud .hud-balance,#slot-shell:not([data-layout=portrait]) .hud .hud-win{grid-column:auto;grid-row:auto}
+#slot-shell:not([data-layout=portrait]) .hud .hud-win{text-align:right;padding-left:6px}
+#slot-shell:not([data-layout=portrait]) .hud .hud-bet{width:auto;height:6.1cqw;min-height:38px;padding:0 0 0 1.3cqw;flex-direction:row;gap:0}
+#slot-shell:not([data-layout=portrait]) .hud .hud-bet .hud-amount{flex-direction:column;align-items:flex-start;gap:1px}
+#slot-shell:not([data-layout=portrait]) .hud .hud-bet-arrows{width:32%;min-width:0;height:100%;flex-direction:column}
+#slot-shell:not([data-layout=portrait]) .hud .hud-bet-arrows button{width:100%;height:50%;min-height:0;min-width:0}
+#slot-shell:not([data-layout=portrait]) .hud .hud-bet-arrows svg{width:40%;height:65%}
+#slot-shell:not([data-layout=portrait]) .hud .hud-turbo,#slot-shell:not([data-layout=portrait]) .hud .hud-provider{width:100%;height:auto;min-height:0;aspect-ratio:1}
+#slot-shell:not([data-layout=portrait]) .hud .hud-autoplay{width:100%;height:6.1cqw;min-height:38px;aspect-ratio:auto}
+#slot-shell:not([data-layout=portrait]) .hud .hud-spin{width:100%;height:auto;min-height:0;aspect-ratio:1}
+#slot-shell:not([data-layout=portrait]) .hud .hud-amount>strong{font-size:clamp(11px,1.52cqw,23px)}
+#slot-shell:not([data-layout=portrait]) .hud .hud-amount>span{font-size:clamp(8px,1cqw,15px)}
+#slot-shell[data-layout=landscape] #screen-toggle{display:grid}
+#slot-shell[data-layout=landscape] #rail-screen-toggle{display:none}
+#slot-shell[data-layout=portrait] .hud{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:96%;margin:0;padding:0}
+#slot-shell[data-layout=portrait].blood-intro-active #blood-money-controls .hell-mute{top:calc(var(--hero-height) + 4px)!important;right:54px!important}
+.bet-mobile-icon{display:none}
+/* Phone controls follow the reference: turbo / offers above a centered spin
+   row, then balance / bet / win. These are the original buttons and handlers. */
+#slot-shell[data-layout=portrait] .hud{bottom:12px;width:88%;height:158px;min-height:0;display:grid;grid-template-columns:44px minmax(0,1fr) 72px minmax(0,1fr) 44px;grid-template-rows:46px 60px 44px;gap:4px 0;isolation:isolate}
+#slot-shell[data-layout=portrait] .hud:before,#slot-shell[data-layout=portrait] .hud:after{content:"";position:absolute;left:0;right:0;z-index:-1;pointer-events:none;border-radius:4px;background:#10100edd}
+#slot-shell[data-layout=portrait] .hud:before{top:56px;height:48px}
+#slot-shell[data-layout=portrait] .hud:after{bottom:0;height:44px}
+#slot-shell[data-layout=portrait] .hud-readouts,#slot-shell[data-layout=portrait] .hud-bet,#slot-shell[data-layout=portrait] .hud-bet-arrows{display:contents}
+#slot-shell[data-layout=portrait] .hud-turbo{grid-column:1;grid-row:1;width:44px;height:44px;justify-self:start}
+#slot-shell[data-layout=portrait] .hud-provider{grid-column:5;grid-row:1;width:44px;height:44px;justify-self:end}
+#slot-shell[data-layout=portrait] .hud-menu{grid-column:1;grid-row:2;width:44px;height:48px;min-width:44px;align-self:center}
+#slot-shell[data-layout=portrait] .hud #bet-down{grid-column:2;grid-row:2;width:44px;height:48px;justify-self:center;align-self:center}
+#slot-shell[data-layout=portrait] .hud #bet-up{grid-column:4;grid-row:2;width:44px;height:48px;justify-self:center;align-self:center}
+#slot-shell[data-layout=portrait] .bet-desktop-icon{display:none}
+#slot-shell[data-layout=portrait] .bet-mobile-icon{display:block}
+#slot-shell[data-layout=portrait] .hud-bet-arrows svg{width:24px;height:18px;stroke-width:2.6}
+#slot-shell[data-layout=portrait] .hud-spin{grid-column:3;grid-row:2;width:72px;height:72px;justify-self:center;align-self:center;z-index:1}
+#slot-shell[data-layout=portrait] .hud-autoplay{grid-column:5;grid-row:2;width:44px;height:48px;justify-self:end;align-self:center;background:transparent}
+#slot-shell[data-layout=portrait] .hud-balance{grid-column:1/3;grid-row:3;padding:0 0 0 8px;text-align:left;align-self:center}
+#slot-shell[data-layout=portrait] .hud-bet>.hud-amount{grid-column:3;grid-row:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;text-align:center;align-self:center}
+#slot-shell[data-layout=portrait] .hud-win{grid-column:4/6;grid-row:3;padding:0 8px 0 0;text-align:right;align-self:center}
+#slot-shell[data-layout=portrait] .hud-amount>strong{font-size:12px;line-height:1.15;letter-spacing:-.03em}
+#slot-shell[data-layout=portrait] .hud-amount>span{font-size:9px;line-height:1.1;font-weight:600}
+#slot-shell[data-layout=portrait] .hud #remaining{font-size:25px}
+#ground-rail{transition:filter .3s ease}
+#slot-shell.blood-intro-active #ground-rail,#slot-shell:has([role=dialog][aria-label^="Bounty closed."]:not([hidden])) #ground-rail{filter:brightness(.5)}
+
+/* Mobile controls and feature overlays share a stable, readable layout. */
+#slot-shell[data-layout=portrait]{align-items:safe center}
+#slot-shell[data-layout=portrait] .hud{width:94%;height:178px;grid-template-rows:48px 72px 50px;gap:4px 0}
+#slot-shell[data-layout=portrait] .hud:before{top:56px;height:60px}
+#slot-shell[data-layout=portrait] .hud:after{height:50px}
+#slot-shell[data-layout=portrait] .hud-amount>strong{font-size:14px;line-height:1.2}
+#slot-shell[data-layout=portrait] .hud-amount>span{font-size:12px;line-height:1.2}
+#slot-shell[data-layout=portrait] #crossfire-skip{top:auto!important;bottom:142px;right:calc(3% + 50px);font-size:12px;min-height:44px}
+#slot-shell[data-layout=portrait] #screen-toggle{width:44px;height:44px;right:4px;top:4px}
+#slot-shell[data-layout=portrait] .hang-toast{top:8px;max-width:calc(100% - 100px);padding:8px 0}
+#slot-shell[data-layout=portrait] .hang-toast span{font-size:12px;letter-spacing:.02em}
+#slot-shell[data-layout=portrait] .hang-toast strong{font-size:20px;white-space:normal}
+#slot-shell[data-layout=portrait] .hang-toast small{font-size:12px;line-height:1.25;letter-spacing:0}
+#slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-action{max-width:calc(100% - 24px);width:calc(100% - 24px);bottom:28px}
+#slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-award{font-size:14px}
+#slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-skip{max-width:100%;min-width:min(228px,100%)}
+#slot-shell[data-layout=portrait] .blood-briefing{overflow:hidden;overscroll-behavior:contain}
+#slot-shell[data-layout=portrait] .blood-continue,#slot-shell[data-layout=portrait] #bounty-return{min-width:0;width:min(230px,100%)}
+#slot-shell[data-layout=portrait] .hang-result-outlaws{gap:10px}
+#slot-shell[data-layout=portrait] .hang-result-outlaw{max-width:28%}
+#slot-shell[data-layout=portrait] #hang-result-details{font-size:12px}
+#slot-shell[data-layout=portrait] .hang-continue{min-width:0;width:min(230px,100%)}
+@media(max-width:360px){#slot-shell[data-layout=portrait] .feature-film-controls[data-feature] .feature-film-skip{font-size:20px;gap:16px;padding:12px 18px;white-space:nowrap}}
+@media(max-width:360px){#slot-shell[data-layout=portrait] .blood-continue{font-size:18px;padding:12px;white-space:nowrap}}
+
+/* Rotated phones get a touch-sized control rail instead of shrunken desktop HUD. */
+#slot-shell[data-layout=landscape] #stage{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:8px;align-items:center}
+#slot-shell[data-layout=landscape] .hud{position:relative;left:auto;bottom:auto;transform:none;width:200px;height:306px;display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:80px 74px 56px 64px;gap:8px;justify-content:center;padding:0}
+#slot-shell[data-layout=landscape] .hud .hud-readouts{grid-column:1/4;grid-row:1;width:184px;height:80px;grid-template-columns:44px minmax(0,1fr);grid-template-rows:1fr 1fr;padding:0 8px 0 0}
+#slot-shell[data-layout=landscape] .hud .hud-menu{grid-column:1;grid-row:1/3;min-width:44px;min-height:44px}
+#slot-shell[data-layout=landscape] .hud .hud-balance{grid-column:2;grid-row:1}
+#slot-shell[data-layout=landscape] .hud .hud-win{grid-column:2;grid-row:2;text-align:left;padding:0}
+#slot-shell[data-layout=landscape] .hud .hud-bet{grid-column:1/4;grid-row:2;width:184px;height:74px;flex-direction:column;align-items:center;justify-content:center;padding:0}
+#slot-shell[data-layout=landscape] .hud .hud-bet .hud-amount{flex-direction:row;align-items:baseline;gap:8px}
+#slot-shell[data-layout=landscape] .hud .hud-bet-arrows{flex-direction:row;width:112px;height:44px}
+#slot-shell[data-layout=landscape] .hud .hud-bet-arrows button{width:56px;height:44px;min-height:44px}
+#slot-shell[data-layout=landscape] .hud .hud-bet-arrows svg{width:24px;height:20px}
+#slot-shell[data-layout=landscape] .hud .hud-amount>strong{font-size:14px}
+#slot-shell[data-layout=landscape] .hud .hud-amount>span{font-size:12px}
+#slot-shell[data-layout=landscape] .hud .hud-turbo{grid-column:1;grid-row:3;width:48px;height:48px}
+#slot-shell[data-layout=landscape] .hud .hud-autoplay{grid-column:2;grid-row:3;width:48px;height:48px}
+#slot-shell[data-layout=landscape] .hud .hud-provider{grid-column:3;grid-row:3;width:48px;height:48px}
+#slot-shell[data-layout=landscape] .hud .hud-spin{grid-column:2;grid-row:4;width:60px;height:60px}
+#slot-shell[data-layout=landscape] #screen-toggle{display:none}
+#slot-shell[data-layout=landscape] #rail-screen-toggle{display:grid;grid-column:3;grid-row:4;width:48px;height:48px;align-self:center}
+#slot-shell[data-layout=portrait] .approved-win-controls{bottom:72px;right:3%}
+/* Keep the skyline's edge landmarks clear of the fullscreen control. */
+#slot-shell[data-layout=portrait] #screen-toggle{left:calc(50% - 22px);right:auto;top:4px}
+#slot-shell[data-layout=portrait].blood-money-active #screen-toggle,#slot-shell[data-layout=portrait].blood-intro-active #screen-toggle{top:4px}
+#slot-shell[data-layout=portrait] .hang-toast{top:auto;bottom:calc(var(--ground-height) + var(--board-width) * 608 / 1212 + 6px);max-width:94%}

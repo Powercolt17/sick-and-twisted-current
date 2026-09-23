@@ -1,0 +1,269 @@
+{
+  "frameWidth": 640,
+  "frameHeight": 640,
+  "columns": 8,
+  "rows": 4,
+  "frameCount": 32,
+  "sourceFps": 24,
+  "drawSourceEnd": 1.7916666666666667,
+  "runtimeDrawDuration": 0.5,
+  "recommendedHold": 0.2,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": 0,
+      "sourceTime": 0,
+      "runtimeTime": 0,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "index": 1,
+      "sourceFrame": 1,
+      "sourceTime": 0.041666666666666664,
+      "runtimeTime": 0.016129032258064516,
+      "x": 640,
+      "y": 0
+    },
+    {
+      "index": 2,
+      "sourceFrame": 3,
+      "sourceTime": 0.125,
+      "runtimeTime": 0.03225806451612903,
+      "x": 1280,
+      "y": 0
+    },
+    {
+      "index": 3,
+      "sourceFrame": 4,
+      "sourceTime": 0.16666666666666666,
+      "runtimeTime": 0.04838709677419355,
+      "x": 1920,
+      "y": 0
+    },
+    {
+      "index": 4,
+      "sourceFrame": 6,
+      "sourceTime": 0.25,
+      "runtimeTime": 0.06451612903225806,
+      "x": 2560,
+      "y": 0
+    },
+    {
+      "index": 5,
+      "sourceFrame": 7,
+      "sourceTime": 0.2916666666666667,
+      "runtimeTime": 0.08064516129032258,
+      "x": 3200,
+      "y": 0
+    },
+    {
+      "index": 6,
+      "sourceFrame": 8,
+      "sourceTime": 0.3333333333333333,
+      "runtimeTime": 0.0967741935483871,
+      "x": 3840,
+      "y": 0
+    },
+    {
+      "index": 7,
+      "sourceFrame": 10,
+      "sourceTime": 0.4166666666666667,
+      "runtimeTime": 0.11290322580645161,
+      "x": 4480,
+      "y": 0
+    },
+    {
+      "index": 8,
+      "sourceFrame": 11,
+      "sourceTime": 0.4583333333333333,
+      "runtimeTime": 0.12903225806451613,
+      "x": 0,
+      "y": 640
+    },
+    {
+      "index": 9,
+      "sourceFrame": 12,
+      "sourceTime": 0.5,
+      "runtimeTime": 0.14516129032258066,
+      "x": 640,
+      "y": 640
+    },
+    {
+      "index": 10,
+      "sourceFrame": 14,
+      "sourceTime": 0.5833333333333334,
+      "runtimeTime": 0.16129032258064516,
+      "x": 1280,
+      "y": 640
+    },
+    {
+      "index": 11,
+      "sourceFrame": 15,
+      "sourceTime": 0.625,
+      "runtimeTime": 0.1774193548387097,
+      "x": 1920,
+      "y": 640
+    },
+    {
+      "index": 12,
+      "sourceFrame": 17,
+      "sourceTime": 0.7083333333333334,
+      "runtimeTime": 0.1935483870967742,
+      "x": 2560,
+      "y": 640
+    },
+    {
+      "index": 13,
+      "sourceFrame": 18,
+      "sourceTime": 0.75,
+      "runtimeTime": 0.20967741935483872,
+      "x": 3200,
+      "y": 640
+    },
+    {
+      "index": 14,
+      "sourceFrame": 19,
+      "sourceTime": 0.7916666666666666,
+      "runtimeTime": 0.22580645161290322,
+      "x": 3840,
+      "y": 640
+    },
+    {
+      "index": 15,
+      "sourceFrame": 21,
+      "sourceTime": 0.875,
+      "runtimeTime": 0.24193548387096775,
+      "x": 4480,
+      "y": 640
+    },
+    {
+      "index": 16,
+      "sourceFrame": 22,
+      "sourceTime": 0.9166666666666666,
+      "runtimeTime": 0.25806451612903225,
+      "x": 0,
+      "y": 1280
+    },
+    {
+      "index": 17,
+      "sourceFrame": 24,
+      "sourceTime": 1,
+      "runtimeTime": 0.27419354838709675,
+      "x": 640,
+      "y": 1280
+    },
+    {
+      "index": 18,
+      "sourceFrame": 25,
+      "sourceTime": 1.0416666666666667,
+      "runtimeTime": 0.2903225806451613,
+      "x": 1280,
+      "y": 1280
+    },
+    {
+      "index": 19,
+      "sourceFrame": 26,
+      "sourceTime": 1.0833333333333333,
+      "runtimeTime": 0.3064516129032258,
+      "x": 1920,
+      "y": 1280
+    },
+    {
+      "index": 20,
+      "sourceFrame": 28,
+      "sourceTime": 1.1666666666666667,
+      "runtimeTime": 0.3225806451612903,
+      "x": 2560,
+      "y": 1280
+    },
+    {
+      "index": 21,
+      "sourceFrame": 29,
+      "sourceTime": 1.2083333333333333,
+      "runtimeTime": 0.3387096774193548,
+      "x": 3200,
+      "y": 1280
+    },
+    {
+      "index": 22,
+      "sourceFrame": 31,
+      "sourceTime": 1.2916666666666667,
+      "runtimeTime": 0.3548387096774194,
+      "x": 3840,
+      "y": 1280
+    },
+    {
+      "index": 23,
+      "sourceFrame": 32,
+      "sourceTime": 1.3333333333333333,
+      "runtimeTime": 0.3709677419354839,
+      "x": 4480,
+      "y": 1280
+    },
+    {
+      "index": 24,
+      "sourceFrame": 33,
+      "sourceTime": 1.375,
+      "runtimeTime": 0.3870967741935484,
+      "x": 0,
+      "y": 1920
+    },
+    {
+      "index": 25,
+      "sourceFrame": 35,
+      "sourceTime": 1.4583333333333333,
+      "runtimeTime": 0.4032258064516129,
+      "x": 640,
+      "y": 1920
+    },
+    {
+      "index": 26,
+      "sourceFrame": 36,
+      "sourceTime": 1.5,
+      "runtimeTime": 0.41935483870967744,
+      "x": 1280,
+      "y": 1920
+    },
+    {
+      "index": 27,
+      "sourceFrame": 37,
+      "sourceTime": 1.5416666666666667,
+      "runtimeTime": 0.43548387096774194,
+      "x": 1920,
+      "y": 1920
+    },
+    {
+      "index": 28,
+      "sourceFrame": 39,
+      "sourceTime": 1.625,
+      "runtimeTime": 0.45161290322580644,
+      "x": 2560,
+      "y": 1920
+    },
+    {
+      "index": 29,
+      "sourceFrame": 40,
+      "sourceTime": 1.6666666666666667,
+      "runtimeTime": 0.46774193548387094,
+      "x": 3200,
+      "y": 1920
+    },
+    {
+      "index": 30,
+      "sourceFrame": 42,
+      "sourceTime": 1.75,
+      "runtimeTime": 0.4838709677419355,
+      "x": 3840,
+      "y": 1920
+    },
+    {
+      "index": 31,
+      "sourceFrame": 43,
+      "sourceTime": 1.7916666666666667,
+      "runtimeTime": 0.5,
+      "x": 4480,
+      "y": 1920
+    }
+  ]
+}

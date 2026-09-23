@@ -1,0 +1,5 @@
+.blood-tier{position:absolute;filter:drop-shadow(0 7px 6px #0009);pointer-events:none}
+.blood-tier canvas{position:absolute;inset:0;width:100%;height:100%}
+.blood-target-mount{z-index:1}.blood-target-iron{z-index:2}.blood-target-fx{z-index:3}
+.blood-tier-value{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.blood-target-loading{position:absolute;inset:20% 0;display:grid;place-content:center;color:#f7dfae;text-shadow:0 2px 5px #000;font:900 40px Offers,Georgia,serif}

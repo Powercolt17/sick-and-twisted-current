@@ -1,0 +1,44 @@
+@font-face{font-family:Western;src:url('assets/western.otf') format('opentype');font-display:swap}@font-face{font-family:Outlaw;src:url('assets/rye.ttf') format('truetype');font-display:block}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#090708;color:#e5dddd;font-family:Arial,Helvetica,sans-serif}body{min-height:100dvh;display:flex;align-items:center;justify-content:center}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #ffed28;outline-offset:5px}button:disabled{cursor:default;opacity:.4}main{width:min(1280px,100%);padding:18px 28px 20px}.page-top{display:flex;justify-content:space-between;font-size:12px;letter-spacing:2.1px;color:#9a8589;padding:0 0 12px}#stage{position:relative;width:100%;aspect-ratio:1092/608;background:#ac001b;overflow:hidden;isolation:isolate}canvas{width:100%;height:100%;display:block}#loading{position:absolute;inset:0;display:grid;place-content:center;gap:18px;text-align:center;background:#160306;font-size:16px;letter-spacing:3px}#loading span{height:3px;background:#e60030;animation:load 1s ease-in-out infinite alternate}@keyframes load{from{transform:scaleX(.2)}to{transform:scaleX(1)}}.control{position:absolute;background:#57000ae8;border:3px solid #fff;color:white;box-shadow:0 0 0 4px #4000056b}.spin{left:84.3%;top:57%;width:14%;height:23.4%;border-radius:16%}.spin svg{width:65%;height:65%;overflow:visible}.spin path{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:10}.spin:hover{background:#7d0018}.spin:active{transform:scale(.97)}.small-control{width:5.2%;aspect-ratio:1;border-radius:50%;padding:0;display:flex;align-items:center;justify-content:center}.menu{left:1.25%;top:68%;flex-direction:column;gap:9%}.menu span{width:49%;height:8%;background:#fff;border-radius:5px}.auto{left:83.4%;top:83.7%}.auto svg{height:82%;width:82%;fill:#fff}.auto.enabled{border-color:#ff0;background:#9b0022}.hit{position:absolute;border:0;background:transparent;border-radius:50%;width:6.2%;height:11%;top:83.7%}.sound{left:.6%}.turbo{right:.7%}.sound[aria-pressed=false]::after{content:'';position:absolute;height:3px;width:63%;background:#fffb00;top:50%;left:18%;transform:rotate(-43deg)}.turbo[aria-pressed=true]{background:#ffef0033;box-shadow:0 0 15px #ffeb00}.control[hidden]{display:none}.toolbar{display:flex;justify-content:space-between;gap:12px;padding:17px 0 9px;border-bottom:1px solid #2d1b20}.actions,.tools{display:flex;align-items:center;gap:8px}.toolbar button{border:1px solid #3b242b;background:#170e12;color:#c6b2b7;min-height:42px;border-radius:3px;padding:0 14px;font-size:12px;font-weight:700;letter-spacing:.8px;white-space:nowrap}.toolbar button:hover{border-color:#b72943;color:#fff}.toolbar .active{background:#b60025;color:#fff;border-color:#df123d}.toolbar button.running{color:#fff;border-color:#cb1340}.bet-picker{display:flex;align-items:center;gap:8px}.bet-picker button{border:0;background:transparent;font-size:20px;padding:0 8px}.bet-picker span{font-size:14px;min-width:52px;text-align:center}.tools #reference-button{border:0;background:transparent}.tools #fullscreen,.tools #reset{font-size:24px;padding:0 9px}footer{display:flex;justify-content:space-between;gap:20px;color:#968288;font-size:12px;padding-top:12px}.hint{font-size:11px;letter-spacing:1.2px;color:#66575b}#remaining{position:absolute;left:90.5%;top:70%;width:7.3%;height:11.2%;border:4px solid white;border-radius:27%;display:grid;place-items:center;background:#0c0508bb;font-size:clamp(16px,2.3vw,28px)}#remaining[hidden]{display:none}dialog{position:absolute;margin:0;left:24.6%;top:15.5%;width:57%;height:auto;border:0;border-radius:15px;background:#090405df;color:#fff;padding:1.5%;overflow:visible}dialog::backdrop{background:#0004}.close{position:absolute;right:2.4%;top:2.5%;width:34px;height:34px;border:0;border-radius:50%;font-size:29px;line-height:1;background:#fff;color:#000}.menu-heading{font-weight:700;background:#df0057;border-radius:25px;padding:9px 14px;width:fit-content;margin:0 auto 12px;box-shadow:0 0 0 4px #83042d88;font-size:clamp(10px,1.4vw,17px)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:3%;margin:0 0 17px}.cards button{border:0;color:#fff;background:transparent;padding:0;font-size:clamp(10px,1.4vw,16px)}.cards img{display:block;width:100%;height:auto;border-radius:3px;border:2px solid transparent}.cards button:hover img{border-color:#ff0;filter:brightness(1.2)}.cards span{display:block;margin-top:5px}dialog small{display:block;text-align:center;color:#ab9b9e;font-size:11px}#reference-wrap{position:absolute;inset:0;background:#000;z-index:20}#reference-wrap[hidden]{display:none}#reference{width:100%;height:100%;object-fit:contain}#close-reference{position:absolute;right:12px;top:36px;background:#080808dc;border:1px solid #fff;color:#fff;border-radius:50%;width:36px;height:36px;font-size:27px}#reference-wrap>span{position:absolute;top:9px;left:50%;transform:translateX(-50%);background:#000b;padding:5px 10px;font-size:11px;letter-spacing:1.2px}#stage:fullscreen{width:100vw;height:100vh;background:#000;aspect-ratio:auto}#stage:fullscreen canvas{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain}@media(max-width:850px){main{padding:12px}.toolbar{flex-wrap:wrap}.tools{margin-left:auto}.toolbar button{padding:0 10px}.page-top{font-size:10px}.close{width:25px;height:25px;font-size:23px}.menu-heading{padding:5px 10px;margin-bottom:8px}.cards{margin-bottom:10px}dialog small{font-size:9px}}@media(max-width:540px){body{align-items:flex-start;padding-top:8vh}main{padding:7px}.toolbar{gap:6px;padding-top:11px}.actions{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}.toolbar button{font-size:10px;padding:0 7px}.tools{width:100%;justify-content:space-between}.hint{display:none}.control{border-width:2px}.small-control{box-shadow:none}dialog{width:69%;left:17%}.page-top{letter-spacing:1px}#remaining{border-width:2px}footer{font-size:11px}}@media(prefers-reduced-motion:reduce){#loading span{animation:none}}
+/* The sixth reel uses its own column; each of the four rows is almost square. */
+main{width:min(1560px,100%,calc((100dvh - 150px)*1.993421 + 56px))}
+#stage{aspect-ratio:1212/608}
+.spin{left:85.83%;width:12.61%;border-width:3px;border-radius:17%;box-shadow:0 0 0 3px #46000b,0 8px 20px #19000540}
+.small-control{width:4.7%}.menu{left:1.1%}.auto{left:85.05%}
+.hit{width:5.58%}.sound{left:.55%}.turbo{right:.62%}
+#remaining{left:91.45%;width:6.58%}
+dialog{left:24.8%;width:60%}
+#game{image-rendering:auto}
+main:fullscreen{width:min(100vw,calc((100dvh - 150px)*1.993421 + 56px));margin:auto;background:#090708;height:100dvh;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:850px){main{width:min(100%,calc((100dvh - 174px)*1.993421 + 24px))}.spin{border-width:2px}}
+@media(max-width:540px){main{width:100%}dialog{width:70%;left:16%}.small-control{width:4.8%}.spin{box-shadow:0 0 0 2px #46000b}}
+
+/* Portrait-side controls sit at the feet, leaving the logo and face unobstructed. */
+.menu{left:1.1%;top:85.3%;width:4.3%}
+.sound{left:14.7%;top:85.3%;width:4.3%;height:auto;aspect-ratio:1;background:#57000aeb;border:3px solid #f6edce;box-shadow:0 0 0 3px #4000056b;display:grid;place-items:center}
+.sound svg{width:72%;height:72%;fill:none;stroke:#f6edce;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.sound svg path:first-child{fill:#f6edce;stroke:none}
+.sound[aria-pressed=false]::after{background:#f6edce;height:3px;width:75%;left:12.5%}
+.sound:hover{background:#7d0018}
+@media(max-width:540px){.menu,.sound{width:4.3%;border-width:2px}}
+
+/* Ash & Bone: palette only. Existing geometry, timing and hit areas are retained. */
+html,body{background:#090909;color:#e6dfcf}
+.page-top{color:#aca797}
+#stage{background:#292823}
+#loading{background:#171714;color:#e6dfcf}
+.control,.sound{background:#22211ee8;border-color:#eee5cf;box-shadow:0 0 0 3px #09090999}
+.spin:hover,.sound:hover{background:#36332b}
+.spin path{stroke:#eee5cf}
+.menu span,.auto svg{color:#eee5cf}
+.menu span{background:#eee5cf}.auto svg{fill:#eee5cf}
+.toolbar{border-bottom-color:#38352e}
+.toolbar button{background:#1b1b18;color:#d4cbb7;border-color:#454138}
+.toolbar button:hover{border-color:#a19a87;color:#fff9e8}
+.toolbar .active{background:#34322b;border-color:#b3a78e;color:#fff4d9}
+.toolbar button.running{border-color:#9d3835;color:#fff4d9}
+footer{color:#a29b8a}.hint{color:#777366}
+#features{background:#10100fe8}
+.menu-heading{background:#373129;box-shadow:0 0 0 4px #a2996b24;color:#f1e4c7}
+#remaining{background:#141411dc}
+main:fullscreen{background:#090909}
+

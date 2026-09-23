@@ -1,0 +1,12 @@
+{
+  "feature": "Blood Money",
+  "scatters": 3,
+  "source": "User-supplied b8c00d62-f346-4494-846a-0ac72e235627.png",
+  "artwork": "artwork.png",
+  "cleanPlate": "cloth-clean-plate.png",
+  "cleanPlateUse": "Only inside the original loose-cloth silhouette; all remaining pixels use the supplied artwork",
+  "burn": "Native procedural mask over the actual live scatter cells; per-play random effect seed",
+  "audio": "Clean generated PCM: feature-audio.js, no media element or recording",
+  "artworkMotion": "Live separate cloth and painted fire layers",
+  "recordedPlayback": false
+}

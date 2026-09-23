@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+<defs>
+ <linearGradient id="metal" x1="24" y1="12" x2="90" y2="106" gradientUnits="userSpaceOnUse"><stop stop-color="#e9c265"/><stop offset=".38" stop-color="#b78936"/><stop offset=".67" stop-color="#7b521d"/><stop offset="1" stop-color="#cf9e3f"/></linearGradient>
+ <linearGradient id="red" x1="39" y1="17" x2="79" y2="106" gradientUnits="userSpaceOnUse"><stop stop-color="#aa2b20"/><stop offset=".55" stop-color="#871910"/><stop offset="1" stop-color="#58110b"/></linearGradient>
+ <linearGradient id="gold" x1="42" y1="28" x2="64" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#f2d476"/><stop offset=".38" stop-color="#e8bb42"/><stop offset=".74" stop-color="#d5a12c"/><stop offset="1" stop-color="#efc855"/></linearGradient>
+ <path id="five" d="M28 28H65V42H57V39H39L37 51C41 49 46 48 51 49C64 50 69 59 68 72C67 85 59 93 45 93C36 93 29 90 24 85L22 71H34L37 80C40 83 45 84 50 81C54 79 56 74 55 69C54 63 51 60 45 60C40 60 36 62 33 66L23 60Z"/>
+ <path id="times" d="M76 43L85 52L94 43L102 51L93 60L102 69L94 77L85 68L76 77L68 69L77 60L68 51Z"/>
+ <clipPath id="letters"><use href="#five"/><use href="#times"/></clipPath>
+</defs>
+<path d="M60 3C91 2 116 27 117 58C118 91 94 116 62 117C30 118 4 94 3 63C1 31 27 4 60 3Z" fill="#27190d"/>
+<path d="M60 6C90 5 113 29 114 59C115 89 91 112 62 113C31 114 7 91 6 61C5 31 29 7 60 6Z" fill="url(#metal)"/>
+<circle cx="60" cy="59.5" r="48.5" fill="url(#red)" stroke="#513012" stroke-width="1.4"/>
+<path d="M18 32C30 10 52 6 71 10M91 103C78 112 54 115 37 107" stroke="#f1cf77" stroke-width="1.1" opacity=".65"/>
+<g stroke="#38110b" stroke-linecap="round" opacity=".4"><path d="m22 29 10-9m-17 52 1 8m19 18 8 3m58-23-4 11m7-48-3-9" stroke-width="1.3"/><path d="m17 48 4-8m26-22 7-1m24 82 8-4" stroke-width=".7"/></g>
+<g fill="#3c1d09" transform="translate(0 2)"><use href="#five"/><use href="#times"/></g>
+<g fill="url(#gold)" stroke="#5b330c" stroke-width="1.1" stroke-linejoin="round"><use href="#five"/><use href="#times"/></g>
+<g clip-path="url(#letters)" fill="none" stroke-linecap="square">
+ <path d="M30 30H63M27 74l2 9M41 89c13 3 22-5 24-15M77 46l8 8m10-8 4 5" stroke="#fff0a2" stroke-width="1" opacity=".65"/>
+ <path d="m29 35 8-.4m10 .4 10-.5M29 56l5-2M42 86l8-1m6-21 3 2M76 69l3-3m13-12 3-3" stroke="#825018" stroke-width="1.2" opacity=".55"/>
+</g>
+</svg>

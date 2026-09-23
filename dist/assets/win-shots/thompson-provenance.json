@@ -1,0 +1,12 @@
+{
+  "source": "Bjorn Lynne - Top Gun- Thomson Submachine Gun Long Shooting Burst .wav",
+  "sourceSHA256": "2537d8629aa2264ae473e98805b115f3f464898bb0c75205c8897bcd1f2de459",
+  "runtime": "thompson-win-burst.wav",
+  "durationSeconds": 2.042,
+  "channels": 2,
+  "sampleRate": 48000,
+  "gainIncreaseDb": 2.484,
+  "peakDbFS": -1.0,
+  "processing": "96 kHz to 48 kHz, linear gain to -1 dBFS; original timing, pitch and stereo preserved",
+  "playback": "One burst per winning sequence, starting with the first bullet; existing mute/pause/skip controls; music continues"
+}

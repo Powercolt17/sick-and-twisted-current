@@ -1,0 +1,8 @@
+@font-face{font-family:ApprovedWinOutlaw;src:url('assets/approved-win/rye.ttf')}@font-face{font-family:ApprovedWinWestern;src:url('assets/approved-win/western.otf')}
+#approved-win-layer{position:absolute;inset:0;z-index:30;overflow:hidden;touch-action:manipulation;pointer-events:none}
+#approved-win-layer[hidden]{display:none}
+#approved-win-canvas{position:absolute;inset:0;width:100%;height:100%;max-width:none;pointer-events:none;background:transparent}
+.approved-win-controls{pointer-events:auto;position:absolute;right:8px;bottom:8px;display:flex;gap:6px;z-index:1}
+.approved-win-controls button{min-width:44px;min-height:44px;border:1px solid #8b7459;background:#15110de8;color:#ecdfc0;padding:8px 12px;font:700 12px Arial,sans-serif;cursor:pointer}
+.approved-win-controls button:focus-visible{outline:2px solid #ecdfc0;outline-offset:2px}
+.approved-win-controls button:disabled{opacity:.6;cursor:default}

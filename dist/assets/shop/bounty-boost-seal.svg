@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+<defs>
+ <linearGradient id="edge" x1="28" y1="8" x2="86" y2="112" gradientUnits="userSpaceOnUse"><stop stop-color="#e4c46a"/><stop offset=".35" stop-color="#bd913c"/><stop offset=".7" stop-color="#79501d"/><stop offset="1" stop-color="#ca9c43"/></linearGradient>
+ <linearGradient id="enamel" x1="42" y1="16" x2="76" y2="105" gradientUnits="userSpaceOnUse"><stop stop-color="#9d281e"/><stop offset=".55" stop-color="#811a12"/><stop offset="1" stop-color="#61110e"/></linearGradient>
+</defs>
+<circle cx="60" cy="61" r="57" fill="#24120a"/>
+<circle cx="60" cy="59" r="55" fill="url(#edge)" stroke="#412612" stroke-width="1.5"/>
+<circle cx="60" cy="59" r="50.5" fill="url(#enamel)" stroke="#613416" stroke-width="1.5"/>
+<path d="M17 29A52 52 0 0 1 97 22" stroke="#f3da90" stroke-width=".9" stroke-linecap="round" opacity=".7"/>
+<path d="M29 104A52 52 0 0 0 100 92" stroke="#e5bb57" stroke-width=".8" stroke-linecap="round" opacity=".55"/>
+</svg>
