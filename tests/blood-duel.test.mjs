@@ -53,3 +53,16 @@ assert.deepEqual(chain.releaseAim(),{angle:.12,frame:31});assert.equal(chain.rel
 assert.equal(chain.drawFigure({},7000,true),false,'old pose cannot reappear after target holstering');
 chain.start(1,2);chain.hit(2,true,{continueToTarget:true});chain.stop();assert.equal(chain.releaseAim(),null,'cancel clears the held gun');
 console.log('PASS held gun survives reaction cleanup, transfers once and clears on cancellation.');
+
+for(const reduced of [false,true]){
+ const gated=createBloodDuel({shooter:aimedShooter,canvas:{style:{filter:''}},reduced});
+ await gated.load();gated.start(0,2);gated.update(0);gated.hit(2,true,{continueToTarget:true});gated.next(1);
+ let now=0;for(;now<8000;now+=16)gated.update(now);
+ assert.equal(gated.debug.level,0,'new enemy cannot overlap the multiplier or spin reward');
+ assert.equal(gated.settled,false,'pending reward blocks the next spin');
+ gated.revealNext();assert.equal(gated.settled,false,'release alone must not skip the next entrance');
+ gated.update(now+=16);assert.equal(gated.debug.level,1);assert.equal(gated.settled,false,'entrance has its own readable beat');
+ for(let i=0;i<40;i++)gated.update(now+=16);
+ assert.equal(gated.settled,true);gated.stop();
+}
+console.log('PASS reward-gated next enemy, complete entrance before spin, normal and reduced motion.');

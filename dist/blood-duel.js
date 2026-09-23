@@ -4,12 +4,12 @@
 // Desktop and tablet only. Phones never paint the gunslinger, so they keep the header poster.
 import {BLOOD_STAGE,bloodHeroPoint} from './blood-duel-stage.js?v=1';
 import {gunslingerTimeline} from './gunslinger-motion.js?v=2';
-import {DUEL_TIMING,planDuelShot,duelClipTime,duelFrame} from './blood-duel-motion.js?v=1';
+import {DUEL_TIMING,planDuelShot,duelClipTime,duelFrame} from './blood-duel-motion.js?v=2';
 const clamp=v=>Math.max(0,Math.min(1,v)),ease=v=>{v=clamp(v);return v*v*(3-2*v);};
 const {bodyHold:LIE,fade:FADE,enter:ENTER}=DUEL_TIMING,POSTER_IN=700;
 const CLIP_OF=['hit1','hit2','kill'],REST=[['hit1',0],['hit1',-1],['hit2',-1],['kill',-1]];
 export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=false,turbo=()=>false,onCue=()=>{},onKick=()=>{},getBounty=()=>null}){
- let meta=null,loading=null,img={},d=null,clock=0,last=null,slow=null,particles=[],shots=[],paused=false,heldShot=null;
+ let meta=null,loading=null,img={},d=null,clock=0,last=null,dustAt=null,particles=[],shots=[],paused=false,heldShot=null;
  const LANE=BLOOD_STAGE.enemy;
  const bmp=async src=>{const im=new Image();im.src=src;await im.decode();try{return await createImageBitmap(im);}catch(e){return im;}};
  function load(){
@@ -23,32 +23,32 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
  }
  const has=level=>level!=null&&!!meta&&!!meta.outlaws[String(level)]&&!!img[`clip_${level}_hit1`];
  const O=()=>meta.outlaws[String(d.level)];
- const fresh=(level,enterAt)=>({level,state:0,clip:null,hitAt:null,pools:[],enterAt,goneAt:0,restAt:-1e9,shot:null,away:false});
- function start(level=0,stamps=0){heldShot=null;if(!has(level))return false;clock=0;last=null;slow=null;particles=[];shots=[];d=fresh(level,-1e9);d.state=Math.max(0,Math.min(2,stamps));canvas.style.filter='';return true;}
- function stop(){heldShot=null;d=null;particles=[];shots=[];slow=null;canvas.style.filter='';}
+ const fresh=(level,enterAt)=>({level,state:0,clip:null,hitAt:null,pools:[],enterAt,goneAt:0,restAt:-1e9,shot:null,away:false,deferNext:false});
+ function start(level=0,stamps=0){heldShot=null;if(!has(level))return false;clock=0;last=null;dustAt=null;particles=[];shots=[];d=fresh(level,-1e9);d.state=Math.max(0,Math.min(2,stamps));canvas.style.filter='';return true;}
+ function stop(){heldShot=null;d=null;particles=[];shots=[];dustAt=null;canvas.style.filter='';}
  function setPaused(value){paused=!!value;last=null;}
  // Active time is shared by fire, contact, audio and particles. Drawing never advances state.
  function update(now){if(!d||paused){last=null;return;}const dt=last===null?0:Math.max(0,Math.min(100,now-last))*(turbo()?1.55:1);last=now;clock+=dt;
   if(d.clip&&clock>=d.clip.at){const c=O().clips[d.clip.name],time=duelClipTime(clock-d.clip.origin,d.clip.plan,d.clip.kill,reduced);
-   if(d.clip.kill&&!d.clip.landed&&time>=(c.ground??c.ts.at(-1))){d.clip.landed=true;onCue({type:'fall',clock});if(!reduced)onKick(1.8);}
+   if(d.clip.kill&&!d.clip.landed&&time>=(c.ground??c.ts.at(-1))){d.clip.landed=true;dustAt=clock;onCue({type:'fall',clock});if(!reduced)onKick(1.8);}
    if((reduced&&d.shot?.impacted)||time>=c.ts.at(-1)){d.clip=null;d.restAt=clock;}}
   const sec=dt/1000;particles=particles.filter(p=>{p.vy+=900*sec;p.x+=p.vx*sec;p.y+=p.vy*sec;p.life-=sec;return p.life>0&&p.y<LANE.ground+6;});
   shots=shots.filter(s=>clock-s.at<s.dur+100);
   const b=getBounty();
   if(b&&b.level>d.level&&d.next===undefined&&!d.away){if(d.state<3&&!(d.shot&&!d.shot.impacted)){d.state=3;d.clip=null;d.restAt=clock;}next(b.level);}
-  if(d.goneAt&&!d.clip&&!d.shot&&clock>=d.goneAt+FADE&&d.next!==undefined){const lv=d.next;d=has(lv)?fresh(lv,clock):{...fresh(lv,clock),away:true,awayAt:clock};slow=null;return;}
+  if(d.goneAt&&!d.clip&&!d.shot&&clock>=d.goneAt+FADE&&d.next!==undefined&&!d.deferNext){const lv=d.next;d=has(lv)?fresh(lv,clock):{...fresh(lv,clock),away:true,awayAt:clock};dustAt=null;return;}
   if(d.state===3&&!d.clip&&!d.shot&&d.next===undefined&&!d.away&&clock-d.restAt>=LIE){d.goneAt=clock;d.next=null;}
   const q=d.shot;if(!q)return;const t=clock-q.at;
   if(!q.drew&&t>=0){q.drew=true;onCue({type:'draw',clock});}
   if(!q.fired&&clock>=q.origin+q.plan.fire){q.fired=true;const m=muzzle(q.run,q.run.shots[0]+.001),w=wound(q.n);
    shots.push({x0:m.x,y0:m.y,x1:w.x,y1:w.y,at:q.origin+q.plan.fire,dur:q.plan.travel||1,kill:q.kill});
-   onCue({type:'shot',kill:q.kill,clock,scheduled:q.origin+q.plan.fire});onKick(q.kill?3.5:2.2);}
+   onCue({type:'shot',kill:q.kill,clock,scheduled:q.origin+q.plan.fire});onKick(q.kill?1.6:1.4);}
   if(q.fired&&!q.impacted&&clock>=q.origin+q.plan.land){q.impacted=true;const w=wound(q.n);d.hitAt=q.origin+q.plan.land;
    for(let i=0;i<(q.kill?18:12);i++){const a=(Math.random()-.5)*1.9,sp=90+Math.random()*230;particles.push({x:w.x,y:w.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-65,r:.8+Math.random()*1.6,life:.65+Math.random()*.3});}
    d.pools.push({x:LANE.cx+(Math.random()-.5)*22,at:clock,s:42+q.n*16});d.state=q.n+1;
-   if(q.kill)slow={from:d.hitAt,to:d.hitAt+DUEL_TIMING.killAccent};
+   // Impact light stays on the enemy silhouette; never filter the reels.
    if(reduced){d.clip=null;d.restAt=clock;}
-   onCue({type:'impact',n:q.n,kill:q.kill,clock,scheduled:q.origin+q.plan.land});onKick(q.kill?6:4);}
+   onCue({type:'impact',n:q.n,kill:q.kill,clock,scheduled:q.origin+q.plan.land});onKick(q.kill?2.8:2.2);}
   if(q.impacted&&t>=q.run.end*1000&&!d.clip)d.shot=null;
  }
  function muzzle(run,t){if(shooter.muzzle)return shooter.muzzle(t);const j=shooter.assets.json,p=j.placement,k=shooter.frameIndex(t),m=j.muzzles[Math.max(0,k)];return bloodHeroPoint(p.x+m[0]*p.width/j.width,p.y+m[1]*p.height/j.height);}
@@ -56,7 +56,7 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
  function hit(n,kill,{continueToTarget=false}={}){if(!d||d.away||d.shot||d.clip||!Number.isInteger(n)||n<0||n>2||n!==d.state)return false;
   const run=shooter.timeline?.({hold:kill&&continueToTarget})||gunslingerTimeline([[0,0]]),c=O().clips[CLIP_OF[n]],plan=planDuelShot(c,run,kill,reduced);
   shooter.startCells(run,wound(n));d.shot={origin:clock,at:clock+plan.gunDelay,plan,run,n,kill:!!kill,fired:false,impacted:false,drew:false};
-  if(kill&&continueToTarget)heldShot=d.shot;
+  if(kill&&continueToTarget){heldShot=d.shot;d.deferNext=true;}
   d.clip={name:CLIP_OF[n],origin:clock,plan,kill:!!kill,at:clock+plan.clipStart};return true;}
  function next(level){if(!d||d.next!==undefined)return;const c=d.clip&&O().clips[d.clip.name];
   const end=c?d.clip.origin+d.clip.plan.land+Math.max(0,c.ts.at(-1)-d.clip.plan.impact)+DUEL_TIMING.killAccent*(1-DUEL_TIMING.killRate):clock;
@@ -68,6 +68,7 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
  function buffer(){const rs=getRenderScale();if(!buf||bufRS!==rs){buf=document.createElement('canvas');buf.width=Math.ceil(BW*rs);buf.height=Math.ceil(BH*rs);bufG=buf.getContext('2d');bufRS=rs;}return bufG;}
  const lane=phone=>!phone&&!!d&&!d.away&&has(d.level);
  const owns=phone=>!phone&&!!d&&!!meta;
+ function revealNext(){if(d)d.deferNext=false;}
  function releaseAim(){if(!heldShot)return null;const result=shooter.handoff?.((clock-heldShot.at)/1000)??null;heldShot=null;return result;}
  function drawFigure(ctx,now,motion){const q=(d&&d.shot)||heldShot;if(!q||!shooter.assets.json)return false;const t=(clock-q.at)/1000;if(t<0||(!heldShot&&t>=q.run.end))return false;if(reduced)return shooter.idle(ctx,now,false)||false;shooter.figure(ctx,t,1,now,motion);return true;}
  let warmed=false;
@@ -76,7 +77,7 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
   // so no sheet is ever drawn for the first time in the middle of a shot
   if(!warmed){warmed=true;ctx.save();ctx.globalAlpha=.004;for(const k of Object.keys(img))if(img[k])ctx.drawImage(img[k],0,0,1,1);ctx.restore();}
   const gone=d.goneAt?clamp((t-d.goneAt)/FADE):0;if(gone>=1)return;const enter=ease(clamp((t-d.enterAt)/ENTER)),alpha=(1-gone)*enter;
-  const hitA=d.hitAt!=null?(t-d.hitAt)/1000:9,e=hitA<.14?(1-hitA/.14)*.4:0;
+  const hitA=d.hitAt!=null?(t-d.hitAt)/1000:9,e=hitA<.095?(1-hitA/.095)*.55:0;
   // Contact shadow and blood remain planted on the shared dirt floor
   ctx.save();ctx.globalAlpha=alpha*.55;ctx.translate(LANE.cx,LANE.ground+1);ctx.scale(1.2,.19);const sh=ctx.createRadialGradient(0,0,4,0,0,70);sh.addColorStop(0,'rgba(8,4,2,.85)');sh.addColorStop(1,'rgba(8,4,2,0)');ctx.fillStyle=sh;ctx.fillRect(-72,-72,144,144);ctx.restore();
   if(img.pool)for(const p of d.pools){const a=clamp((t-p.at)/900),w=p.s*(.3+.7*ease(a)),h=w*img.pool.height/img.pool.width*.32;ctx.save();ctx.globalAlpha=.85*alpha;ctx.drawImage(img.pool,p.x-w/2,LANE.ground-h*.55,w,h);ctx.restore();}
@@ -100,11 +101,19 @@ export function createBloodDuel({shooter,canvas,getRenderScale=()=>2,reduced=fal
   }
   // blood blown out of him, falling to the boards
   if(particles.length){ctx.save();ctx.fillStyle='#5e0a07';for(const b of particles){ctx.globalAlpha=Math.min(1,b.life*1.6);ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,6.283);ctx.fill();}ctx.restore();}
-  // bullet time: a short accent on the moving reaction after the kill round lands (a GPU filter on the canvas)
-  let a=0;if(slow&&!reduced&&t>=slow.from&&t<slow.to+180)a=t<slow.to?Math.min(1,(t-slow.from)/40):1-ease((t-slow.to)/180);
-  const f=a>.01?`grayscale(${(a*.75).toFixed(3)}) brightness(${(1-a*.22).toFixed(3)}) contrast(${(1+a*.12).toFixed(3)})`:'';if(canvas.style.filter!==f)canvas.style.filter=f;}
- return {load,start,stop,update,hit,next,has,lane,owns,releaseAim,drawFigure,drawOutlaw,drawOver,setPaused,
-  get debug(){return d?{level:d.level,state:d.state,holdingAim:!!heldShot,gun:shooter.handoff?.(Math.max(0,(clock-((d.shot||heldShot)?.at??clock))/1000))??null,ground:LANE.ground,scale:LANE.scale,clip:d.clip&&d.clip.name,frame:d.clip?clipAt(d.clip.name):null,shot:!!d.shot,impacted:!!d.shot?.impacted,away:d.away,paused,clock:Math.round(clock),particles:particles.length,plan:d.shot?.plan??null}:null;},
+  // A low, warm ground plume puts weight behind the body's actual landing.
+  if(dustAt!==null&&!reduced){const age=(t-dustAt)/1000;
+   if(age>=0&&age<.85){const p=age/.85,fade=Math.sin(Math.PI*Math.sqrt(p))*.3;
+    ctx.save();ctx.globalAlpha=fade;ctx.translate(LANE.cx,LANE.ground+1);
+    for(let i=0;i<5;i++){const x=(i-2)*(9+28*p),y=-3-10*p-(i%2)*7*p;
+     ctx.save();ctx.translate(x,y);ctx.scale(1,.35);const r=10+27*p,g=ctx.createRadialGradient(0,0,0,0,0,r);
+     g.addColorStop(0,'rgba(168,125,76,.8)');g.addColorStop(1,'rgba(120,86,48,0)');ctx.fillStyle=g;ctx.fillRect(-r,-r,r*2,r*2);ctx.restore();}
+    ctx.restore();}
+  }
+ }
+
+ return {load,start,stop,update,hit,next,has,lane,owns,releaseAim,revealNext,drawFigure,drawOutlaw,drawOver,setPaused,
+  get debug(){return d?{deferNext:d.deferNext,entering:clock-d.enterAt<ENTER,level:d.level,state:d.state,holdingAim:!!heldShot,gun:shooter.handoff?.(Math.max(0,(clock-((d.shot||heldShot)?.at??clock))/1000))??null,ground:LANE.ground,scale:LANE.scale,clip:d.clip&&d.clip.name,frame:d.clip?clipAt(d.clip.name):null,shot:!!d.shot,impacted:!!d.shot?.impacted,away:d.away,paused,clock:Math.round(clock),particles:particles.length,plan:d.shot?.plan??null}:null;},
   get posterAlpha(){return !d||!d.away?1:ease(clamp((clock-(d.awayAt||0))/POSTER_IN));},
-  get active(){return !!d;},get impacted(){return !!d&&(!d.shot||d.shot.impacted);},get settled(){return !d||(!d.shot&&!d.clip&&(d.away||d.state<3||clock-d.restAt>=DUEL_TIMING.settleHold)&&!(d.goneAt&&clock<d.goneAt+FADE));},get ready(){return !!meta;}};
+  get active(){return !!d;},get acting(){return !!(d?.shot||d?.clip);},get impacted(){return !!d&&(!d.shot||d.shot.impacted);},get settled(){return !d||(!d.deferNext&&d.next===undefined&&clock-d.enterAt>=ENTER&&!d.shot&&!d.clip&&(d.away||d.state<3||clock-d.restAt>=DUEL_TIMING.settleHold)&&!(d.goneAt&&clock<d.goneAt+FADE));},get ready(){return !!meta;}};
 }

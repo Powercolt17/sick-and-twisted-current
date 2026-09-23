@@ -1,3 +1,7 @@
+# Current: weighted death / separated reward / pitched scatter sound
+
+Read the current polish revision in BLOOD-CONTINUITY.md first. Game255 is the latest authored source.
+
 # Current account: cigarette / continuous kill-to-target / bottom spin reward
 
 Read BLOOD-CONTINUITY.md first. It supersedes prior target choreography and reward-layout notes. Use this checkout's hosting manifest for the new private Site. Game entry v254; all 24 checks pass.

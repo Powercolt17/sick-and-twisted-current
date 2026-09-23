@@ -1,4 +1,15 @@
-// One struck-steel voice at bullet contact, through the game's muted/limited bus.
+// The exact scatter recording, a perfect fifth higher, at target contact.
+// No layered synthetic ding: preserve the recognizable recorded attack and ring.
+export function playTargetScatter(context,destination,buffer){
+ if(!buffer)return null;
+ const source=context.createBufferSource(),gain=context.createGain(),pan=context.createStereoPanner?.();
+ source.buffer=buffer;source.playbackRate.value=1.5;gain.gain.value=.9;
+ source.connect(gain);if(pan){pan.pan.value=.42;gain.connect(pan);pan.connect(destination);}else gain.connect(destination);
+ source.onended=()=>{source.disconnect();gain.disconnect();pan?.disconnect();};
+ source.start(context.currentTime);
+ return {source,rate:1.5,end:context.currentTime+buffer.duration/1.5};
+}
+// Historical synthesized voice, retained for old offline reference comparisons.
 // Inharmonic resonances and a short noisy attack keep this a range-target ding.
 export function playTargetDing(context,destination){
  const at=context.currentTime,out=context.createStereoPanner();out.pan.value=.38;out.connect(destination);

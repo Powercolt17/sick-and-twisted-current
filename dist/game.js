@@ -1,6 +1,6 @@
-import {playTargetDing} from './blood-target-audio.js?v=1';
+import {playTargetScatter} from './blood-target-audio.js?v=2';
 import {createBloodRewards} from './blood-rules.js?v=2';
-import {createBloodPromotion} from './blood-promotion.js?v=6';
+import {createBloodPromotion} from './blood-promotion.js?v=7';
 import {createBloodTargetGun,createBloodGunslinger} from './blood-gunslinger.js?v=2';
 import {BLOOD_STAGE} from './blood-duel-stage.js?v=1';
 import {createScatterSlam} from './scatter-slam.js?v=1';
@@ -14,7 +14,7 @@ import {createFeatureScenes,confirmedBloodCells,confirmedHangCells,confirmedHell
 import {createScatterAudio} from './scatter-audio.js?v=2';
 import {createThemeMusic} from './theme-music.js?v=3';
 import {createBloodBank} from './blood-bank.js?v=132';
-import {createBloodDuel} from './blood-duel.js?v=6';
+import {createBloodDuel} from './blood-duel.js?v=7';
 import {createBloodReceipt} from './blood-receipt.js?v=3';
 import {createBloodBriefing} from './blood-briefing.js?v=124';
 import {freshBounty,upgradeGrid} from './blood-bounty.js?v=81';
@@ -203,8 +203,7 @@ const bloodPromotion=createBloodPromotion({stage:$('#stage'),reduced,onStart:()=
  if(cue.type==='target-draw'&&!bloodTargetGun.continued)playSample('draw',.22,1,false,0,0,undefined,-.55);
  if(cue.type==='target-shot')playSample('shot',.5,.98,false,0,0,undefined,-.55);
  if(cue.type==='target-impact'){
-  playSample('stamp',.22,1.45,false,0,0,undefined,.6);
-  playTargetDing(audio,bus());
+  playTargetScatter(audio,bus(),samples.scatter);
  }
  if(cue.type==='target-catch')playSample('cock',.13,.8,false,0,0,undefined,.6);
 }});
@@ -930,7 +929,7 @@ if(dev.pauseRendering){queueRender();return;}lastTime=now;featureScenes.tick(now
  // The payout coordinator owns all reaction and amount sound cues.
  if(bloodBank.active){
   bloodBank.setReadout(freeSpins,bonusAward,bloodPromotion.shownMultiplier);if(bloodDuel.lane(phoneView))bloodDuel.drawOutlaw(ctx);else if(!bloodDuel.owns(phoneView))bloodBank.drawPoster(ctx,now);bloodDuel.drawOver(ctx);if(!phoneView)bloodTargetGun.drawOver(ctx,bloodPromotion.age,bloodPromotion.target);
-  if(!tumble.active)bloodBank.drawHighlights(ctx,reels,now,[...Object.keys(spinning),...Object.keys(wilds)].map(Number));
+  if(!tumble.active&&!bloodPromotion.active&&!bloodDuel.acting)bloodBank.drawHighlights(ctx,reels,now,[...Object.keys(spinning),...Object.keys(wilds)].map(Number));
  }else if(bloodBriefing.active||bloodEntryPending){if(bloodDuel.lane(phoneView)){bloodDuel.drawOutlaw(ctx);bloodDuel.drawOver(ctx);}else if(!bloodDuel.owns(phoneView))bloodBank.drawBriefing(ctx);
  }else{
   drawRoundReadout();
@@ -1287,7 +1286,7 @@ async function presentBounty(step,token,id){
     const reward=bloodRewards.claim(event);
     if(reward){freeSpins+=reward.spins;roundMeta.winBoost=reward.multiplier;$('#remaining').textContent=freeSpins;bloodBank.addSpins(reward.spins);bloodBank.setReadout(freeSpins,bonusAward,bloodPromotion.shownMultiplier);bloodPromotion.show(reward,{defeated:OUTLAW_NAMES[event.target],next:OUTLAW_NAMES[event.next],remaining:freeSpins,clock:bloodBank.presentationTime});}
     const cells=[];reels.forEach((col,c)=>col.forEach((s,r)=>{if(s===event.target&&!wilds[c])cells.push([c,r]);}));
-    reels=upgradeGrid(reels,event.state.level);bloodBank.flash(cells,now,event.target,event.next);if(duel)bloodDuel.next(event.state.level);
+    reels=upgradeGrid(reels,event.state.level);if(!duel)bloodBank.flash(cells,now,event.target,event.next);if(duel)bloodDuel.next(event.state.level);
     setStatus('Bounty claimed. Taking aim at the multiplier target.');
    }
   }
@@ -1296,6 +1295,7 @@ async function presentBounty(step,token,id){
  }
  if(token===sequenceToken)bloodBank.finishEvent();
  while(token===sequenceToken&&bloodPromotion.active){bloodPromotion.update(bloodBank.presentationTime);await wait(16);}
+ if(token===sequenceToken&&duel&&event.upgraded)bloodDuel.revealNext();
  // his reaction plays out before the next spin, so the next round always lands on the pose it starts from
  if(duel){while(token===sequenceToken&&bloodDuel.active&&!bloodDuel.settled)await wait(16);}
 }

@@ -1,3 +1,35 @@
+# Current polish revision — 2026-09-23, game255
+
+Supersedes the presentation timing and sound descriptions below.
+
+- Retimed all three existing death clips with continuous acceleration into the
+  measured ground contact and a slower grounded settling tail. Contact remains
+  exactly aligned to the bullet; source poses, wounds and props are preserved.
+- Removed the full-canvas grayscale/darkening effect. Impact light is confined
+  to the enemy silhouette for95ms, with smaller camera impulses and a short
+  ground-dust plume at actual body contact. No replacement art or extra assets.
+- A stage-clearing kill gates the next enemy until the multiplier spin AND the
+  +2-spins moment finish. After that, a separate480ms entrance completes before
+  play resumes. Reset, cancellation and reduced motion respect the same gate.
+- Removed competing reel upgrade flips on desktop; contributing-symbol accents
+  are suppressed during the duel and promotion. The approved floating +2 FREE
+  SPINS artwork/position stays, with stronger feathered backing for contrast.
+- The target now plays the exact scatter-impact-a.wav recording at1.5x pitch
+  (a perfect fifth), with0.9 gain through the existing mute/limited bus. This
+  replaces the synthetic steel ding and layered stamp. It fires once at contact.
+- Cigarette continuity and one continuous enemy-to-target gun draw are retained.
+  Odds, payouts, random multiplier distribution and two extra-spin grants unchanged.
+
+Verification: all24 test files passed; new transition-gate checks pass in normal
+and reduced motion. Complete desktop (normal speed) and phone-emulated (Turbo)
+walkthroughs both returned12spins,2grants,4x final,$42.90 and no runtime/asset
+errors. Recorded samples verify no new enemy during reward, no canvas filter,
+held-gun continuity and raised target shot. Reviewed all three live death takes
+at ten phases each and the full kill/target/reward/entrance sequence. Offline
+render confirms exact source buffer, rate1.5, peak0.647038, no nonfinite samples.
+Physical phones/Safari and subjective speaker balance remain unverified.
+Artifacts: ../work/polish-{desktop,mobile,deaths}, plus contact sheets.
+
 # Blood Money continuity update — 2026-09-23
 
 This checkout is the current-account continuation of the approved game. The user
