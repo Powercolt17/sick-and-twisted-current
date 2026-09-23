@@ -1,3 +1,7 @@
+# Blood Money target shares scene camera — game260
+
+The entire multiplier target now inherits the exact canvas camera matrix every frame, including hit shake, impact zoom and camera pivots. Its local flip/recoil remains inside that transform. Screen-to-world conversion accounts for pixel scale and portrait header. Start/stop clears residual transforms. Camera alignment, target motion and Ringleader tests pass. No math/assets/layout changes.
+
 # Blood Money Ringleader hotfix and reference panels — game259
 
 Ringleader now accepts three real paying-target hits, including the existing death reaction on hit three. Final-stage health 0–3 maps to canonical catalog index 6; no payout, seed, multiplier odds or extra-spin changes. No rewards after final death. Tests/blood-ringleader.test.mjs exercises real resolver→timeline→duel across normal/Turbo/reduced motion and terminal-state catalog invariance. All 27 tests pass; the complete browser walkthrough reaches Ringleader defeated, 12 spins and $42.90.

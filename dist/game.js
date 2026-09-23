@@ -1,6 +1,6 @@
 import {playTargetScatter} from './blood-target-audio.js?v=2';
 import {createBloodRewards} from './blood-rules.js?v=2';
-import {createBloodPromotion} from './blood-promotion.js?v=7';
+import {createBloodPromotion} from './blood-promotion.js?v=8';
 import {createBloodTargetGun,createBloodGunslinger} from './blood-gunslinger.js?v=2';
 import {BLOOD_STAGE} from './blood-duel-stage.js?v=1';
 import {createScatterSlam} from './scatter-slam.js?v=1';
@@ -891,6 +891,7 @@ function render(now){if(document.hidden)return;const renderStarted=performance.n
  if($('#slot-shell').dataset.sceneHeader!==String(sceneHeader)||$('#slot-shell').dataset.sceneFeature!==(featureScenes.state.feature||'')){$('#slot-shell').dataset.sceneHeader=String(sceneHeader);$('#slot-shell').dataset.sceneFeature=featureScenes.state.feature||'';mobileView.measure();}
 if(dev.pauseRendering){queueRender();return;}lastTime=now;featureScenes.tick(now);bloodDuel.update(now);modeBackground.setSuspended(featureScenes.hasBackground);featureScenes.setMotion(environment.isMotionEnabled()&&(!phoneView||mobileRenderBudget.motion));ctx.setTransform(renderScale,0,0,renderScale,0,Math.round(sceneTop*renderScale));ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(featureScenes.active&&!featureScenes.revealing){featureScenes.drawIntro(ctx);presentScene();queueRender();return;}ctx.save();ctx.fillStyle='#060203';ctx.fillRect(0,-sceneTop,W,H+sceneTop+sceneBottom);const kick=impactMotion.sample(now),impactZoom=1+Math.max(2*Math.abs(kick.x)/W,2*Math.abs(kick.y)/H);ctx.translate(W/2+kick.x,H/2+kick.y);ctx.scale(impactZoom,impactZoom);ctx.translate(-W/2,-H/2);const shotCamera=crossfire.camera();ctx.translate(W/2+shotCamera.x,H/2+shotCamera.y);ctx.scale(shotCamera.scale,shotCamera.scale);ctx.translate(-W/2,-H/2);
  const cam=shootoutCamera(now);if(cam){ctx.translate(cam.cx+cam.dx,cam.cy+cam.dy);ctx.scale(cam.s,cam.s);ctx.translate(-cam.cx,-cam.cy);}   // the shootout's push-in and shot kicks carry everything drawn below
+ bloodPromotion.camera(ctx.getTransform(),renderScale,sceneTop);
  const cacheStatic=!cam&&kick.x===0&&kick.y===0&&shotCamera.scale===1&&shotCamera.x===0&&shotCamera.y===0;
  cacheSettledCells=cacheStatic&&!bloodBank.active&&!crossfire.state.active&&!tumble.active&&Object.keys(spinning).length===0;
  environment.draw(now,{occluded:featureScenes.opaqueBackground||modeBackground.opaque,emphasis:(payout.active||bloodBank.focused) ? .28 : 1,mobile:phoneView,lowPower:!mobileRenderBudget.motion,sceneX:mobileView.layout.sceneX,sceneWidth:mobileView.layout.sceneWidth,top:sceneTop,bottom:sceneBottom,scale:renderScale,cacheStatic});
