@@ -1,0 +1,7 @@
+# Per-spin big wins — game261
+
+The shared runTumbles orchestrator now presents the approved big-win animation after every qualifying completed spin, before handing control to another spin or a scatter intro. Its input is the resolver's rounded, capped total across all cascades. Blood Money, Hang Em High, other free spins and Hell to Pay use the base bet; paid enhanced spins retain the actual paid spin stake. Existing 20x threshold is unchanged. MAX owns its separate presentation. Preview-only fixtures do not trigger it.
+
+Summary-only presentation cannot award credits. Round receipts suppress a second big-win animation; a feature total cannot manufacture a qualifying spin from multiple smaller spins. Tests exercise the actual asynchronous runTumbles body with deterministic resolver fixtures, payout coordinator, threshold boundaries, consecutive feature wins, enhanced stakes and MAX deduplication. The existing feedback, Ringleader and target-camera checks also pass.
+
+Audio has NOT changed. Recommended replacement for review: entrance revolver crack plus low brass/drum impact, accelerating coin accents during the count-up, vault slam and short metallic ring at the exact amount lock. Synchronize to win-animation.js TIMES (entrance .89s, advance 2.55s, burst 3.04s, lock 3.53s; 6.2s total). Keep mute, pause/resume, skip and music ducking intact. The currently shipped track remains the earlier reference-derived WAV.

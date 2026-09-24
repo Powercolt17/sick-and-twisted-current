@@ -1,3 +1,7 @@
+# Hang Em High complete bounty progression — game262
+
+Read HANG-262.md for current rules and verification. Original full-column Outlaw Wild retained. Bounty stamps, Last Sentence double stamps, temporary fourth Wild and exact bounty receipt are now integrated. Thirty-one tests pass. Prior paused-work warning is superseded for Hang; Blood Money remains unchanged.
+
 # Blood Money target shares scene camera — game260
 
 The entire multiplier target now inherits the exact canvas camera matrix every frame, including hit shake, impact zoom and camera pivots. Its local flip/recoil remains inside that transform. Screen-to-world conversion accounts for pixel scale and portrait header. Start/stop clears residual transforms. Camera alignment, target motion and Ringleader tests pass. No math/assets/layout changes.

@@ -1,0 +1,29 @@
+/* One announcement look for the whole slot: the approved Blood Money "+2 FREE SPINS" reward (blood-promotion.css).
+   Floating type on a soft dark radial backing, no box: tracked gold eyebrow between hairlines, a Georgia headline
+   with a larger gold lead, a tracked gold subtitle. Canvas announcements use the same values (announce.js). */
+.st-announce{container-type:inline-size;isolation:isolate;text-align:center;color:#f0dcad;text-shadow:0 3px 8px #000}
+.st-announce::before{content:'';position:absolute;inset:-30px -20px;z-index:-1;background:radial-gradient(ellipse at 50% 60%,#140a03f5 12%,#140a03da 38%,#140a0370 58%,transparent 75%)}
+.st-announce-top{font:700 clamp(9px,1.65cqw,12px)/1.3 Arial,sans-serif;letter-spacing:.3em;color:#d5ad6e;display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:7px}
+.st-announce-top::before,.st-announce-top::after{content:'';width:42px;height:1px;background:#a77b3c;flex:none}
+.st-announce-main{display:flex;align-items:baseline;justify-content:center;gap:2cqw;white-space:nowrap;color:#f7e1b6;font:700 clamp(24px,8.8cqw,64px)/1.1 Georgia,serif;letter-spacing:-.025em}
+.st-announce-lead{font-size:1.5em;color:#ffe1a4;line-height:.95;letter-spacing:-.025em}
+.st-announce-title{font:inherit;margin:0}
+.st-announce-sub{margin-top:9px;font:700 clamp(9px,1.8cqw,13px)/1.3 Arial,sans-serif;letter-spacing:.22em;color:#dbb979}
+[data-layout=portrait] .st-announce-top{letter-spacing:.12em;gap:8px;margin-bottom:5px}
+[data-layout=portrait] .st-announce-top::before,[data-layout=portrait] .st-announce-top::after{width:20px}
+[data-layout=portrait] .st-announce-sub{letter-spacing:.14em;margin-top:6px}
+
+/* Hang 'Em High notices adopt it. The old boxed/boarded panel rules are neutralised here (this file loads last). */
+#slot-shell .hang-presentation .hang-toast.st-announce{top:auto!important;bottom:9%!important;left:50%;width:50%!important;max-width:none!important;padding:0!important;
+ background:none!important;border:0!important;outline:0!important;box-shadow:none!important;box-sizing:border-box;white-space:normal}
+#slot-shell .hang-presentation .hang-toast.st-announce::after{content:none!important}
+#slot-shell .hang-presentation .hang-toast.st-announce::before{content:''!important;position:absolute;top:-30px!important;right:-20px;bottom:-30px;left:-20px!important;transform:none!important;font-size:0}
+#slot-shell .hang-presentation .hang-toast.st-announce .st-announce-main{font-size:clamp(24px,8.8cqw,64px)!important}
+#slot-shell .hang-presentation .hang-toast.st-announce .st-announce-sub{font-size:clamp(9px,1.8cqw,13px)!important;line-height:1.3!important;color:#dbb979!important}
+#slot-shell .hang-presentation .hang-toast.st-announce .st-announce-top{font-size:clamp(9px,1.65cqw,12px)!important;color:#d5ad6e!important}
+#slot-shell .hang-presentation .hang-toast.st-announce .st-announce-title{white-space:nowrap}
+#slot-shell .hang-presentation .hang-toast.st-announce[data-event=intro] .st-announce-sub,
+#slot-shell .hang-presentation .hang-toast.st-announce[data-event=finale] .st-announce-sub{white-space:normal;max-width:84cqw;margin-left:auto;margin-right:auto}
+#slot-shell[data-layout=portrait] .hang-presentation .hang-toast.st-announce{width:88%!important;bottom:auto!important;top:10px!important}
+.hang-toast.st-announce.struck .st-announce-lead{animation:st-announce-hit .7s both}
+@keyframes st-announce-hit{0%{transform:scale(1.45);color:#fff7d8;text-shadow:0 0 22px #f7c577}28%{transform:scale(.96)}48%{transform:scale(1.03)}100%{transform:scale(1);color:#ffe1a4;text-shadow:0 3px 8px #000}}

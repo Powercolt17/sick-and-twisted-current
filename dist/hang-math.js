@@ -1,6 +1,6 @@
 import * as M from './math.js?v=23';
-import {HANG_RULES,hangFeature} from './hang-kernel.js?v=3';
-import {HANG_CATALOG} from './hang-catalog.js?v=2';
+import {HANG_RULES,hangFeature} from './hang-kernel.js?v=4';
+import {HANG_CATALOG} from './hang-catalog.js?v=3';
 // Fixed release weighting: favor returns near the buy, while retaining a large-win tail.
 // This is calibrated once to 96.4%; no player or previous-result inputs.
 export const HANG_PAYOUT_SHAPE=Object.freeze({shoulder:.75,power:4});
@@ -26,7 +26,9 @@ export function rollHangFeature(rng=()=>crypto.getRandomValues(new Uint32Array(1
  return feature;
 }
 export function hangDemoFeature(){
- const row=HANG_CATALOG.find(([,cents,locks,upgrades,first,retriggers,tumbles])=>locks===3&&upgrades>=1&&retriggers>=1&&tumbles>=1&&cents>=50000&&cents<150000);
+ // Explicit, illustrative demo only: exercises the final phase and a paying
+ // temporary Wild. Purchased/naturally triggered features use rollHangFeature.
+ const row=HANG_CATALOG.find(([seed])=>seed===4178);
  if(!row)throw Error('Hang walkthrough is missing');return hangFeature(row[0]);
 }
 export function hangAudit(){

@@ -1,0 +1,33 @@
+/* Sleek HUD: one dark glass language for every control, gold hairlines, the announcement typography
+   (tracked gold caps for labels, parchment for values). Layout and sizes stay in hud.css / mobile.css. */
+#slot-shell .hud{color:#f3e6cc}
+#slot-shell .hud-readouts,#slot-shell .hud-bet,#slot-shell .hud .hud-autoplay{
+ background:linear-gradient(180deg,#1a1410f0 0%,#0d0a08f0 100%)!important;border:1px solid #6e5432;border-radius:7px;
+ box-shadow:inset 0 1px 0 #ffffff10,inset 0 -1px 0 #00000080,0 6px 18px #00000099}
+#slot-shell .hud-readouts{grid-template-columns:17% minmax(0,1fr) minmax(0,1fr)}
+#slot-shell .hud-balance{border-left:1px solid #6e543280;padding-left:1.1cqw}
+#slot-shell .hud-win{border-left:1px solid #6e543233}
+#slot-shell .hud-amount>span{color:#d5ad6e;font:700 clamp(9px,.78cqw,11px)/1.2 Arial,Helvetica,sans-serif;letter-spacing:.3em;margin-bottom:2px}
+#slot-shell .hud-amount>strong{color:#f7e1b6;font-weight:800;letter-spacing:-.01em;text-shadow:0 2px 6px #000}
+#slot-shell #round-net{color:#d5ad6e}
+#slot-shell .hud-menu svg,#slot-shell .hud-bet-arrows svg,#slot-shell .hud-autoplay svg,#slot-shell .hud-turbo svg{stroke:#e9d7ad}
+#slot-shell .hud button:hover:not(:disabled) svg{stroke:#ffe1a4}
+#slot-shell .hud-autoplay .auto-play{fill:#e9d7ad;stroke:none}
+#slot-shell .hud-autoplay.enabled{color:#ffe1a4;border-color:#c9a25a}
+#slot-shell .hud-autoplay.enabled .auto-play{fill:#ffe1a4}
+/* round controls: dark glass in a thin gold rim */
+#slot-shell .hud-turbo,#slot-shell .hud-provider{
+ background:radial-gradient(circle at 50% 32%,#241c15,#0b0908 72%)!important;border:1.5px solid #8a6a3c!important;
+ box-shadow:inset 0 1px 0 #ffffff14,0 6px 16px #00000099}
+#slot-shell .hud-turbo{color:#e9d7ad}
+#slot-shell .hud-turbo[aria-pressed=true]{color:#ffe1a4;border-color:#e8bd66!important;background:radial-gradient(circle at 50% 32%,#3a2c16,#120d08 72%)!important;box-shadow:0 0 0 1px #e8bd6640,0 0 18px #e8bd6650,0 6px 16px #00000099}
+#slot-shell .hud-turbo:hover:not(:disabled){background:radial-gradient(circle at 50% 32%,#2e251c,#0f0c0a 72%)!important}
+#slot-shell .hud-provider{border-color:#c9a25a!important}
+/* the spin button: the one thing that should catch the eye */
+#slot-shell .hud .hud-spin{
+ color:#f7e1b6;border:3px solid #0b0908;background:radial-gradient(circle at 50% 36%,#3b2f22,#15100c 68%,#0b0908);
+ box-shadow:0 0 0 2.5px #c9a25a,0 0 0 5px #1a130c,0 0 0 6px #6e543299,0 10px 26px #000c,inset 0 2px 0 #ffffff14}
+#slot-shell .hud .hud-spin:hover:not(:disabled){background:radial-gradient(circle at 50% 36%,#4a3b2a,#1a140e 68%,#0b0908)!important;box-shadow:0 0 0 2.5px #e8bd66,0 0 0 5px #1a130c,0 0 0 6px #6e5432cc,0 0 22px #e8bd6640,0 10px 26px #000c,inset 0 2px 0 #ffffff14}
+#slot-shell .hud .hud-spin:disabled{color:#c9bda2;box-shadow:0 0 0 2.5px #8a6a3c,0 0 0 5px #1a130c,0 0 0 6px #6e543266,0 10px 26px #000c}
+#slot-shell .hud #remaining{color:#ffe1a4;font-family:Georgia,serif;font-weight:700;text-shadow:0 3px 8px #000}
+#slot-shell .hud button:focus-visible{outline:2px solid #ffe1a4;outline-offset:3px}

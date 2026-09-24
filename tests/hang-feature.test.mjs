@@ -16,7 +16,7 @@ for(const feature of samples){
  assert.equal(feature.spins.length,12+3*feature.retriggers);assert.ok(feature.retriggers<=HANG_RULES.maxRetriggers);assert.ok(feature.first<3);assert.ok(feature.locks>=1&&feature.locks<=3);
  const row=HANG_CATALOG.find(r=>r[0]===feature.seed);assert.equal(feature.cents,row[1]);let sum=0,previous={};
  for(const outcome of feature.spins){
-  assert.deepEqual(outcome.hang.before,previous);assert.ok(Object.keys(outcome.wilds).length<=3);
+  assert.deepEqual(outcome.hang.before,previous);assert.ok(Object.keys(outcome.wilds).length<=3+(outcome.hang.temporary?1:0));
   for(const [c,w] of Object.entries(previous)){assert.ok(outcome.wilds[c].locked);assert.ok(outcome.wilds[c].mult>=w.mult);}
   const event=outcome.hang.event;
   if(event?.type==='upgrade'){upgrades++;assert.equal(Object.keys(previous).length,3);assert.equal(event.to,event.from*2);assert.ok(event.to<=64);}
@@ -25,9 +25,9 @@ for(const feature of samples){
   for(let i=0;i<result.steps.length;i++){
    const step=result.steps[i];if(step.bomb)blastPaths++;
    assert.ok(step.clearCells.every(([c])=>!step.wilds[c]),'locked reels cannot enter gravity');
-   assert.deepEqual(step.wilds,step.hang.locks);
+   assert.deepEqual(Object.fromEntries(Object.entries(step.wilds).filter(([,w])=>!w.temporary)),step.hang.locks);
    if(i)for(const [c,w] of Object.entries(result.steps[i-1].wilds)){assert.ok(step.wilds[c].locked);assert.ok(step.wilds[c].mult>=w.mult);}
-   if(step.hang.event?.type==='upgrade'){assert.equal(Object.keys(step.wilds).length,3);assert.equal(step.hang.event.to,step.hang.event.from*2);assert.ok(step.hang.event.to<=64);}
+   if(step.hang.event?.type==='upgrade'){assert.equal(Object.keys(step.hang.locks).length,3);assert.equal(step.hang.event.to,step.hang.event.from*2);assert.ok(step.hang.event.to<=64);}
    if(step.hangRetrigger){assert.equal(i,result.steps.length-1);assert.ok(step.hangRetrigger.cells.length>=3);assert.ok(step.hangRetrigger.cells.every(([c,r])=>!step.wilds[c]&&step.grid[c][r]==='scatter'));assert.equal(step.hangRetrigger.spins,3);assert.equal(step.hangRetrigger.remaining,outcome.hang.remaining);}
    if(i){const prior=result.steps[i-1],next=collapse(prior.grid,prior.clearCells,(c,r)=>step.grid[c][r]).grid;assert.deepEqual(step.grid,next);}
   }
